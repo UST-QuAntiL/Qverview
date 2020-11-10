@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from "@angular/material/table";
-import { Sdk } from '../sdk.model';
 import { SdkService } from '../sdk.service';
 
 @Component({

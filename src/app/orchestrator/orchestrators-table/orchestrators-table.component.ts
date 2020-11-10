@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OrchestratorService} from '../orchestrator.service';
+import { MatTableDataSource } from "@angular/material/table";
 
 @Component({
   selector: 'app-orchestrators-table',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrchestratorsTableComponent implements OnInit {
 
-  constructor() { }
+  orchestratorService: OrchestratorService;
+  dataSource;
+  displayedColumns = [
+    'name',
+    'licenses',
+    'programmingLanguages',
+    'activeDevelopment',
+    'productionReady'
+  ];
+
+  constructor(orchestratorService: OrchestratorService) {
+    this.orchestratorService = orchestratorService;
+  }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource(this.orchestratorService.getOrchestrators());
   }
 
 }

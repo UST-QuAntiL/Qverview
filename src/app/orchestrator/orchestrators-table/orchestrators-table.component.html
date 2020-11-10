@@ -1,1 +1,37 @@
-<p>orchestrators-table works!</p>
+<h2>Orchestrators</h2>
+<div *ngIf="dataSource">
+    <mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let orchestrator">{{orchestrator.name}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="licenses">
+            <mat-header-cell *matHeaderCellDef>Licenses</mat-header-cell>
+            <mat-cell *matCellDef="let orchestrator">
+                <span *ngFor="let x of orchestrator.licenses">{{x}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="programmingLanguages">
+            <mat-header-cell *matHeaderCellDef>Programming Languages</mat-header-cell>
+            <mat-cell *matCellDef="let orchestrator">
+                <span *ngFor="let x of orchestrator.programmingLanguages">{{x}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="activeDevelopment">
+            <mat-header-cell *matHeaderCellDef>Active Development</mat-header-cell>
+            <mat-cell *matCellDef="let orchestrator">
+                <span>{{orchestrator.activeDevelopment}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="productionReady">
+            <mat-header-cell *matHeaderCellDef>Production ready</mat-header-cell>
+            <mat-cell *matCellDef="let orchestrator">
+                <span>{{orchestrator.productionReady}}</span>
+            </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+</div>
