@@ -1,1 +1,37 @@
-<p>quantum-cloud-services-table works!</p>
+<h2>Quantum Cloud Services</h2>
+<div *ngIf="dataSource">
+    <mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let qcs">{{qcs.name}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="accessMethods">
+            <mat-header-cell *matHeaderCellDef>Access Methods</mat-header-cell>
+            <mat-cell *matCellDef="let qcs">
+                <span *ngFor="let x of qcs.accessMethods">{{x}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="serviceModel">
+            <mat-header-cell *matHeaderCellDef>Service Model</mat-header-cell>
+            <mat-cell *matCellDef="let qcs">
+                <span>{{qcs.serviceModel}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="resources">
+            <mat-header-cell *matHeaderCellDef>Resources</mat-header-cell>
+            <mat-cell *matCellDef="let qcs">
+                <span *ngFor="let x of qcs.resources">{{x}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="assemblyLanguage">
+            <mat-header-cell *matHeaderCellDef>Assembly Language</mat-header-cell>
+            <mat-cell *matCellDef="let qcs">
+                <span>{{qcs.assemblyLanguage}}</span>
+            </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+</div>

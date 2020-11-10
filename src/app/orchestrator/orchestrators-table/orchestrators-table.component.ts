@@ -9,7 +9,6 @@ import { MatTableDataSource } from "@angular/material/table";
 })
 export class OrchestratorsTableComponent implements OnInit {
 
-  orchestratorService: OrchestratorService;
   dataSource;
   displayedColumns = [
     'name',
@@ -20,11 +19,9 @@ export class OrchestratorsTableComponent implements OnInit {
   ];
 
   constructor(orchestratorService: OrchestratorService) {
-    this.orchestratorService = orchestratorService;
+    this.dataSource = new MatTableDataSource(orchestratorService.getOrchestrators());
   }
 
-  ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.orchestratorService.getOrchestrators());
-  }
+  ngOnInit(): void {}
 
 }

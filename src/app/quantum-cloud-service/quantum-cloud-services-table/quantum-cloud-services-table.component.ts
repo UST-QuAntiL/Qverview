@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { QcsService } from '../qcs.service';
+import { MatTableDataSource } from "@angular/material/table";
 
 @Component({
   selector: 'app-quantum-cloud-services-table',
@@ -7,7 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuantumCloudServicesTableComponent implements OnInit {
 
-  constructor() { }
+  dataSource;
+  displayedColumns = [
+    'name',
+    'accessMethods',
+    'serviceModel',
+    'resources',
+    'assemblyLanguage'
+  ];
+
+  constructor(qcsService: QcsService) {
+    this.dataSource = new MatTableDataSource(qcsService.getQcs());
+  }
 
   ngOnInit(): void {
   }
