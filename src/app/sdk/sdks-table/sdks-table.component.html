@@ -1,1 +1,81 @@
-<p>sdks-table works!</p>
+<h2>Quantum Software Development Kits</h2>
+<div>
+    <mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let sdk">{{sdk.name}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="licenses">
+            <mat-header-cell *matHeaderCellDef>Licenses</mat-header-cell>
+            <mat-cell *matCellDef="let sdk">
+                <span *ngFor="let x of sdk.licenses">{{x}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="programmingLanguages">
+            <mat-header-cell *matHeaderCellDef>Programming Languages</mat-header-cell>
+            <mat-cell *matCellDef="let sdk">
+                <span *ngFor="let x of sdk.programmingLanguages">{{x}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="compilerInputLanguages">
+            <mat-header-cell *matHeaderCellDef>Input Languages</mat-header-cell>
+            <mat-cell *matCellDef="let sdk">
+                <span *ngFor="let x of sdk.compilerInputLanguages">{{x}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="compilerOutputLanguages">
+            <mat-header-cell *matHeaderCellDef>Output Languages</mat-header-cell>
+            <mat-cell *matCellDef="let sdk">
+                <span *ngFor="let x of sdk.compilerOutputLanguages">{{x}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="compilerOptimizationStrategies">
+            <mat-header-cell *matHeaderCellDef>Optimization Strategies</mat-header-cell>
+            <mat-cell *matCellDef="let sdk">
+                <span *ngFor="let x of sdk.compilerOptimizationStrategies">{{x}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="knowlegdeReuses">
+            <mat-header-cell *matHeaderCellDef>Knowlegde Reuses</mat-header-cell>
+            <mat-cell *matCellDef="let sdk">
+                <span *ngFor="let x of sdk.knowlegdeReuses">{{x}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="activeDevelopment">
+            <mat-header-cell *matHeaderCellDef>Active Development</mat-header-cell>
+            <mat-cell *matCellDef="let sdk">
+                <span>{{sdk.activeDevelopment}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="supportedQuantumCloudServices">
+            <mat-header-cell *matHeaderCellDef>Supported Quantum Cloud Services
+            </mat-header-cell>
+            <mat-cell *matCellDef="let sdk">
+                <span *ngFor="let x of sdk.supportedQuantumCloudServices">{{x}}</span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="localSimulator">
+            <mat-header-cell *matHeaderCellDef>Local Simulator</mat-header-cell>
+            <mat-cell *matCellDef="let sdk">
+                <span>{{sdk.localSimulator}}</span>
+            </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+</div>
+
+<!-- sdks: Sdk[] = [{
+name: '',
+licenses: [''],
+programmingLanguages: [''],
+compilerInputLanguages: [''],
+compilerOutputLanguages: [''],
+compilerOptimizationStrategies: [''],
+knowlegdeReuses: [''],
+activeDevelopment: true,
+supportedQuantumCloudServices: [''],
+localSimulator: true
+}]; -->
