@@ -1,2 +1,9 @@
 <h2>Filter</h2>
-<button (click)="test()">Hello</button>
+<div *ngIf="sdkFilter">
+    <div>
+        Programming Languages:
+        <span *ngFor="let x of sdkFilter.programmingLanguages">
+            <button (click)="prorammingLanguageClicked(x)">{{x}}</button>
+        </span>
+    </div>
+</div>

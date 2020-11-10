@@ -18,11 +18,10 @@ export class QuantumCloudServicesTableComponent implements OnInit {
     'assemblyLanguage'
   ];
 
-  constructor(qcsService: QcsService) {
-    this.dataSource = new MatTableDataSource(qcsService.getQcs());
-  }
+  constructor(private qcsService: QcsService) {}
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource(this.qcsService.getQcs());
   }
 
 }

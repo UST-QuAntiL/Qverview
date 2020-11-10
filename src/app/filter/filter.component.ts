@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterUpdateService } from './filter-update.service';
+import { Sdk } from '../sdk/sdk.model';
 
 @Component({
   selector: 'app-filter',
@@ -8,16 +9,22 @@ import { FilterUpdateService } from './filter-update.service';
 })
 export class FilterComponent implements OnInit {
 
+  sdkFilter: Sdk;
+
   constructor(private filterUpdateService: FilterUpdateService) { }
 
   ngOnInit(): void {
     this.filterUpdateService.events$.forEach(filterUpdateEvent => {
-      console.log(filterUpdateEvent);
+      this.sdkFilter = filterUpdateEvent;
     });
+    this.clear();
   }
 
-  test() {
-    this.filterUpdateService.updateFilter('test');
+  prorammingLanguageClicked(programmingLanguage: string) {
+    this.filterUpdateService.toggleProgrammingLanguage(programmingLanguage);
   }
 
+  clear() {
+    this.filterUpdateService.clear()
+  }
 }

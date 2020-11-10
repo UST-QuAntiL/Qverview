@@ -18,10 +18,10 @@ export class OrchestratorsTableComponent implements OnInit {
     'productionReady'
   ];
 
-  constructor(orchestratorService: OrchestratorService) {
-    this.dataSource = new MatTableDataSource(orchestratorService.getOrchestrators());
-  }
+  constructor(private orchestratorService: OrchestratorService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dataSource = new MatTableDataSource(this.orchestratorService.getOrchestrators());
+  }
 
 }

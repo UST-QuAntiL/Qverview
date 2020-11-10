@@ -8,18 +8,44 @@ import { of } from 'rxjs';
 })
 export class SdkService {
 
-  sdks: Sdk[] = [{
-    name: 'Qiskit',
-    licenses: ['Apache 2.0'],
-    programmingLanguages: ['JavaScript', 'Python'],
-    compilerInputLanguages: ['OpenQASM'],
-    compilerOutputLanguages: ['OpenQASM'],
-    compilerOptimizationStrategies: ['hardware-dependent'],
-    knowlegdeReuses: ['libraries'],
-    activeDevelopment: true,
-    supportedQuantumCloudServices: ['IBM Quantum'],
-    localSimulator: true
-  }];
+  sdks: Sdk[] = [
+    {
+      name: 'Qiskit',
+      licenses: ['Apache 2.0'],
+      programmingLanguages: ['JavaScript', 'Python'],
+      compilerInputLanguages: ['OpenQASM'],
+      compilerOutputLanguages: ['OpenQASM'],
+      compilerOptimizationStrategies: ['hardware-dependent'],
+      knowlegdeReuses: ['libraries'],
+      activeDevelopment: true,
+      supportedQuantumCloudServices: ['IBM Quantum'],
+      localSimulator: true
+    },
+    {
+      name: 'XACC',
+      licenses: ['Apache 2.0'],
+      programmingLanguages: ['C++', 'Python'],
+      compilerInputLanguages: [],
+      compilerOutputLanguages: ['OpenQASM'],
+      compilerOptimizationStrategies: ['hardware-dependent'],
+      knowlegdeReuses: ['libraries'],
+      activeDevelopment: true,
+      supportedQuantumCloudServices: ['IBM Quantum', 'D-Wave'],
+      localSimulator: true
+    },
+    {
+      name: 'Forest',
+      licenses: ['Apache 2.0'],
+      programmingLanguages: ['Python'],
+      compilerInputLanguages: ['QUIL', 'OpenQASM'],
+      compilerOutputLanguages: ['OpenQASM'],
+      compilerOptimizationStrategies: ['hardware-dependent'],
+      knowlegdeReuses: ['libraries'],
+      activeDevelopment: true,
+      supportedQuantumCloudServices: [],
+      localSimulator: true
+    },
+  ];
 
   constructor() { }
 

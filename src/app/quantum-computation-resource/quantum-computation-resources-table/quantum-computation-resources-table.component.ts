@@ -17,11 +17,10 @@ export class QuantumComputationResourcesTableComponent implements OnInit {
     'vendor'
   ];
 
-  constructor(qcrS: QuantumComputationResourceService) {
-    this.dataSource = new MatTableDataSource(qcrS.getQuantumComputationResource());
-  }
+  constructor(private qcrS: QuantumComputationResourceService) {}
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource(this.qcrS.getQuantumComputationResource());
   }
 
 }

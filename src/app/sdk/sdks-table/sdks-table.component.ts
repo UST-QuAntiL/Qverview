@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from "@angular/material/table";
 import { SdkService } from '../sdk.service';
+import { FilterUpdateService } from '../../filter/filter-update.service';
 
 @Component({
   selector: 'app-sdks-table',
@@ -23,11 +24,28 @@ export class SdksTableComponent implements OnInit {
     'localSimulator',
   ];
 
-  constructor(sdkService: SdkService) {
-    this.dataSource = new MatTableDataSource(sdkService.getSdks());
+  constructor(private sdkService: SdkService, private filterUpdateService: FilterUpdateService) {
   }
 
   ngOnInit(): void {
+    this.dataSource = new MatTableDataSource(this.sdkService.getSdks());
+    this.dataSource.filterPredicate = function (data, filter: string): boolean {
+      var result = true;
+      var f = JSON.parse(filter);
+      for (let x of f.programmingLanguages) {
+        if (!data.programmingLanguages.includes(x)) {
+          result = false;
+        }
+      }
+      return result;
+    };
+
+    this.filterUpdateService.events$.forEach(filterUpdateEvent => {
+      this.dataSource.filter = JSON.stringify(filterUpdateEvent);
+    });
   }
 
+  programmingLanguageClicked(language: string) {
+    this.filterUpdateService.toggleProgrammingLanguage(language);
+  }
 }
