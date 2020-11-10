@@ -32,6 +32,11 @@ export class SdksTableComponent implements OnInit {
     this.dataSource.filterPredicate = function (data, filter: string): boolean {
       var result = true;
       var f = JSON.parse(filter);
+      for (let x of f.licenses) {
+        if (!data.licenses.includes(x)) {
+          result = false;
+        }
+      }
       for (let x of f.programmingLanguages) {
         if (!data.programmingLanguages.includes(x)) {
           result = false;
@@ -43,6 +48,10 @@ export class SdksTableComponent implements OnInit {
     this.filterUpdateService.events$.forEach(filterUpdateEvent => {
       this.dataSource.filter = JSON.stringify(filterUpdateEvent);
     });
+  }
+
+  licensesClicked(license: string) {
+    this.filterUpdateService.toggleLicense(license);
   }
 
   programmingLanguageClicked(language: string) {

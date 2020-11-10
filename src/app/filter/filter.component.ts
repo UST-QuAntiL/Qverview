@@ -20,6 +20,10 @@ export class FilterComponent implements OnInit {
     this.clear();
   }
 
+  licenseClicked(license: string) {
+    this.filterUpdateService.toggleLicense(license);
+  }
+
   prorammingLanguageClicked(programmingLanguage: string) {
     this.filterUpdateService.toggleProgrammingLanguage(programmingLanguage);
   }

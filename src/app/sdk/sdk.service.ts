@@ -11,7 +11,7 @@ export class SdkService {
   sdks: Sdk[] = [
     {
       name: 'Qiskit',
-      licenses: ['Apache 2.0'],
+      licenses: ['Apache2.0'],
       programmingLanguages: ['JavaScript', 'Python'],
       compilerInputLanguages: ['OpenQASM'],
       compilerOutputLanguages: ['OpenQASM'],
@@ -23,7 +23,7 @@ export class SdkService {
     },
     {
       name: 'XACC',
-      licenses: ['Apache 2.0'],
+      licenses: ['EPL'],
       programmingLanguages: ['C++', 'Python'],
       compilerInputLanguages: [],
       compilerOutputLanguages: ['OpenQASM'],
@@ -35,7 +35,7 @@ export class SdkService {
     },
     {
       name: 'Forest',
-      licenses: ['Apache 2.0'],
+      licenses: ['Apache2.0'],
       programmingLanguages: ['Python'],
       compilerInputLanguages: ['QUIL', 'OpenQASM'],
       compilerOutputLanguages: ['OpenQASM'],

@@ -1,6 +1,12 @@
 <h2>Filter</h2>
 <div *ngIf="sdkFilter">
     <div>
+        Licenses:
+        <span *ngFor="let x of sdkFilter.licenses">
+            <button (click)="licenseClicked(x)">{{x}}</button>
+        </span>
+    </div>
+    <div>
         Programming Languages:
         <span *ngFor="let x of sdkFilter.programmingLanguages">
             <button (click)="prorammingLanguageClicked(x)">{{x}}</button>

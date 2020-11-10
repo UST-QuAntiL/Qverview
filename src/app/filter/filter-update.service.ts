@@ -21,8 +21,17 @@ export class FilterUpdateService {
     return this._subject.asObservable();
   }
 
+  toggleLicense(license: string) {
+    const index = this._sdkFilter.licenses.indexOf(license, 0);
+    if (index >= 0) {
+      this._sdkFilter.licenses.splice(index, 1);
+    } else {
+      this._sdkFilter.licenses.push(license);
+    }
+    this.updateFilter();
+  }
+
   toggleProgrammingLanguage(programmingLanguage: string) {
-    console.log(this._sdkFilter);
     const index = this._sdkFilter.programmingLanguages.indexOf(programmingLanguage, 0);
     if (index >= 0) {
       this._sdkFilter.programmingLanguages.splice(index, 1);
