@@ -1,1 +1,25 @@
-<p>quantum-computation-resources-table works!</p>
+<h2>Quantum Computation Resources</h2>
+<div *ngIf="dataSource">
+    <mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let qcs">{{qcs.name}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="type">
+            <mat-header-cell *matHeaderCellDef>Type</mat-header-cell>
+            <mat-cell *matCellDef="let qcs">{{qcs.type}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="computationModel">
+            <mat-header-cell *matHeaderCellDef>Computation Model</mat-header-cell>
+            <mat-cell *matCellDef="let qcs">{{qcs.computationModel}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="vendor">
+            <mat-header-cell *matHeaderCellDef>Vendor</mat-header-cell>
+            <mat-cell *matCellDef="let qcs">{{qcs.vendor}}</mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+</div>
