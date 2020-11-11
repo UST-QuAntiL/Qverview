@@ -46,4 +46,9 @@
             <button (click)="supportedQuantumCloudServiceClicked(x)">{{x}}</button>
         </span>
     </div>
+    <div>
+        Local Simulator:
+        <button *ngIf="sdkFilter.localSimulator != null"
+            (click)="localSimulatorClicked(sdkFilter.localSimulator)">{{sdkFilter.localSimulator}}</button>
+    </div>
 </div>

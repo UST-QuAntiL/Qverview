@@ -70,6 +70,9 @@ export class SdksTableComponent implements OnInit {
           result = false;
         }
       }
+      if (result && f.localSimulator != null && f.localSimulator != data.localSimulator) {
+        result = false;
+      }
       return result;
     };
 
@@ -108,5 +111,9 @@ export class SdksTableComponent implements OnInit {
 
   supportedQuantumCloudServiceClicked(supportedQuantumCloudService: string) {
     this.filterUpdateService.toggleSupportedQuantumCloudServices(supportedQuantumCloudService);
+  }
+
+  localSimulatorClicked(localSimulator: boolean) {
+    this.filterUpdateService.toggleLocalSimulator(localSimulator);
   }
 }

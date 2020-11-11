@@ -43,7 +43,7 @@ export class SdkService {
       knowledgeReuses: ['libraries'],
       activeDevelopment: true,
       supportedQuantumCloudServices: [],
-      localSimulator: true
+      localSimulator: false
     },
     {
       name: 'Liqui|>',

@@ -57,7 +57,7 @@
         <ng-container matColumnDef="localSimulator">
             <th mat-header-cell *matHeaderCellDef>Local Simulator</th>
             <td mat-cell *matCellDef="let sdk">
-                <span>{{sdk.localSimulator}}</span>
+                <button (click)="localSimulatorClicked(sdk.localSimulator)">{{sdk.localSimulator}}</button>
             </td>
         </ng-container>
 

@@ -99,6 +99,15 @@ export class FilterUpdateService {
     this.updateFilter();
   }
 
+  toggleLocalSimulator(localSimulator: boolean) {
+    if (this._sdkFilter.localSimulator == null) {
+      this._sdkFilter.localSimulator = localSimulator;
+    } else {
+      this._sdkFilter.localSimulator = null;
+    }
+    this.updateFilter();
+  }
+
   clear() {
     this._sdkFilter = {
       name: '',

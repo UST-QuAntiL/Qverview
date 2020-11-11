@@ -53,6 +53,10 @@ export class FilterComponent implements OnInit {
     this.filterUpdateService.toggleSupportedQuantumCloudServices(supportedQuantumCloudService);
   }
 
+  localSimulatorClicked(localSimulator: boolean) {
+    this.filterUpdateService.toggleLocalSimulator(localSimulator);
+  }
+
   clear() {
     this.filterUpdateService.clear()
   }
