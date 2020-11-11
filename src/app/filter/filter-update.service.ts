@@ -41,6 +41,16 @@ export class FilterUpdateService {
     this.updateFilter();
   }
 
+  toggleCompilerInputLanguage(compilerInputLanguage: string) {
+    const index = this._sdkFilter.compilerInputLanguages.indexOf(compilerInputLanguage, 0);
+    if (index >= 0) {
+      this._sdkFilter.compilerInputLanguages.splice(index, 1);
+    } else {
+      this._sdkFilter.compilerInputLanguages.push(compilerInputLanguage);
+    }
+    this.updateFilter();
+  }
+
   clear() {
     this._sdkFilter = {
       name: '',

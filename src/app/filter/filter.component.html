@@ -12,4 +12,10 @@
             <button (click)="prorammingLanguageClicked(x)">{{x}}</button>
         </span>
     </div>
+    <div>
+        Compiler Input Languages:
+        <span *ngFor="let x of sdkFilter.compilerInputLanguages">
+            <button (click)="compilerInputLanguageClicked(x)">{{x}}</button>
+        </span>
+    </div>
 </div>
