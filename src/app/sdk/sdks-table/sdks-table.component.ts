@@ -47,6 +47,11 @@ export class SdksTableComponent implements OnInit {
           result = false;
         }
       }
+      for (let x of f.compilerOutputLanguages) {
+        if (!data.compilerOutputLanguages.includes(x)) {
+          result = false;
+        }
+      }
       return result;
     };
 
@@ -65,5 +70,9 @@ export class SdksTableComponent implements OnInit {
 
   compilerInputLanguageClicked(compilerInputLanguage: string) {
     this.filterUpdateService.toggleCompilerInputLanguage(compilerInputLanguage);
+  }
+
+  compilerOutputLanguageClicked(compilerOutputLanguage: string) {
+    this.filterUpdateService.toggleCompilerOutputLanguage(compilerOutputLanguage);
   }
 }

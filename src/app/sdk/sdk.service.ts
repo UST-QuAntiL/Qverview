@@ -38,7 +38,7 @@ export class SdkService {
       licenses: ['Apache2.0'],
       programmingLanguages: ['Python'],
       compilerInputLanguages: ['QUIL', 'OpenQASM'],
-      compilerOutputLanguages: ['OpenQASM'],
+      compilerOutputLanguages: ['QUIL'],
       compilerOptimizationStrategies: ['hardware-dependent'],
       knowlegdeReuses: ['libraries'],
       activeDevelopment: true,

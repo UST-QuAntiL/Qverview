@@ -18,4 +18,10 @@
             <button (click)="compilerInputLanguageClicked(x)">{{x}}</button>
         </span>
     </div>
+    <div>
+        Compiler Output Languages:
+        <span *ngFor="let x of sdkFilter.compilerOutputLanguages">
+            <button (click)="compilerOutputLanguageClicked(x)">{{x}}</button>
+        </span>
+    </div>
 </div>

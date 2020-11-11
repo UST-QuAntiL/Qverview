@@ -32,6 +32,10 @@ export class FilterComponent implements OnInit {
     this.filterUpdateService.toggleCompilerInputLanguage(compilerInputLanguage);
   }
 
+  compilerOutputLanguageClicked(compilerOutputLanguage: string) {
+    this.filterUpdateService.toggleCompilerOutputLanguage(compilerOutputLanguage);
+  }
+
   clear() {
     this.filterUpdateService.clear()
   }
