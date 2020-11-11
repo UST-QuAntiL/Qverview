@@ -36,4 +36,8 @@
             <button (click)="knowledgeReuseClicked(x)">{{x}}</button>
         </span>
     </div>
+    <div>
+        Active Development:
+        <button *ngIf="sdkFilter.activeDevelopment != null" (click)="activeDevelopmentClicked(sdkFilter.activeDevelopment)">{{sdkFilter.activeDevelopment}}</button>
+    </div>
 </div>

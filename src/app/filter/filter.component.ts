@@ -45,6 +45,10 @@ export class FilterComponent implements OnInit {
     this.filterUpdateService.toggleKnowledgeReuse(knowledgeReuse);
   }
 
+  activeDevelopmentClicked(activeDevelopment: boolean) {
+    this.filterUpdateService.toggleActiveDevelopment(activeDevelopment);
+  }
+
   clear() {
     this.filterUpdateService.clear()
   }

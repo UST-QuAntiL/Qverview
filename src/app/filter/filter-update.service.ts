@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Sdk } from '../sdk/sdk.model';
-import { SdkService } from '../sdk/sdk.service';
 
 @Injectable({
   providedIn: 'root'
@@ -77,6 +76,15 @@ export class FilterUpdateService {
       this._sdkFilter.knowledgeReuses.splice(index, 1);
     } else {
       this._sdkFilter.knowledgeReuses.push(knowledgeReuse);
+    }
+    this.updateFilter();
+  }
+
+  toggleActiveDevelopment(activeDevelopment: boolean) {
+    if (this._sdkFilter.activeDevelopment == null) {
+      this._sdkFilter.activeDevelopment = activeDevelopment;
+    } else {
+      this._sdkFilter.activeDevelopment = null;
     }
     this.updateFilter();
   }

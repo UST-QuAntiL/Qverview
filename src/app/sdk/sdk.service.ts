@@ -45,6 +45,18 @@ export class SdkService {
       supportedQuantumCloudServices: [],
       localSimulator: true
     },
+    {
+      name: 'Liqui|>',
+      licenses: ['Custom'],
+      programmingLanguages: ['F#'],
+      compilerInputLanguages: ['Custom'],
+      compilerOutputLanguages: [],
+      compilerOptimizationStrategies: ['hardware-dependent'],
+      knowledgeReuses: ['libraries'],
+      activeDevelopment: false,
+      supportedQuantumCloudServices: [],
+      localSimulator: true
+    },
   ];
 
   constructor() { }

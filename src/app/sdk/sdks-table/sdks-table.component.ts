@@ -62,6 +62,9 @@ export class SdksTableComponent implements OnInit {
           result = false;
         }
       }
+      if (result && f.activeDevelopment != null && f.activeDevelopment != data.activeDevelopment) {
+        result = false;
+      }
       return result;
     };
 
@@ -92,5 +95,9 @@ export class SdksTableComponent implements OnInit {
 
   knowledgeReuseClicked(knowledgeReuse: string) {
     this.filterUpdateService.toggleKnowledgeReuse(knowledgeReuse);
+  }
+
+  activeDevelopmentClicked(activeDevelopment: boolean) {
+    this.filterUpdateService.toggleActiveDevelopment(activeDevelopment);
   }
 }

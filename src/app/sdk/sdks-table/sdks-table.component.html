@@ -44,7 +44,7 @@
         <ng-container matColumnDef="activeDevelopment">
             <th mat-header-cell *matHeaderCellDef>Active Development</th>
             <td mat-cell *matCellDef="let sdk">
-                <span>{{sdk.activeDevelopment}}</span>
+                <button (click)="activeDevelopmentClicked(sdk.activeDevelopment)">{{sdk.activeDevelopment}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="supportedQuantumCloudServices">
