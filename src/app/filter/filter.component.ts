@@ -49,6 +49,10 @@ export class FilterComponent implements OnInit {
     this.filterUpdateService.toggleActiveDevelopment(activeDevelopment);
   }
 
+  supportedQuantumCloudServiceClicked(supportedQuantumCloudService: string) {
+    this.filterUpdateService.toggleSupportedQuantumCloudServices(supportedQuantumCloudService);
+  }
+
   clear() {
     this.filterUpdateService.clear()
   }

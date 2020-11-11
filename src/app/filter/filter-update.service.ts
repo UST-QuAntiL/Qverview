@@ -89,6 +89,16 @@ export class FilterUpdateService {
     this.updateFilter();
   }
 
+  toggleSupportedQuantumCloudServices(supportedQuantumCloudService: string) {
+    const index = this._sdkFilter.supportedQuantumCloudServices.indexOf(supportedQuantumCloudService, 0);
+    if (index >= 0) {
+      this._sdkFilter.supportedQuantumCloudServices.splice(index, 1);
+    } else {
+      this._sdkFilter.supportedQuantumCloudServices.push(supportedQuantumCloudService);
+    }
+    this.updateFilter();
+  }
+
   clear() {
     this._sdkFilter = {
       name: '',

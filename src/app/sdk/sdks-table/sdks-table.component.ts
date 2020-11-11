@@ -65,6 +65,11 @@ export class SdksTableComponent implements OnInit {
       if (result && f.activeDevelopment != null && f.activeDevelopment != data.activeDevelopment) {
         result = false;
       }
+      for (let x of f.supportedQuantumCloudServices) {
+        if (!data.supportedQuantumCloudServices.includes(x)) {
+          result = false;
+        }
+      }
       return result;
     };
 
@@ -99,5 +104,9 @@ export class SdksTableComponent implements OnInit {
 
   activeDevelopmentClicked(activeDevelopment: boolean) {
     this.filterUpdateService.toggleActiveDevelopment(activeDevelopment);
+  }
+
+  supportedQuantumCloudServiceClicked(supportedQuantumCloudService: string) {
+    this.filterUpdateService.toggleSupportedQuantumCloudServices(supportedQuantumCloudService);
   }
 }

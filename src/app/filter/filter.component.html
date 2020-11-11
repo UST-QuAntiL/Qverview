@@ -40,4 +40,10 @@
         Active Development:
         <button *ngIf="sdkFilter.activeDevelopment != null" (click)="activeDevelopmentClicked(sdkFilter.activeDevelopment)">{{sdkFilter.activeDevelopment}}</button>
     </div>
+    <div>
+        Supported Quantum Cloud Services:
+        <span *ngFor="let x of sdkFilter.supportedQuantumCloudServices">
+            <button (click)="supportedQuantumCloudServiceClicked(x)">{{x}}</button>
+        </span>
+    </div>
 </div>
