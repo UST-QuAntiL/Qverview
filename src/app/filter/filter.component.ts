@@ -36,6 +36,10 @@ export class FilterComponent implements OnInit {
     this.filterUpdateService.toggleCompilerOutputLanguage(compilerOutputLanguage);
   }
 
+  compilerOptimizationStrategyClicked(compilerOptimizationStrategy: string) {
+    this.filterUpdateService.toggleCompilerOptimizationStrategy(compilerOptimizationStrategy);
+  }
+
   clear() {
     this.filterUpdateService.clear()
   }

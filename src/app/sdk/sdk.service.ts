@@ -27,7 +27,7 @@ export class SdkService {
       programmingLanguages: ['C++', 'Python'],
       compilerInputLanguages: [],
       compilerOutputLanguages: ['OpenQASM'],
-      compilerOptimizationStrategies: ['hardware-dependent'],
+      compilerOptimizationStrategies: ['no optimization'],
       knowlegdeReuses: ['libraries'],
       activeDevelopment: true,
       supportedQuantumCloudServices: ['IBM Quantum', 'D-Wave'],

@@ -24,4 +24,10 @@
             <button (click)="compilerOutputLanguageClicked(x)">{{x}}</button>
         </span>
     </div>
+    <div>
+        Compiler Optimization Strategies:
+        <span *ngFor="let x of sdkFilter.compilerOptimizationStrategies">
+            <button (click)="compilerOptimizationStrategyClicked(x)">{{x}}</button>
+        </span>
+    </div>
 </div>

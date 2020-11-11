@@ -61,6 +61,16 @@ export class FilterUpdateService {
     this.updateFilter();
   }
 
+  toggleCompilerOptimizationStrategy(compilerOptimizationStrategy: string) {
+    const index = this._sdkFilter.compilerOptimizationStrategies.indexOf(compilerOptimizationStrategy, 0);
+    if (index >= 0) {
+      this._sdkFilter.compilerOptimizationStrategies.splice(index, 1);
+    } else {
+      this._sdkFilter.compilerOptimizationStrategies.push(compilerOptimizationStrategy);
+    }
+    this.updateFilter();
+  }
+
   clear() {
     this._sdkFilter = {
       name: '',

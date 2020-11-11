@@ -52,6 +52,11 @@ export class SdksTableComponent implements OnInit {
           result = false;
         }
       }
+      for (let x of f.compilerOptimizationStrategies) {
+        if (!data.compilerOptimizationStrategies.includes(x)) {
+          result = false;
+        }
+      }
       return result;
     };
 
@@ -74,5 +79,9 @@ export class SdksTableComponent implements OnInit {
 
   compilerOutputLanguageClicked(compilerOutputLanguage: string) {
     this.filterUpdateService.toggleCompilerOutputLanguage(compilerOutputLanguage);
+  }
+
+  compilerOptimizationStrategyClicked(compilerOptimizationStrategy: string) {
+    this.filterUpdateService.toggleCompilerOptimizationStrategy(compilerOptimizationStrategy);
   }
 }
