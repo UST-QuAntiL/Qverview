@@ -71,6 +71,16 @@ export class FilterUpdateService {
     this.updateFilter();
   }
 
+  toggleKnowledgeReuse(knowledgeReuse: string) {
+    const index = this._sdkFilter.knowledgeReuses.indexOf(knowledgeReuse, 0);
+    if (index >= 0) {
+      this._sdkFilter.knowledgeReuses.splice(index, 1);
+    } else {
+      this._sdkFilter.knowledgeReuses.push(knowledgeReuse);
+    }
+    this.updateFilter();
+  }
+
   clear() {
     this._sdkFilter = {
       name: '',
@@ -79,7 +89,7 @@ export class FilterUpdateService {
       compilerInputLanguages: [],
       compilerOutputLanguages: [],
       compilerOptimizationStrategies: [],
-      knowlegdeReuses: [],
+      knowledgeReuses: [],
       activeDevelopment: null,
       supportedQuantumCloudServices: [],
       localSimulator: null

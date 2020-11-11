@@ -30,4 +30,10 @@
             <button (click)="compilerOptimizationStrategyClicked(x)">{{x}}</button>
         </span>
     </div>
+    <div>
+        Knowledge Reuses:
+        <span *ngFor="let x of sdkFilter.knowledgeReuses">
+            <button (click)="knowledgeReuseClicked(x)">{{x}}</button>
+        </span>
+    </div>
 </div>

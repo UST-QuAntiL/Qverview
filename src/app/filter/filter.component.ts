@@ -40,6 +40,11 @@ export class FilterComponent implements OnInit {
     this.filterUpdateService.toggleCompilerOptimizationStrategy(compilerOptimizationStrategy);
   }
 
+
+  knowledgeReuseClicked(knowledgeReuse: string) {
+    this.filterUpdateService.toggleKnowledgeReuse(knowledgeReuse);
+  }
+
   clear() {
     this.filterUpdateService.clear()
   }

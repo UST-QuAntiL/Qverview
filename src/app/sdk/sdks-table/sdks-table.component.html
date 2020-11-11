@@ -35,10 +35,10 @@
                 <button *ngFor="let x of sdk.compilerOptimizationStrategies" (click)="compilerOptimizationStrategyClicked(x)">{{x}}</button>
             </td>
         </ng-container>
-        <ng-container matColumnDef="knowlegdeReuses">
-            <th mat-header-cell *matHeaderCellDef>Knowlegde Reuses</th>
+        <ng-container matColumnDef="knowledgeReuses">
+            <th mat-header-cell *matHeaderCellDef>Knowledge Reuses</th>
             <td mat-cell *matCellDef="let sdk">
-                <span *ngFor="let x of sdk.knowlegdeReuses">{{x}}</span>
+                <button *ngFor="let x of sdk.knowledgeReuses" (click)="knowledgeReuseClicked(x)">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="activeDevelopment">

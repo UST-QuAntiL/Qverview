@@ -16,7 +16,7 @@ export class SdkService {
       compilerInputLanguages: ['OpenQASM'],
       compilerOutputLanguages: ['OpenQASM'],
       compilerOptimizationStrategies: ['hardware-dependent'],
-      knowlegdeReuses: ['libraries'],
+      knowledgeReuses: ['libraries', 'jupyter'],
       activeDevelopment: true,
       supportedQuantumCloudServices: ['IBM Quantum'],
       localSimulator: true
@@ -28,7 +28,7 @@ export class SdkService {
       compilerInputLanguages: [],
       compilerOutputLanguages: ['OpenQASM'],
       compilerOptimizationStrategies: ['no optimization'],
-      knowlegdeReuses: ['libraries'],
+      knowledgeReuses: ['libraries'],
       activeDevelopment: true,
       supportedQuantumCloudServices: ['IBM Quantum', 'D-Wave'],
       localSimulator: true
@@ -40,7 +40,7 @@ export class SdkService {
       compilerInputLanguages: ['QUIL', 'OpenQASM'],
       compilerOutputLanguages: ['QUIL'],
       compilerOptimizationStrategies: ['hardware-dependent'],
-      knowlegdeReuses: ['libraries'],
+      knowledgeReuses: ['libraries'],
       activeDevelopment: true,
       supportedQuantumCloudServices: [],
       localSimulator: true

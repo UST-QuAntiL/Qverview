@@ -18,7 +18,7 @@ export class SdksTableComponent implements OnInit {
     'compilerInputLanguages',
     'compilerOutputLanguages',
     'compilerOptimizationStrategies',
-    'knowlegdeReuses',
+    'knowledgeReuses',
     'activeDevelopment',
     'supportedQuantumCloudServices',
     'localSimulator',
@@ -57,6 +57,11 @@ export class SdksTableComponent implements OnInit {
           result = false;
         }
       }
+      for (let x of f.knowledgeReuses) {
+        if (!data.knowledgeReuses.includes(x)) {
+          result = false;
+        }
+      }
       return result;
     };
 
@@ -83,5 +88,9 @@ export class SdksTableComponent implements OnInit {
 
   compilerOptimizationStrategyClicked(compilerOptimizationStrategy: string) {
     this.filterUpdateService.toggleCompilerOptimizationStrategy(compilerOptimizationStrategy);
+  }
+
+  knowledgeReuseClicked(knowledgeReuse: string) {
+    this.filterUpdateService.toggleKnowledgeReuse(knowledgeReuse);
   }
 }
