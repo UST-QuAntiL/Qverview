@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QcsService } from '../qcs.service';
-import { MatTableDataSource } from "@angular/material/table";
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-quantum-cloud-services-table',

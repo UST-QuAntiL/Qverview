@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuantumComputationResourceService } from '../quantum-computation-resource.service';
-import { MatTableDataSource } from "@angular/material/table";
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-quantum-computation-resources-table',
