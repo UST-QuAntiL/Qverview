@@ -12,6 +12,52 @@ export class SdkFilterUpdateService {
 
   constructor() { }
 
+  static isActive(sdk: Sdk, sdkFilter: Sdk): boolean {
+    let result = true;
+    for (const x of sdkFilter.licenses) {
+      if (!sdk.licenses.includes(x)) {
+        result = false;
+      }
+    }
+    for (const x of sdkFilter.programmingLanguages) {
+      if (!sdk.programmingLanguages.includes(x)) {
+        result = false;
+      }
+    }
+    for (const x of sdkFilter.compilerInputLanguages) {
+      if (!sdk.compilerInputLanguages.includes(x)) {
+        result = false;
+      }
+    }
+    for (const x of sdkFilter.compilerOutputLanguages) {
+      if (!sdk.compilerOutputLanguages.includes(x)) {
+        result = false;
+      }
+    }
+    for (const x of sdkFilter.compilerOptimizationStrategies) {
+      if (!sdk.compilerOptimizationStrategies.includes(x)) {
+        result = false;
+      }
+    }
+    for (const x of sdkFilter.knowledgeReuses) {
+      if (!sdk.knowledgeReuses.includes(x)) {
+        result = false;
+      }
+    }
+    if (result && sdkFilter.activeDevelopment != null && sdkFilter.activeDevelopment !== sdk.activeDevelopment) {
+      result = false;
+    }
+    for (const x of sdkFilter.supportedQuantumCloudServices) {
+      if (!sdk.supportedQuantumCloudServices.includes(x)) {
+        result = false;
+      }
+    }
+    if (result && sdkFilter.localSimulator != null && sdkFilter.localSimulator !== sdk.localSimulator) {
+      result = false;
+    }
+    return result;
+  }
+
   private updateFilter(): void {
     this.subject.next(this.sdkFilter);
   }

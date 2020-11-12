@@ -31,50 +31,7 @@ export class SdksTableComponent implements OnInit {
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.sdkService.getSdks());
     this.dataSource.filterPredicate = (data, filter: string) => {
-      let result = true;
-      const f = JSON.parse(filter);
-      for (const x of f.licenses) {
-        if (!data.licenses.includes(x)) {
-          result = false;
-        }
-      }
-      for (const x of f.programmingLanguages) {
-        if (!data.programmingLanguages.includes(x)) {
-          result = false;
-        }
-      }
-      for (const x of f.compilerInputLanguages) {
-        if (!data.compilerInputLanguages.includes(x)) {
-          result = false;
-        }
-      }
-      for (const x of f.compilerOutputLanguages) {
-        if (!data.compilerOutputLanguages.includes(x)) {
-          result = false;
-        }
-      }
-      for (const x of f.compilerOptimizationStrategies) {
-        if (!data.compilerOptimizationStrategies.includes(x)) {
-          result = false;
-        }
-      }
-      for (const x of f.knowledgeReuses) {
-        if (!data.knowledgeReuses.includes(x)) {
-          result = false;
-        }
-      }
-      if (result && f.activeDevelopment != null && f.activeDevelopment !== data.activeDevelopment) {
-        result = false;
-      }
-      for (const x of f.supportedQuantumCloudServices) {
-        if (!data.supportedQuantumCloudServices.includes(x)) {
-          result = false;
-        }
-      }
-      if (result && f.localSimulator != null && f.localSimulator !== data.localSimulator) {
-        result = false;
-      }
-      return result;
+      return SdkFilterUpdateService.isActive(data, JSON.parse(filter));
     };
 
     this.sdkFilterUpdateService.events$.subscribe(filterUpdateEvent => {
