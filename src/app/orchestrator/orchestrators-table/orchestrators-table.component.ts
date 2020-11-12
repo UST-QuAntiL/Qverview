@@ -3,6 +3,7 @@ import { OrchestratorService} from '../orchestrator.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { OrchestratorFilterUpdateService } from '../orchestrator-filter/orchestrator-filter-update.service';
 import { Orchestrator } from '../orchestrator.model';
+import { Sdk } from '../../sdk/sdk.model';
 
 @Component({
   selector: 'app-orchestrators-table',
@@ -33,6 +34,13 @@ export class OrchestratorsTableComponent implements OnInit {
       this.orchestratorFilter = filterUpdateEvent;
       this.dataSource.filter = JSON.stringify(filterUpdateEvent);
     });
+  }
+
+  getActiveFilter(): Orchestrator {
+    if (this.orchestratorFilter == null) {
+      this.orchestratorFilterUpdateService.clear();
+    }
+    return this.orchestratorFilter;
   }
 
   licenseClicked(license: string): void {
