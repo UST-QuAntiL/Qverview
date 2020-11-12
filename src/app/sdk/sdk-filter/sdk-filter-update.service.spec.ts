@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FilterUpdateService } from './filter-update.service';
+import { SdkFilterUpdateService } from './sdk-filter-update.service';
 
 describe('FilterUpdateService', () => {
-  let service: FilterUpdateService;
+  let service: SdkFilterUpdateService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(FilterUpdateService);
+    service = TestBed.inject(SdkFilterUpdateService);
   });
 
   it('should be created', () => {

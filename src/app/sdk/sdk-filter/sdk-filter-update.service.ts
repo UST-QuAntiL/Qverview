@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { Sdk } from '../sdk/sdk.model';
+import { Sdk } from '../sdk.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FilterUpdateService {
+export class SdkFilterUpdateService {
 
   private subject = new Subject<any>();
   private sdkFilter: Sdk;

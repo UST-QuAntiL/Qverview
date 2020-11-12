@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { SdkService } from '../sdk.service';
-import { FilterUpdateService } from '../../filter/filter-update.service';
+import { SdkFilterUpdateService } from '../sdk-filter/sdk-filter-update.service';
 import { Sdk } from '../sdk.model';
 
 @Component({
@@ -26,7 +26,7 @@ export class SdksTableComponent implements OnInit {
   ];
   private sdkFilter: Sdk;
 
-  constructor(private sdkService: SdkService, private filterUpdateService: FilterUpdateService) { }
+  constructor(private sdkService: SdkService, private sdkFilterUpdateService: SdkFilterUpdateService) { }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.sdkService.getSdks());
@@ -77,7 +77,7 @@ export class SdksTableComponent implements OnInit {
       return result;
     };
 
-    this.filterUpdateService.events$.forEach(filterUpdateEvent => {
+    this.sdkFilterUpdateService.events$.forEach(filterUpdateEvent => {
       this.sdkFilter = filterUpdateEvent;
       this.dataSource.filter = JSON.stringify(filterUpdateEvent);
     });
@@ -85,44 +85,44 @@ export class SdksTableComponent implements OnInit {
 
   getActiveFilter(): Sdk {
     if (this.sdkFilter == null) {
-      this.filterUpdateService.clear();
+      this.sdkFilterUpdateService.clear();
     }
     return this.sdkFilter;
   }
 
   licensesClicked(license: string): void {
-    this.filterUpdateService.toggleLicense(license);
+    this.sdkFilterUpdateService.toggleLicense(license);
   }
 
   programmingLanguageClicked(language: string): void {
-    this.filterUpdateService.toggleProgrammingLanguage(language);
+    this.sdkFilterUpdateService.toggleProgrammingLanguage(language);
   }
 
   compilerInputLanguageClicked(compilerInputLanguage: string): void {
-    this.filterUpdateService.toggleCompilerInputLanguage(compilerInputLanguage);
+    this.sdkFilterUpdateService.toggleCompilerInputLanguage(compilerInputLanguage);
   }
 
   compilerOutputLanguageClicked(compilerOutputLanguage: string): void {
-    this.filterUpdateService.toggleCompilerOutputLanguage(compilerOutputLanguage);
+    this.sdkFilterUpdateService.toggleCompilerOutputLanguage(compilerOutputLanguage);
   }
 
   compilerOptimizationStrategyClicked(compilerOptimizationStrategy: string): void {
-    this.filterUpdateService.toggleCompilerOptimizationStrategy(compilerOptimizationStrategy);
+    this.sdkFilterUpdateService.toggleCompilerOptimizationStrategy(compilerOptimizationStrategy);
   }
 
   knowledgeReuseClicked(knowledgeReuse: string): void {
-    this.filterUpdateService.toggleKnowledgeReuse(knowledgeReuse);
+    this.sdkFilterUpdateService.toggleKnowledgeReuse(knowledgeReuse);
   }
 
   activeDevelopmentClicked(activeDevelopment: boolean): void {
-    this.filterUpdateService.toggleActiveDevelopment(activeDevelopment);
+    this.sdkFilterUpdateService.toggleActiveDevelopment(activeDevelopment);
   }
 
   supportedQuantumCloudServiceClicked(supportedQuantumCloudService: string): void {
-    this.filterUpdateService.toggleSupportedQuantumCloudServices(supportedQuantumCloudService);
+    this.sdkFilterUpdateService.toggleSupportedQuantumCloudServices(supportedQuantumCloudService);
   }
 
   localSimulatorClicked(localSimulator: boolean): void {
-    this.filterUpdateService.toggleLocalSimulator(localSimulator);
+    this.sdkFilterUpdateService.toggleLocalSimulator(localSimulator);
   }
 }

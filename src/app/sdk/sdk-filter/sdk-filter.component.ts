@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FilterUpdateService } from './filter-update.service';
-import { Sdk } from '../sdk/sdk.model';
+import { SdkFilterUpdateService } from './sdk-filter-update.service';
+import { Sdk } from '../sdk.model';
 
 @Component({
   selector: 'app-filter',
-  templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.scss']
+  templateUrl: './sdk-filter.component.html',
+  styleUrls: ['./sdk-filter.component.scss']
 })
-export class FilterComponent implements OnInit {
+export class SdkFilterComponent implements OnInit {
 
   sdkFilter: Sdk;
 
-  constructor(private filterUpdateService: FilterUpdateService) { }
+  constructor(private filterUpdateService: SdkFilterUpdateService) { }
 
   ngOnInit(): void {
     this.filterUpdateService.events$.forEach(filterUpdateEvent => {
@@ -20,44 +20,44 @@ export class FilterComponent implements OnInit {
     this.clear();
   }
 
-  licenseClicked(license: string) {
+  licenseClicked(license: string): void {
     this.filterUpdateService.toggleLicense(license);
   }
 
-  prorammingLanguageClicked(programmingLanguage: string) {
+  prorammingLanguageClicked(programmingLanguage: string): void {
     this.filterUpdateService.toggleProgrammingLanguage(programmingLanguage);
   }
 
-  compilerInputLanguageClicked(compilerInputLanguage: string) {
+  compilerInputLanguageClicked(compilerInputLanguage: string): void {
     this.filterUpdateService.toggleCompilerInputLanguage(compilerInputLanguage);
   }
 
-  compilerOutputLanguageClicked(compilerOutputLanguage: string) {
+  compilerOutputLanguageClicked(compilerOutputLanguage: string): void {
     this.filterUpdateService.toggleCompilerOutputLanguage(compilerOutputLanguage);
   }
 
-  compilerOptimizationStrategyClicked(compilerOptimizationStrategy: string) {
+  compilerOptimizationStrategyClicked(compilerOptimizationStrategy: string): void {
     this.filterUpdateService.toggleCompilerOptimizationStrategy(compilerOptimizationStrategy);
   }
 
 
-  knowledgeReuseClicked(knowledgeReuse: string) {
+  knowledgeReuseClicked(knowledgeReuse: string): void {
     this.filterUpdateService.toggleKnowledgeReuse(knowledgeReuse);
   }
 
-  activeDevelopmentClicked(activeDevelopment: boolean) {
+  activeDevelopmentClicked(activeDevelopment: boolean): void {
     this.filterUpdateService.toggleActiveDevelopment(activeDevelopment);
   }
 
-  supportedQuantumCloudServiceClicked(supportedQuantumCloudService: string) {
+  supportedQuantumCloudServiceClicked(supportedQuantumCloudService: string): void {
     this.filterUpdateService.toggleSupportedQuantumCloudServices(supportedQuantumCloudService);
   }
 
-  localSimulatorClicked(localSimulator: boolean) {
+  localSimulatorClicked(localSimulator: boolean): void {
     this.filterUpdateService.toggleLocalSimulator(localSimulator);
   }
 
-  clear() {
-    this.filterUpdateService.clear()
+  clear(): void {
+    this.filterUpdateService.clear();
   }
 }
