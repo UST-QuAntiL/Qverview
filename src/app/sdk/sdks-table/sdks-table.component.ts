@@ -24,7 +24,7 @@ export class SdksTableComponent implements OnInit {
     'supportedQuantumCloudServices',
     'localSimulator',
   ];
-  private sdkFilter: Sdk;
+  private _sdkFilter: Sdk;
 
   constructor(private sdkService: SdkService, private filterUpdateService: FilterUpdateService) { }
 
@@ -78,9 +78,16 @@ export class SdksTableComponent implements OnInit {
     };
 
     this.filterUpdateService.events$.forEach(filterUpdateEvent => {
-      this.sdkFilter = filterUpdateEvent;
+      this._sdkFilter = filterUpdateEvent;
       this.dataSource.filter = JSON.stringify(filterUpdateEvent);
     });
+  }
+
+  getActiveFilter():Sdk {
+    if (this._sdkFilter == null) {
+      this.filterUpdateService.clear();
+    }
+    return this._sdkFilter;
   }
 
   licensesClicked(license: string) {
