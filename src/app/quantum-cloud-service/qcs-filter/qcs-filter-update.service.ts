@@ -7,29 +7,29 @@ import { QuantumCloudService } from '../quantum-cloud-service.model';
 })
 export class QcsFilterUpdateService {
 
-  private subject = new Subject<any>();
+  private subject = new Subject<QuantumCloudService>();
   private qcsFilter: QuantumCloudService;
 
   constructor() { }
 
-  static isActive(qcs: QuantumCloudService, qcsFilter: QuantumCloudService): boolean {
+  static isActive(qcs: QuantumCloudService, filter: QuantumCloudService): boolean {
     let result = true;
-    for (const x of qcsFilter.accessMethods) {
+    for (const x of filter.accessMethods) {
       if (!qcs.accessMethods.includes(x)) {
         result = false;
       }
     }
-    if (result && qcsFilter.serviceModel !== '' &&
-      qcsFilter.serviceModel !== qcsFilter.serviceModel) {
+    if (result && filter.serviceModel !== '' &&
+      filter.serviceModel !== filter.serviceModel) {
       result = false;
     }
-    for (const x of qcsFilter.resources) {
+    for (const x of filter.resources) {
       if (!qcs.resources.includes(x)) {
         result = false;
       }
     }
-    if (result && qcsFilter.assemblyLanguage !== '' &&
-      qcsFilter.assemblyLanguage !== qcsFilter.assemblyLanguage) {
+    if (result && filter.assemblyLanguage !== '' &&
+      filter.assemblyLanguage !== filter.assemblyLanguage) {
       result = false;
     }
     return result;
@@ -39,7 +39,7 @@ export class QcsFilterUpdateService {
     this.subject.next(this.qcsFilter);
   }
 
-  get events$(): Observable<any> {
+  get events$(): Observable<QuantumCloudService> {
     return this.subject.asObservable();
   }
 

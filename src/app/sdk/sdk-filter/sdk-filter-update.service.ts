@@ -7,52 +7,52 @@ import { Sdk } from '../sdk.model';
 })
 export class SdkFilterUpdateService {
 
-  private subject = new Subject<any>();
+  private subject = new Subject<Sdk>();
   private sdkFilter: Sdk;
 
   constructor() { }
 
-  static isActive(sdk: Sdk, sdkFilter: Sdk): boolean {
+  static isActive(sdk: Sdk, filter: Sdk): boolean {
     let result = true;
-    for (const x of sdkFilter.licenses) {
+    for (const x of filter.licenses) {
       if (!sdk.licenses.includes(x)) {
         result = false;
       }
     }
-    for (const x of sdkFilter.programmingLanguages) {
+    for (const x of filter.programmingLanguages) {
       if (!sdk.programmingLanguages.includes(x)) {
         result = false;
       }
     }
-    for (const x of sdkFilter.compilerInputLanguages) {
+    for (const x of filter.compilerInputLanguages) {
       if (!sdk.compilerInputLanguages.includes(x)) {
         result = false;
       }
     }
-    for (const x of sdkFilter.compilerOutputLanguages) {
+    for (const x of filter.compilerOutputLanguages) {
       if (!sdk.compilerOutputLanguages.includes(x)) {
         result = false;
       }
     }
-    for (const x of sdkFilter.compilerOptimizationStrategies) {
+    for (const x of filter.compilerOptimizationStrategies) {
       if (!sdk.compilerOptimizationStrategies.includes(x)) {
         result = false;
       }
     }
-    for (const x of sdkFilter.knowledgeReuses) {
+    for (const x of filter.knowledgeReuses) {
       if (!sdk.knowledgeReuses.includes(x)) {
         result = false;
       }
     }
-    if (result && sdkFilter.activeDevelopment != null && sdkFilter.activeDevelopment !== sdk.activeDevelopment) {
+    if (result && filter.activeDevelopment != null && filter.activeDevelopment !== sdk.activeDevelopment) {
       result = false;
     }
-    for (const x of sdkFilter.supportedQuantumCloudServices) {
+    for (const x of filter.supportedQuantumCloudServices) {
       if (!sdk.supportedQuantumCloudServices.includes(x)) {
         result = false;
       }
     }
-    if (result && sdkFilter.localSimulator != null && sdkFilter.localSimulator !== sdk.localSimulator) {
+    if (result && filter.localSimulator != null && filter.localSimulator !== sdk.localSimulator) {
       result = false;
     }
     return result;
@@ -62,7 +62,7 @@ export class SdkFilterUpdateService {
     this.subject.next(this.sdkFilter);
   }
 
-  get events$(): Observable<any> {
+  get events$(): Observable<Sdk> {
     return this.subject.asObservable();
   }
 

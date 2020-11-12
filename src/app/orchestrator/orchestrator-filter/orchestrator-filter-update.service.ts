@@ -7,29 +7,29 @@ import { Orchestrator } from '../orchestrator.model';
 })
 export class OrchestratorFilterUpdateService {
 
-  private subject = new Subject<any>();
+  private subject = new Subject<Orchestrator>();
   private orchestratorFilter: Orchestrator;
 
   constructor() { }
 
-  static isActive(orchestrator: Orchestrator, orchestratorFilter: Orchestrator): boolean {
+  static isActive(orchestrator: Orchestrator, filter: Orchestrator): boolean {
     let result = true;
-    for (const x of orchestratorFilter.licenses) {
+    for (const x of filter.licenses) {
       if (!orchestrator.licenses.includes(x)) {
         result = false;
       }
     }
-    for (const x of orchestratorFilter.programmingLanguages) {
+    for (const x of filter.programmingLanguages) {
       if (!orchestrator.programmingLanguages.includes(x)) {
         result = false;
       }
     }
-    if (result && orchestratorFilter.activeDevelopment != null &&
-        orchestratorFilter.activeDevelopment !== orchestratorFilter.activeDevelopment) {
+    if (result && filter.activeDevelopment != null &&
+      orchestrator.activeDevelopment !== filter.activeDevelopment) {
       result = false;
     }
-    if (result && orchestratorFilter.productionReady != null &&
-      orchestratorFilter.productionReady !== orchestratorFilter.productionReady) {
+    if (result && filter.productionReady != null &&
+      orchestrator.productionReady !== filter.productionReady) {
       result = false;
     }
     return result;
@@ -39,7 +39,7 @@ export class OrchestratorFilterUpdateService {
     this.subject.next(this.orchestratorFilter);
   }
 
-  get event$(): Observable<any> {
+  get event$(): Observable<Orchestrator> {
     return this.subject.asObservable();
   }
 

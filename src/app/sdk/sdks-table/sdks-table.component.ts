@@ -30,13 +30,13 @@ export class SdksTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.sdkService.getSdks());
-    this.dataSource.filterPredicate = (data, filter: string) => {
-      return SdkFilterUpdateService.isActive(data, JSON.parse(filter));
+    this.dataSource.filterPredicate = (data, filter: Sdk) => {
+      return SdkFilterUpdateService.isActive(data, filter);
     };
 
     this.sdkFilterUpdateService.events$.subscribe(filterUpdateEvent => {
       this.sdkFilter = filterUpdateEvent;
-      this.dataSource.filter = JSON.stringify(filterUpdateEvent);
+      this.dataSource.filter = filterUpdateEvent;
     });
   }
 

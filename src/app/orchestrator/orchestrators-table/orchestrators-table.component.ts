@@ -26,13 +26,13 @@ export class OrchestratorsTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.orchestratorService.getOrchestrators());
-    this.dataSource.filterPredicate = (data, filter: string) => {
-      return OrchestratorFilterUpdateService.isActive(data, JSON.parse(filter));
+    this.dataSource.filterPredicate = (data, filter: Orchestrator) => {
+      return OrchestratorFilterUpdateService.isActive(data, filter);
     };
 
     this.orchestratorFilterUpdateService.event$.subscribe(filterUpdateEvent => {
       this.orchestratorFilter = filterUpdateEvent;
-      this.dataSource.filter = JSON.stringify(filterUpdateEvent);
+      this.dataSource.filter = filterUpdateEvent;
     });
   }
 
