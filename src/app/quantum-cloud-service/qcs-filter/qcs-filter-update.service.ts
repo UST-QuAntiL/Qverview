@@ -20,7 +20,7 @@ export class QcsFilterUpdateService {
       }
     }
     if (result && filter.serviceModel !== '' &&
-      filter.serviceModel !== filter.serviceModel) {
+      qcs.serviceModel !== filter.serviceModel) {
       result = false;
     }
     for (const x of filter.resources) {
@@ -29,7 +29,7 @@ export class QcsFilterUpdateService {
       }
     }
     if (result && filter.assemblyLanguage !== '' &&
-      filter.assemblyLanguage !== filter.assemblyLanguage) {
+      qcs.assemblyLanguage !== filter.assemblyLanguage) {
       result = false;
     }
     return result;

@@ -10,7 +10,8 @@ export class SdkFilterUpdateService {
   private subject = new Subject<Sdk>();
   private sdkFilter: Sdk;
 
-  constructor() { }
+  constructor() {
+  }
 
   static isActive(sdk: Sdk, filter: Sdk): boolean {
     let result = true;
@@ -44,7 +45,8 @@ export class SdkFilterUpdateService {
         result = false;
       }
     }
-    if (result && filter.activeDevelopment != null && filter.activeDevelopment !== sdk.activeDevelopment) {
+    if (result && filter.activeDevelopment != null &&
+      filter.activeDevelopment !== sdk.activeDevelopment) {
       result = false;
     }
     for (const x of filter.supportedQuantumCloudServices) {
@@ -52,7 +54,8 @@ export class SdkFilterUpdateService {
         result = false;
       }
     }
-    if (result && filter.localSimulator != null && filter.localSimulator !== sdk.localSimulator) {
+    if (result && filter.localSimulator != null &&
+      filter.localSimulator !== sdk.localSimulator) {
       result = false;
     }
     return result;
