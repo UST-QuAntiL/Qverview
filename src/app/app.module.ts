@@ -11,6 +11,7 @@ import { OrchestratorsTableComponent } from './orchestrator/orchestrators-table/
 import { QuantumCloudServicesTableComponent } from './quantum-cloud-service/quantum-cloud-services-table/quantum-cloud-services-table.component';
 import { QuantumComputationResourcesTableComponent } from './quantum-computation-resource/quantum-computation-resources-table/quantum-computation-resources-table.component';
 import { SdkFilterComponent } from './sdk/sdk-filter/sdk-filter.component';
+import { OrchestratorFilterComponent } from './orchestrator/orchestrator-filter/orchestrator-filter.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SdkFilterComponent } from './sdk/sdk-filter/sdk-filter.component';
     OrchestratorsTableComponent,
     QuantumCloudServicesTableComponent,
     QuantumComputationResourcesTableComponent,
-    SdkFilterComponent
+    SdkFilterComponent,
+    OrchestratorFilterComponent
   ],
   imports: [
     BrowserModule,

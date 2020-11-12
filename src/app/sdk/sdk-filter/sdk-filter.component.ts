@@ -3,7 +3,7 @@ import { SdkFilterUpdateService } from './sdk-filter-update.service';
 import { Sdk } from '../sdk.model';
 
 @Component({
-  selector: 'app-filter',
+  selector: 'app-sdk-filter',
   templateUrl: './sdk-filter.component.html',
   styleUrls: ['./sdk-filter.component.scss']
 })
