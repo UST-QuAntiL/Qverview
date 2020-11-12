@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Orchestrator} from '../orchestrator.model';
+import { OrchestratorFilterUpdateService} from './orchestrator-filter-update.service';
 
 @Component({
   selector: 'app-orchestrator-filter',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrchestratorFilterComponent implements OnInit {
 
-  constructor() { }
+  orchestratorFilter: Orchestrator;
+
+  constructor(private orchestratorFilterUpdateService: OrchestratorFilterUpdateService) { }
 
   ngOnInit(): void {
+
   }
 
 }

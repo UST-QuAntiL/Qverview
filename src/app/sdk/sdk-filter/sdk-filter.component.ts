@@ -11,53 +11,53 @@ export class SdkFilterComponent implements OnInit {
 
   sdkFilter: Sdk;
 
-  constructor(private filterUpdateService: SdkFilterUpdateService) { }
+  constructor(private sdkFilterUpdateService: SdkFilterUpdateService) { }
 
   ngOnInit(): void {
-    this.filterUpdateService.events$.subscribe(filterUpdateEvent => {
+    this.sdkFilterUpdateService.events$.subscribe(filterUpdateEvent => {
       this.sdkFilter = filterUpdateEvent;
     });
     this.clear();
   }
 
   licenseClicked(license: string): void {
-    this.filterUpdateService.toggleLicense(license);
+    this.sdkFilterUpdateService.toggleLicense(license);
   }
 
   prorammingLanguageClicked(programmingLanguage: string): void {
-    this.filterUpdateService.toggleProgrammingLanguage(programmingLanguage);
+    this.sdkFilterUpdateService.toggleProgrammingLanguage(programmingLanguage);
   }
 
   compilerInputLanguageClicked(compilerInputLanguage: string): void {
-    this.filterUpdateService.toggleCompilerInputLanguage(compilerInputLanguage);
+    this.sdkFilterUpdateService.toggleCompilerInputLanguage(compilerInputLanguage);
   }
 
   compilerOutputLanguageClicked(compilerOutputLanguage: string): void {
-    this.filterUpdateService.toggleCompilerOutputLanguage(compilerOutputLanguage);
+    this.sdkFilterUpdateService.toggleCompilerOutputLanguage(compilerOutputLanguage);
   }
 
   compilerOptimizationStrategyClicked(compilerOptimizationStrategy: string): void {
-    this.filterUpdateService.toggleCompilerOptimizationStrategy(compilerOptimizationStrategy);
+    this.sdkFilterUpdateService.toggleCompilerOptimizationStrategy(compilerOptimizationStrategy);
   }
 
 
   knowledgeReuseClicked(knowledgeReuse: string): void {
-    this.filterUpdateService.toggleKnowledgeReuse(knowledgeReuse);
+    this.sdkFilterUpdateService.toggleKnowledgeReuse(knowledgeReuse);
   }
 
   activeDevelopmentClicked(activeDevelopment: boolean): void {
-    this.filterUpdateService.toggleActiveDevelopment(activeDevelopment);
+    this.sdkFilterUpdateService.toggleActiveDevelopment(activeDevelopment);
   }
 
   supportedQuantumCloudServiceClicked(supportedQuantumCloudService: string): void {
-    this.filterUpdateService.toggleSupportedQuantumCloudServices(supportedQuantumCloudService);
+    this.sdkFilterUpdateService.toggleSupportedQuantumCloudServices(supportedQuantumCloudService);
   }
 
   localSimulatorClicked(localSimulator: boolean): void {
-    this.filterUpdateService.toggleLocalSimulator(localSimulator);
+    this.sdkFilterUpdateService.toggleLocalSimulator(localSimulator);
   }
 
   clear(): void {
-    this.filterUpdateService.clear();
+    this.sdkFilterUpdateService.clear();
   }
 }
