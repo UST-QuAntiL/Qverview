@@ -6,4 +6,18 @@
               <button class="filter-active" (click)="licenseClicked(x)">{{x}}</button>
           </span>
   </div>
+  <div>
+    Programming Languages:
+    <span *ngFor="let x of orchestratorFilter.programmingLanguages">
+            <button class="filter-active" (click)="prorammingLanguageClicked(x)">{{x}}</button>
+        </span>
+  </div>
+  <div>
+    Active Development:
+    <button class="filter-active" *ngIf="orchestratorFilter.activeDevelopment != null" (click)="activeDevelopmentClicked(orchestratorFilter.activeDevelopment)">{{orchestratorFilter.activeDevelopment}}</button>
+  </div>
+  <div>
+    Production Ready:
+    <button class="filter-active" *ngIf="orchestratorFilter.productionReady != null" (click)="productionReadyClicked(orchestratorFilter.productionReady)">{{orchestratorFilter.productionReady}}</button>
+  </div>
 </div>

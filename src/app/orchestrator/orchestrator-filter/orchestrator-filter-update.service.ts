@@ -19,6 +19,19 @@ export class OrchestratorFilterUpdateService {
         result = false;
       }
     }
+    for (const x of orchestratorFilter.programmingLanguages) {
+      if (!orchestrator.programmingLanguages.includes(x)) {
+        result = false;
+      }
+    }
+    if (result && orchestratorFilter.activeDevelopment != null &&
+        orchestratorFilter.activeDevelopment !== orchestratorFilter.activeDevelopment) {
+      result = false;
+    }
+    if (result && orchestratorFilter.productionReady != null &&
+      orchestratorFilter.productionReady !== orchestratorFilter.productionReady) {
+      result = false;
+    }
     return result;
   }
 
@@ -36,6 +49,34 @@ export class OrchestratorFilterUpdateService {
       this.orchestratorFilter.licenses.splice(index, 1);
     } else {
       this.orchestratorFilter.licenses.push(license);
+    }
+    this.updateFilter();
+  }
+
+  toggleProgrammingLanguage(programmingLanguage: string): void {
+    const index = this.orchestratorFilter.programmingLanguages.indexOf(programmingLanguage, 0);
+    if (index >= 0) {
+      this.orchestratorFilter.programmingLanguages.splice(index, 1);
+    } else {
+      this.orchestratorFilter.programmingLanguages.push(programmingLanguage);
+    }
+    this.updateFilter();
+  }
+
+  toggleActiveDevelopment(activeDevelopment: boolean): void {
+    if (this.orchestratorFilter.activeDevelopment == null) {
+      this.orchestratorFilter.activeDevelopment = activeDevelopment;
+    } else {
+      this.orchestratorFilter.activeDevelopment = null;
+    }
+    this.updateFilter();
+  }
+
+  toggleProductionReady(activeDevelopment: boolean): void {
+    if (this.orchestratorFilter.productionReady == null) {
+      this.orchestratorFilter.productionReady = activeDevelopment;
+    } else {
+      this.orchestratorFilter.productionReady = null;
     }
     this.updateFilter();
   }
