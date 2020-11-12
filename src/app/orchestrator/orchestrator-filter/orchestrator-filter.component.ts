@@ -14,7 +14,18 @@ export class OrchestratorFilterComponent implements OnInit {
   constructor(private orchestratorFilterUpdateService: OrchestratorFilterUpdateService) { }
 
   ngOnInit(): void {
+    this.orchestratorFilterUpdateService.event$.subscribe(filterUpdateEvent => {
+      this.orchestratorFilter = filterUpdateEvent;
+    });
+    this.clear();
+  }
 
+  licenseClicked(license: string): void {
+    this.orchestratorFilterUpdateService.toggleLicense(license);
+  }
+
+  clear(): void {
+    this.orchestratorFilterUpdateService.clear();
   }
 
 }

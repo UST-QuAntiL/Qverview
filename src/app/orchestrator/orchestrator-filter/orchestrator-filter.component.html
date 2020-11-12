@@ -1,1 +1,9 @@
 <h3>Filter Orchestrators</h3>
+<div *ngIf="orchestratorFilter">
+  <div>
+    Licenses:
+    <span *ngFor="let x of orchestratorFilter.licenses">
+              <button class="filter-active" (click)="licenseClicked(x)">{{x}}</button>
+          </span>
+  </div>
+</div>

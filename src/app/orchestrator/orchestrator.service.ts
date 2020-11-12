@@ -6,13 +6,22 @@ import { Orchestrator } from './orchestrator.model';
 })
 export class OrchestratorService {
 
-  orchestrators: Orchestrator[] = [{
-    name: 'Orquestra',
-    licenses: ['Closed Source'],
-    programmingLanguages: ['Orquestra YAML'],
-    activeDevelopment: true,
-    productionReady: true
-  }];
+  orchestrators: Orchestrator[] = [
+    {
+      name: 'Orquestra',
+      licenses: ['Closed Source'],
+      programmingLanguages: ['Orquestra YAML'],
+      activeDevelopment: true,
+      productionReady: true
+    },
+    {
+      name: 'Test',
+      licenses: ['Apache 2.0'],
+      programmingLanguages: ['Custom YAML'],
+      activeDevelopment: false,
+      productionReady: false
+    }
+  ];
 
   constructor() { }
 
