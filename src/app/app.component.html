@@ -1,9 +1,14 @@
 <h1>Qverview</h1>
-<div id="orchestrator-filter">
-  <app-orchestrator-filter></app-orchestrator-filter>
-</div>
-<div id="sdk-filter">
-  <app-sdk-filter></app-sdk-filter>
+<div id="filter">
+  <div class="subfilter" id="orchestrator-filter">
+    <app-orchestrator-filter></app-orchestrator-filter>
+  </div>
+  <div class="subfilter" id="sdk-filter">
+    <app-sdk-filter></app-sdk-filter>
+  </div>
+  <div class="subfilter" id="qcs-filter">
+    <app-qcs-filter></app-qcs-filter>
+  </div>
 </div>
 <app-orchestrators-table></app-orchestrators-table>
 <app-sdks-table></app-sdks-table>

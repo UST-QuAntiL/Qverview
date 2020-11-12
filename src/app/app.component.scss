@@ -1,7 +1,17 @@
-#orchestrator-filter {
+#filter {
+  width: 100%;
+  display: inline-block;
+}
+
+.subfilter {
   float: left;
+  margin: 20px;
+}
+
+#orchestrator-filter {
+  width: 200px;
 }
 
 #sdk-filter {
-  display: inline-block;
+  width: 300px;
 }
