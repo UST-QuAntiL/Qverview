@@ -77,7 +77,7 @@ export class SdksTableComponent implements OnInit {
       return result;
     };
 
-    this.sdkFilterUpdateService.events$.forEach(filterUpdateEvent => {
+    this.sdkFilterUpdateService.events$.subscribe(filterUpdateEvent => {
       this.sdkFilter = filterUpdateEvent;
       this.dataSource.filter = JSON.stringify(filterUpdateEvent);
     });

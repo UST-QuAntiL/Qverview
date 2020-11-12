@@ -14,7 +14,7 @@ export class SdkFilterComponent implements OnInit {
   constructor(private filterUpdateService: SdkFilterUpdateService) { }
 
   ngOnInit(): void {
-    this.filterUpdateService.events$.forEach(filterUpdateEvent => {
+    this.filterUpdateService.events$.subscribe(filterUpdateEvent => {
       this.sdkFilter = filterUpdateEvent;
     });
     this.clear();
