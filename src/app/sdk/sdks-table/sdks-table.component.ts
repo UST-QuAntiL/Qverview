@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from "@angular/material/table";
 import { SdkService } from '../sdk.service';
 import { FilterUpdateService } from '../../filter/filter-update.service';
+import { Sdk } from '../sdk.model';
 
 @Component({
   selector: 'app-sdks-table',
@@ -23,9 +24,9 @@ export class SdksTableComponent implements OnInit {
     'supportedQuantumCloudServices',
     'localSimulator',
   ];
+  private sdkFilter: Sdk;
 
-  constructor(private sdkService: SdkService, private filterUpdateService: FilterUpdateService) {
-  }
+  constructor(private sdkService: SdkService, private filterUpdateService: FilterUpdateService) { }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.sdkService.getSdks());
@@ -77,6 +78,7 @@ export class SdksTableComponent implements OnInit {
     };
 
     this.filterUpdateService.events$.forEach(filterUpdateEvent => {
+      this.sdkFilter = filterUpdateEvent;
       this.dataSource.filter = JSON.stringify(filterUpdateEvent);
     });
   }
