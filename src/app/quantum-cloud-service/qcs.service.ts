@@ -19,7 +19,7 @@ export class QcsService {
       accessMethods: ['SDK', 'CLI', 'REST', 'GUI?'],
       serviceModel: 'QCaaS',
       resources: ['IBM', 'IonQ'],
-      assemblyLanguage: '-'
+      assemblyLanguage: 'Custom'
     }
   ];
 

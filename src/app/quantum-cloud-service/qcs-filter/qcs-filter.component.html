@@ -1,1 +1,23 @@
 <h3>Filter Quantum Cloud Services</h3>
+<div *ngIf="qcsFilter">
+  <div>
+    Access Methods:
+    <span *ngFor="let x of qcsFilter.accessMethods">
+              <button class="filter-active" (click)="accessMethodClicked(x)">{{x}}</button>
+          </span>
+  </div>
+  <div>
+    Service Model:
+    <button class="filter-active" *ngIf="qcsFilter.serviceModel !== ''" (click)="serviceModelClicked(qcsFilter.serviceModel)">{{qcsFilter.serviceModel}}</button>
+  </div>
+  <div>
+    Resources:
+    <span *ngFor="let x of qcsFilter.resources">
+              <button class="filter-active" (click)="resourceClicked(x)">{{x}}</button>
+          </span>
+  </div>
+  <div>
+    Assembly Language:
+    <button class="filter-active" *ngIf="qcsFilter.assemblyLanguage != ''" (click)="assemblyLanguageClicked(qcsFilter.assemblyLanguage)">{{qcsFilter.assemblyLanguage}}</button>
+  </div>
+</div>
