@@ -5,7 +5,7 @@ import { Sdk } from '../sdk.model';
 @Component({
   selector: 'app-sdk-filter',
   templateUrl: './sdk-filter.component.html',
-  styleUrls: ['./sdk-filter.component.scss']
+  styleUrls: [  '../../app.component.scss', './sdk-filter.component.scss' ]
 })
 export class SdkFilterComponent implements OnInit {
 

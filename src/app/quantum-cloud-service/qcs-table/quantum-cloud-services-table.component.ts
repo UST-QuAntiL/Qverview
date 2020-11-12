@@ -7,7 +7,7 @@ import { QuantumCloudService } from '../quantum-cloud-service.model';
 @Component({
   selector: 'app-quantum-cloud-services-table',
   templateUrl: './quantum-cloud-services-table.component.html',
-  styleUrls: ['./quantum-cloud-services-table.component.scss']
+  styleUrls: [  '../../app.component.scss', './quantum-cloud-services-table.component.scss' ]
 })
 export class QuantumCloudServicesTableComponent implements OnInit {
 

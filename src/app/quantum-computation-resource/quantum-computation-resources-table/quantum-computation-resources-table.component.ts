@@ -5,7 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'app-quantum-computation-resources-table',
   templateUrl: './quantum-computation-resources-table.component.html',
-  styleUrls: ['./quantum-computation-resources-table.component.scss']
+  styleUrls: [  '../../app.component.scss', './quantum-computation-resources-table.component.scss' ]
 })
 export class QuantumComputationResourcesTableComponent implements OnInit {
 

@@ -5,7 +5,7 @@ import { QcsFilterUpdateService} from './qcs-filter-update.service';
 @Component({
   selector: 'app-qcs-filter',
   templateUrl: './qcs-filter.component.html',
-  styleUrls: ['./qcs-filter.component.scss']
+  styleUrls: [ '../../app.component.scss', './qcs-filter.component.scss' ]
 })
 export class QcsFilterComponent implements OnInit {
 

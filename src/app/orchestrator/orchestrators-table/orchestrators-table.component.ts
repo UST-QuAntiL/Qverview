@@ -3,12 +3,11 @@ import { OrchestratorService} from '../orchestrator.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { OrchestratorFilterUpdateService } from '../orchestrator-filter/orchestrator-filter-update.service';
 import { Orchestrator } from '../orchestrator.model';
-import { Sdk } from '../../sdk/sdk.model';
 
 @Component({
   selector: 'app-orchestrators-table',
   templateUrl: './orchestrators-table.component.html',
-  styleUrls: ['./orchestrators-table.component.scss']
+  styleUrls: [ '../../app.component.scss', './orchestrators-table.component.scss']
 })
 export class OrchestratorsTableComponent implements OnInit {
 

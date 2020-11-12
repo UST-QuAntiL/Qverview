@@ -7,7 +7,7 @@ import { Sdk } from '../sdk.model';
 @Component({
   selector: 'app-sdks-table',
   templateUrl: './sdks-table.component.html',
-  styleUrls: ['./sdks-table.component.scss']
+  styleUrls: [  '../../app.component.scss', './sdks-table.component.scss' ]
 })
 export class SdksTableComponent implements OnInit {
 
