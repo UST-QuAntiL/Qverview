@@ -13,6 +13,7 @@ import { QuantumComputationResourcesTableComponent } from './quantum-computation
 import { SdkFilterComponent } from './sdk/sdk-filter/sdk-filter.component';
 import { OrchestratorFilterComponent } from './orchestrator/orchestrator-filter/orchestrator-filter.component';
 import { QcsFilterComponent } from './quantum-cloud-service/qcs-filter/qcs-filter.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { QcsFilterComponent } from './quantum-cloud-service/qcs-filter/qcs-filte
     BrowserModule,
     FormsModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
