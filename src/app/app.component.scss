@@ -1,6 +1,9 @@
 #filter {
   width: 100%;
   display: inline-block;
+  position: relative;
+  top: 10px;
+  left: 10px;
 }
 
 .subfilter {
@@ -25,11 +28,33 @@ button.filter-active {
   display: inline-block;
 }
 
+button {
+  margin: 0px 2px;
+  padding: 5px;
+  font: inherit;
+  line-height: normal;
+}
+
 .mat-row {
-  height: 10px;
+  height: auto;
 }
 
-th.mat-cell {
-  padding: 100px;
+.mat-cell {
+  padding: 8px 8px 8px 0;
 }
 
+.w-75{
+  width: 75px;
+}
+
+.w-100{
+  width: 100px;
+}
+
+.w-150{
+  width: 150px;
+}
+
+.w-200{
+  width: 200px;
+}

@@ -1,6 +1,6 @@
 <h2>Quantum Computation Resources</h2>
 <div *ngIf="dataSource">
-    <table mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+    <table mat-table [dataSource]="dataSource">
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef>Name</th>
             <td mat-cell *matCellDef="let qcs">{{qcs.name}}</td>
