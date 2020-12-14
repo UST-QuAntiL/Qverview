@@ -26,7 +26,7 @@
         <ng-container matColumnDef="productionReady">
             <th mat-header-cell *matHeaderCellDef>Production ready</th>
             <td mat-cell *matCellDef="let orchestrator">
-                <button mat -button [ngClass]="{'filter-active': (getActiveFilter().productionReady == orchestrator.productionReady)}" (click)="productionReadyClicked(orchestrator.productionReady)">{{orchestrator.productionReady}}</button>
+                <button mat-button [ngClass]="{'filter-active': (getActiveFilter().productionReady == orchestrator.productionReady)}" (click)="productionReadyClicked(orchestrator.productionReady)">{{orchestrator.productionReady}}</button>
             </td>
         </ng-container>
 
