@@ -12,18 +12,6 @@ import { Sdk } from '../sdk.model';
 export class SdksTableComponent implements OnInit {
 
   dataSource;
-  displayedColumns = [
-    'name',
-    'licenses',
-    'programmingLanguages',
-    'compilerInputLanguages',
-    'compilerOutputLanguages',
-    'compilerOptimizationStrategies',
-    'knowledgeReuses',
-    'activeDevelopment',
-    'supportedQuantumCloudServices',
-    'localSimulator',
-  ];
   private sdkFilter: Sdk;
 
   constructor(private sdkService: SdkService, private sdkFilterUpdateService: SdkFilterUpdateService) { }
