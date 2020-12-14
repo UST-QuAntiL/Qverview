@@ -1,0 +1,9 @@
+[
+  {
+    "name": "IBM Quantum",
+    "accessMethods": ["SDK", "GUI", "REST"],
+    "serviceModel": "QCaaS",
+    "resources": ["IBM"],
+    "assemblyLanguage": "OpenQASM"
+  }
+]

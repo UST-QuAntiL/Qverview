@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Qiskit",
+    "licenses": ["Apache2.0"],
+    "programmingLanguages": ["JavaScript", "Python"],
+    "compilerInputLanguages": ["OpenQASM"],
+    "compilerOutputLanguages": ["OpenQASM"],
+    "compilerOptimizationStrategies": ["hardware-dependent"],
+    "knowledgeReuses": ["libraries", "jupyter"],
+    "activeDevelopment": true,
+    "supportedQuantumCloudServices": ["IBM Quantum"],
+    "localSimulator": true
+  }
+]

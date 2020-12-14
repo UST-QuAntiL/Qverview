@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Orquestra",
+    "licenses": ["Closed Source"],
+    "programmingLanguages": ["Orquestra YAML"],
+    "activeDevelopment": true,
+    "productionReady": true
+  }
+]
