@@ -1,13 +1,13 @@
 [
   {
     "name": "IBM Quantum",
-    "accessMethods": ["SDK:Qiskit", "GUI", "REST"],
+    "accessMethods": ["SDK", "GUI", "REST"],
     "serviceModel": "QCaaS",
     "resources": ["All:IBM"],
     "assemblyLanguages": ["OpenQASM"]
   },
   {
-    "name": "Xanadu",
+    "name": "Xanadu Cloud Platform",
     "accessMethods": ["SDK"],
     "serviceModel": "QCaaS",
     "resources": ["All:Xanadu"],
@@ -15,7 +15,7 @@
   },
   {
     "name": "D-Wave Leap",
-    "accessMethods": ["SDK:Ocean", "GUI", "REST"],
+    "accessMethods": ["SDK", "GUI", "REST"],
     "serviceModel": "QCaaS",
     "resources": ["All:D-Wave"],
     "assemblyLanguages": ["BQM", "DQM"]

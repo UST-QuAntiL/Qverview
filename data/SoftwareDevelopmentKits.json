@@ -20,7 +20,7 @@
     "compilerOptimizationStrategies": [],
     "knowledgeReuses": [],
     "activeDevelopment": true,
-    "supportedQuantumCloudServices": ["Xanadu Quantum Cloud Services"],
+    "supportedQuantumCloudServices": ["Xanadu Cloud Platform"],
     "localSimulator": true
   },
   {
@@ -108,18 +108,6 @@
     "localSimulator": null
   },
   {
-    "name": "OpenQL",
-    "licenses": ["Apache 2.0"],
-    "programmingLanguages": ["C++", "Python"],
-    "compilerInputLanguages": ["cQASM", "eQASM"],
-    "compilerOutputLanguages": [],
-    "compilerOptimizationStrategies": [],
-    "knowledgeReuses": [],
-    "activeDevelopment": true,
-    "supportedQuantumCloudServices": ["none"],
-    "localSimulator": true
-  },
-  {
     "name": "pytket",
     "licenses": ["Non-commercial"],
     "programmingLanguages": ["Python"],
@@ -178,5 +166,17 @@
     "activeDevelopment": null,
     "supportedQuantumCloudServices": [],
     "localSimulator": null
+  },
+  {
+    "name": "Amazon Braket Python SDK",
+    "licenses": ["Apache 2.0"],
+    "programmingLanguages": ["Python"],
+    "compilerInputLanguages": [],
+    "compilerOutputLanguages": [],
+    "compilerOptimizationStrategies": [],
+    "knowledgeReuses": [],
+    "activeDevelopment": true,
+    "supportedQuantumCloudServices": ["AWS Braket"],
+    "localSimulator": true
   }
 ]

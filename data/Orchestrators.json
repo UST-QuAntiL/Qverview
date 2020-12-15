@@ -4,6 +4,13 @@
     "licenses": ["Closed Source"],
     "programmingLanguages": ["Orquestra YAML"],
     "activeDevelopment": true,
-    "productionReady": true
+    "productionReady": false
+  },
+  {
+    "name": "QuantMe",
+    "licenses": ["MIT"],
+    "programmingLanguages": ["BPMN"],
+    "activeDevelopment": true,
+    "productionReady": false
   }
 ]

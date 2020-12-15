@@ -10,5 +10,12 @@
     "inputLanguages": ["Python + Pyquil"],
     "outputLanguages": ["QUIL"],
     "optimizationStrategies": ["hardware-dependent"]
+  },
+  {
+    "name": "OpenQL",
+    "inputLanguages": ["C++", "Python", "cQASM", "eQASM"],
+    "outputLanguages": [],
+    "optimizationStrategies": []
   }
 ]
+
