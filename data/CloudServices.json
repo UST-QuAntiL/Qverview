@@ -24,7 +24,7 @@
     "name": "AWS Braket",
     "accessMethods": ["SDK", "GUI", "CLI"],
     "serviceModel": "QCaaS",
-    "resources": ["IBM"],
+    "resources": ["IonQ", "Aspen-8", "D-Wave 2000Q", "D-Wave Advantage"],
     "assemblyLanguages": ["braket.Circuit"]
   },
   {
@@ -39,6 +39,27 @@
     "accessMethods": [],
     "serviceModel": "",
     "resources": ["Honeywell"],
+    "assemblyLanguages": []
+  },
+  {
+    "name": "Rigetti QCS",
+    "accessMethods": ["GUI", "SDK", "CLI"],
+    "serviceModel": "IaaS",
+    "resources": ["Aspen-8"],
+    "assemblyLanguages": []
+  },
+  {
+    "name": "Jupyterlab IDE",
+    "accessMethods": ["GUI"],
+    "serviceModel": "PaaS/SaaS",
+    "resources": ["Aspen-8"],
+    "assemblyLanguages": []
+  },
+  {
+    "name": "Quantum Programming Studio",
+    "accessMethods": ["GUI", "SDK"],
+    "serviceModel": "PaaS/SaaS",
+    "resources": ["Simulator"],
     "assemblyLanguages": []
   }
 ]

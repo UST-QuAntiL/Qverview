@@ -12,7 +12,7 @@
     "name": "Python",
     "type": "High-Level Programming Language",
     "syntaxImplementation": "standalone",
-    "standardization": "Proprietary Standard"
+    "standardization": "Proprietary"
   },
   {
     "name": "JavaScript",
@@ -57,7 +57,7 @@
     "name": "OpenQASM",
     "type": "Assembly Language",
     "syntaxImplementation": "standalone",
-    "standardization": "proprietary"
+    "standardization": "Proprietary"
   },
   {
     "name": "Quil",
@@ -85,7 +85,7 @@
   },
   {
     "name": "QWIRE",
-    "type": "High-Level Programming Language",
+    "type": "Assembly Language",
     "syntaxImplementation": "embedded",
     "standardization": "none"
   }

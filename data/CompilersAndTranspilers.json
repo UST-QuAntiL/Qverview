@@ -40,6 +40,12 @@
     "inputLanguages": ["Quipper"],
     "outputLanguages": [],
     "optimizationStrategies": ["hardware-independent"]
+  },
+  {
+    "name": "quantum-circuit",
+    "inputLanguages": ["OpenQASM", "Quil"],
+    "outputLanguages": ["OpenQASM", "Python+PyQuil", "Quil", "Python+Qiskit", "Python+Cirq", "Python+TensorFlow Quanutm", "Q#", "QuEST"],
+    "optimizationStrategies": ["none"]
   }
 ]
 

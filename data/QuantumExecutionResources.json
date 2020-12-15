@@ -1,11 +1,5 @@
 [
   {
-    "name": "Yorktown",
-    "type": "QPU",
-    "computationModel": "Circuit-Model",
-    "vendor": "IBM"
-  },
-  {
     "name": "Santiago",
     "type": "QPU",
     "computationModel": "Circuit-Model",
@@ -110,13 +104,13 @@
     "vendor": "Rigetti"
   },
   {
-    "name": "16Q Aspen-1",
+    "name": "Aspen-8",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "Rigetti"
   },
   {
-    "name": "19Q Acorn",
+    "name": "Acorn",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "Rigetti"
