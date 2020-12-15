@@ -162,19 +162,19 @@
 
 
   {
-    "name": "",
+    "name": " ",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "Honeywell"
   },
   {
-    "name": "",
+    "name": " ",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "IonQ"
   },
   {
-    "name": "",
+    "name": " ",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "Intel"

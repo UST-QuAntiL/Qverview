@@ -12,37 +12,43 @@
     "name": "Python",
     "type": "High-Level Programming Language",
     "syntaxImplementation": "standalone",
-    "standardization": "proprietary"
+    "standardization": "Proprietary Standard"
   },
   {
     "name": "JavaScript",
     "type": "High-Level Programming Language",
     "syntaxImplementation": "standalone",
-    "standardization": ""
+    "standardization": "Open Standard"
   },
   {
     "name": "Quipper",
     "type": "High-Level Programming Language",
     "syntaxImplementation": "embedded",
-    "standardization": ""
+    "standardization": "none"
   },
   {
     "name": "Q#",
     "type": "High-Level Programming Language",
     "syntaxImplementation": "standalone",
-    "standardization": ""
+    "standardization": "none"
   },
   {
     "name": "F#",
     "type": "High-Level Programming Language",
     "syntaxImplementation": "standalone",
-    "standardization": ""
+    "standardization": "none"
   },
   {
     "name": "C#",
     "type": "High-Level Programming Language",
     "syntaxImplementation": "standalone",
-    "standardization": ""
+    "standardization": "Open Standard"
+  },
+  {
+    "name": "Proto-Quipper",
+    "type": "High-Level Programming Language",
+    "syntaxImplementation": "standalone",
+    "standardization": "none"
   },
 
 
@@ -75,6 +81,12 @@
     "name": "BQM",
     "type": "Assembly Language",
     "syntaxImplementation": "standalone",
+    "standardization": "none"
+  },
+  {
+    "name": "QWIRE",
+    "type": "High-Level Programming Language",
+    "syntaxImplementation": "embedded",
     "standardization": "none"
   }
 ]

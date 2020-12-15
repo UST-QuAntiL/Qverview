@@ -3,19 +3,43 @@
     "name": "tket",
     "inputLanguages": ["OpenQASM"],
     "outputLanguages": ["OpenQASM"],
-    "optimizationStrategies": ["hardware-dependent"]
+    "optimizationStrategies": ["hardware-specific", "hardware-dependent"]
   },
   {
     "name": "quilc",
     "inputLanguages": ["Python + Pyquil"],
     "outputLanguages": ["QUIL"],
-    "optimizationStrategies": ["hardware-dependent"]
+    "optimizationStrategies": ["hardware-specific"]
   },
   {
     "name": "OpenQL",
     "inputLanguages": ["C++", "Python", "cQASM", "eQASM"],
     "outputLanguages": [],
     "optimizationStrategies": []
+  },
+  {
+    "name": "ScaffCC",
+    "inputLanguages": ["Scaffold"],
+    "outputLanguages": ["OpenQASM"],
+    "optimizationStrategies": ["hardware-independent"]
+  },
+  {
+    "name": "PyZX",
+    "inputLanguages": ["OpenQASM", "Quipper", "Quantomatic"],
+    "outputLanguages": ["OpenQASM", "QC", "Quipper"],
+    "optimizationStrategies": ["hardware-independent"]
+  },
+  {
+    "name": "staq",
+    "inputLanguages": ["C++ + staq", "OpenQASM"],
+    "outputLanguages": ["OpenQASM"],
+    "optimizationStrategies": ["hardware-specific", "hardware-independent"]
+  },
+  {
+    "name": "Quipper Compiler",
+    "inputLanguages": ["Quipper"],
+    "outputLanguages": [],
+    "optimizationStrategies": ["hardware-independent"]
   }
 ]
 
