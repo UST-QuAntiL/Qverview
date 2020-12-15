@@ -58,5 +58,125 @@
     "type": "Simulator",
     "computationModel": "Circuit-Model",
     "vendor": "IBM"
+  },
+
+
+
+
+  {
+    "name": "X8",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "Xanadu"
+  },
+
+
+
+
+  {
+    "name": "N/A",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "Google"
+  },
+  {
+    "name": "N/A",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "Google"
+  },
+  {
+    "name": "Bristlecone",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "Google"
+  },
+  {
+    "name": "Sycamore",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "Google"
+  },
+
+
+
+
+
+
+  {
+    "name": "8Q Agave",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "Rigetti"
+  },
+  {
+    "name": "16Q Aspen-1",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "Rigetti"
+  },
+  {
+    "name": "19Q Acorn",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "Rigetti"
+  },
+
+
+
+
+
+
+  {
+    "name": "D-Wave One (Ranier)",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "D-Wave"
+  },
+  {
+    "name": "D-Wave Two",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "D-Wave"
+  },
+  {
+    "name": "D-Wave 2X",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "D-Wave"
+  },
+  {
+    "name": "D-Wave 2000Q",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "D-Wave"
+  },
+  {
+    "name": "D-Wave Advantage",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "D-Wave"
+  },
+
+
+
+
+  {
+    "name": "",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "Honeywell"
+  },
+  {
+    "name": "",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "IonQ"
+  },
+  {
+    "name": "",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "Intel"
   }
 ]
