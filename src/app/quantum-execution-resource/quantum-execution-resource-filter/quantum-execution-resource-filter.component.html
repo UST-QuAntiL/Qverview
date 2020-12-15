@@ -1,0 +1,15 @@
+<h3>Filter Quantum Execution Resources</h3>
+<div *ngIf="qerFilter">
+  <div>
+    Type:
+    <button class="filter-active" (click)="typeClicked(qerFilter.type)">{{qerFilter.type}}</button>
+  </div>
+  <div>
+    Computation Model:
+    <button class="filter-active" (click)="computationModelClicked(qerFilter.computationModel)">{{qerFilter.computationModel}}</button>
+  </div>
+  <div>
+    Vendor:
+    <button class="filter-active" (click)="vendorClicked(qerFilter.vendor)">{{qerFilter.vendor}}</button>
+  </div>
+</div>

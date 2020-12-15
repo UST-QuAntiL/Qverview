@@ -19,6 +19,7 @@ import { ProgrammingLanguageTableComponent } from './programming-language/progra
 import { ProgrammingLanguageFilterComponent } from './programming-language/programming-language-filter/programming-language-filter.component';
 import { CompilerTableComponent } from './compiler/compiler-table/compiler-table.component';
 import { CompilerFilterComponent } from './compiler/compiler-filter/compiler-filter.component';
+import { QuantumExecutionResourceFilterComponent } from './quantum-execution-resource/quantum-execution-resource-filter/quantum-execution-resource-filter.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CompilerFilterComponent } from './compiler/compiler-filter/compiler-fil
     ProgrammingLanguageTableComponent,
     ProgrammingLanguageFilterComponent,
     CompilerTableComponent,
-    CompilerFilterComponent
+    CompilerFilterComponent,
+    QuantumExecutionResourceFilterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Sdk } from '../sdk.model';
-import { QuantumCloudService } from '../../quantum-cloud-service/quantum-cloud-service.model';
 
 @Injectable({
   providedIn: 'root'
