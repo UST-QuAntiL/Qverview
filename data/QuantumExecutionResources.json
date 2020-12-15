@@ -1,54 +1,54 @@
 [
   {
-    "name": "Santiago",
+    "name": "IBM Santiago",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "IBM"
   },
   {
-    "name": "Athens",
+    "name": "IBM Athens",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "IBM"
   },
   {
-    "name": "Valencia",
+    "name": "IBM Valencia",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "IBM"
   },
   {
-    "name": "Vigo",
+    "name": "IBM Vigo",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "IBM"
   },
   {
-    "name": "Melbourne",
+    "name": "IBM Melbourne",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "IBM"
   },
   {
-    "name": "Ourense",
+    "name": "IBM Ourense",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "IBM"
   },
   {
-    "name": "Yorktown",
+    "name": "IBM Yorktown",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "IBM"
   },
   {
-    "name": "Armonk",
+    "name": "IBM Armonk",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "IBM"
   },
   {
-    "name": "QASM Simulator",
+    "name": "IBM QASM Simulator",
     "type": "Simulator",
     "computationModel": "Circuit-Model",
     "vendor": "IBM"
@@ -58,10 +58,10 @@
 
 
   {
-    "name": "X8",
+    "name": "Xanadu X8",
     "type": "QPU",
     "computationModel": "Circuit-Model",
-    "vendor": "Xanadu"
+    "vendor": "Xanadu Quantum Technologies Inc."
   },
 
 
@@ -80,13 +80,13 @@
     "vendor": "Google"
   },
   {
-    "name": "Bristlecone",
+    "name": "Google Bristlecone",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "Google"
   },
   {
-    "name": "Sycamore",
+    "name": "Google Sycamore",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "Google"
@@ -98,23 +98,42 @@
 
 
   {
-    "name": "8Q Agave",
+    "name": "Rigetti Agave",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "Rigetti"
   },
   {
-    "name": "Aspen-8",
+    "name": "Rigetti Acorn",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "Rigetti"
   },
   {
-    "name": "Acorn",
+    "name": "Rigetti Aspen-1",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "Rigetti"
   },
+  {
+    "name": "Rigetti Aspen-4",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "Rigetti"
+  },
+  {
+    "name": "Rigetti Aspen-7",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "Rigetti"
+  },
+  {
+    "name": "Rigetti Aspen-8",
+    "type": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "Rigetti"
+  },
+
 
 
 
@@ -156,19 +175,19 @@
 
 
   {
-    "name": " ",
+    "name": "Honeywell",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "Honeywell"
   },
   {
-    "name": " ",
+    "name": "IonQ",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "IonQ"
   },
   {
-    "name": " ",
+    "name": "Intel",
     "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "Intel"

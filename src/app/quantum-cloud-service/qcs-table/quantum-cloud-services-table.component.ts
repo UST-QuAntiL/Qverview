@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { QcsFilterUpdateService } from '../qcs-filter/qcs-filter-update.service';
 import { QuantumCloudService } from '../quantum-cloud-service.model';
 import { SdkFilterUpdateService } from '../../sdk/sdk-filter/sdk-filter-update.service';
+import { QerFilterUpdateService } from '../../quantum-execution-resource/quantum-execution-resource-filter/qer-filter-update.service';
 
 @Component({
   selector: 'app-quantum-cloud-services-table',
@@ -22,7 +23,7 @@ export class QuantumCloudServicesTableComponent implements OnInit {
   ];
   private qcsFilter: QuantumCloudService;
 
-  constructor(private qcsService: QcsService, private qcsFilterUpdateService: QcsFilterUpdateService, private sdkFilterUpdateService: SdkFilterUpdateService) { }
+  constructor(private qcsService: QcsService, private qcsFilterUpdateService: QcsFilterUpdateService, private sdkFilterUpdateService: SdkFilterUpdateService, private qerFilterUpdateService: QerFilterUpdateService) { }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.qcsService.getQcs());
@@ -58,6 +59,7 @@ export class QuantumCloudServicesTableComponent implements OnInit {
 
   resourceClicked(resource: string): void {
     this.qcsFilterUpdateService.toggleResource(resource);
+    this.qerFilterUpdateService.toggleName(resource);
   }
 
   assemblyLanguageClicked(assemblyLanguage: string): void {

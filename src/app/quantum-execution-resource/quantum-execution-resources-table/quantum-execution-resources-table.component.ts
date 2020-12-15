@@ -3,6 +3,7 @@ import { QuantumExecutionResourceService } from '../quantum-execution-resource.s
 import { MatTableDataSource } from '@angular/material/table';
 import { QerFilterUpdateService } from '../quantum-execution-resource-filter/qer-filter-update.service';
 import { QuantumExecutionResource } from '../quantum-execution-resource.model';
+import { QcsFilterUpdateService } from '../../quantum-cloud-service/qcs-filter/qcs-filter-update.service';
 
 @Component({
   selector: 'app-quantum-computation-resources-table',
@@ -20,7 +21,7 @@ export class QuantumExecutionResourcesTableComponent implements OnInit {
   ];
   private qerFilter: QuantumExecutionResource;
 
-  constructor(private qcrS: QuantumExecutionResourceService, private qerFilterUpdateService: QerFilterUpdateService) {}
+  constructor(private qcrS: QuantumExecutionResourceService, private qerFilterUpdateService: QerFilterUpdateService, private qcsFilterUpdateService: QcsFilterUpdateService) {}
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.qcrS.getQuantumComputationResource());
@@ -43,6 +44,7 @@ export class QuantumExecutionResourcesTableComponent implements OnInit {
 
   nameClicked(name: string): void {
     this.qerFilterUpdateService.toggleName(name);
+    this.qcsFilterUpdateService.toggleResource(name);
   }
 
   typeClicked(type: string): void {

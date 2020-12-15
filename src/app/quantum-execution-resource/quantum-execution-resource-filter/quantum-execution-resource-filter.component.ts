@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuantumExecutionResource } from '../quantum-execution-resource.model';
 import { QerFilterUpdateService } from './qer-filter-update.service';
+import { QcsFilterUpdateService } from '../../quantum-cloud-service/qcs-filter/qcs-filter-update.service';
 
 @Component({
   selector: 'app-quantum-execution-resource-filter',
@@ -11,7 +12,7 @@ export class QuantumExecutionResourceFilterComponent implements OnInit {
 
   qerFilter: QuantumExecutionResource;
 
-  constructor(private qerFilterUpdateService: QerFilterUpdateService) { }
+  constructor(private qerFilterUpdateService: QerFilterUpdateService, private qcsFilterUpdateService: QcsFilterUpdateService) { }
 
   ngOnInit(): void {
     this.qerFilterUpdateService.events$.subscribe(filterUpdateEvent => {
@@ -22,6 +23,7 @@ export class QuantumExecutionResourceFilterComponent implements OnInit {
 
   nameClicked(name: string): void {
     this.qerFilterUpdateService.toggleName(name);
+    this.qcsFilterUpdateService.toggleResource(name);
   }
 
   typeClicked(type: string): void {

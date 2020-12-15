@@ -75,10 +75,12 @@ export class QcsFilterUpdateService {
   }
 
   toggleResource(resource: string): void {
-    const index = this.qcsFilter.resources.indexOf(resource, 0);
-    if (index >= 0) {
-      this.qcsFilter.resources.splice(index, 1);
+    if (this.qcsFilter.resources.includes(resource)) {
+      this.qcsFilter.resources.pop();
     } else {
+      if (this.qcsFilter.resources.length > 0) {
+        this.qcsFilter.resources.pop();
+      }
       this.qcsFilter.resources.push(resource);
     }
     this.updateFilter();
