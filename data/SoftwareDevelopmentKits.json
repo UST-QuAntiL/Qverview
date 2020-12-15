@@ -1,7 +1,7 @@
 [
   {
     "name": "Qiskit",
-    "licenses": ["Apache2.0"],
+    "licenses": ["Apache 2.0"],
     "programmingLanguages": ["JavaScript", "Python"],
     "compilerInputLanguages": ["OpenQASM"],
     "compilerOutputLanguages": ["OpenQASM"],
@@ -13,7 +13,7 @@
   },
   {
     "name": "Strawberry Fields",
-    "licenses": [],
+    "licenses": ["Apache 2.0"],
     "programmingLanguages": ["Python"],
     "compilerInputLanguages": [],
     "compilerOutputLanguages": ["Blackbird"],
@@ -25,7 +25,7 @@
   },
   {
     "name": "XACC",
-    "licenses": [],
+    "licenses": ["Eclipse Public License", "Eclipse Distribution License"],
     "programmingLanguages": ["C++"],
     "compilerInputLanguages": ["Quil", "OpenQASM"],
     "compilerOutputLanguages": ["XASM", "Quil", "OpenQASM"],
@@ -49,68 +49,56 @@
   },
   {
     "name": "Cirq",
-    "licenses": [],
-    "programmingLanguages": [],
-    "compilerInputLanguages": [],
-    "compilerOutputLanguages": [],
+    "licenses": ["Apache 2.0"],
+    "programmingLanguages": ["Python"],
+    "compilerInputLanguages": ["OpenQASM", "Quirk", "JSON"],
+    "compilerOutputLanguages": ["JSON"],
     "compilerOptimizationStrategies": [],
     "knowledgeReuses": [],
-    "activeDevelopment": null,
-    "supportedQuantumCloudServices": [],
-    "localSimulator": null
-  },
-  {
-    "name": "Cirq",
-    "licenses": [],
-    "programmingLanguages": [],
-    "compilerInputLanguages": [],
-    "compilerOutputLanguages": [],
-    "compilerOptimizationStrategies": [],
-    "knowledgeReuses": [],
-    "activeDevelopment": null,
-    "supportedQuantumCloudServices": [],
-    "localSimulator": null
+    "activeDevelopment": true,
+    "supportedQuantumCloudServices": ["Google Cloud?", "AQT?"],
+    "localSimulator": true
   },
   {
     "name": "Forest",
-    "licenses": [],
-    "programmingLanguages": [],
+    "licenses": ["Apache 2.0"],
+    "programmingLanguages": ["Python"],
     "compilerInputLanguages": [],
     "compilerOutputLanguages": [],
     "compilerOptimizationStrategies": [],
     "knowledgeReuses": [],
-    "activeDevelopment": null,
-    "supportedQuantumCloudServices": [],
-    "localSimulator": null
+    "activeDevelopment": true,
+    "supportedQuantumCloudServices": ["Rigetti Quantum Cloud Services"],
+    "localSimulator": true
   },
   {
     "name": "Project-Q",
-    "licenses": [],
-    "programmingLanguages": [],
+    "licenses": ["Apache 2.0"],
+    "programmingLanguages": ["Python"],
     "compilerInputLanguages": [],
     "compilerOutputLanguages": [],
     "compilerOptimizationStrategies": [],
     "knowledgeReuses": [],
     "activeDevelopment": null,
-    "supportedQuantumCloudServices": [],
-    "localSimulator": null
+    "supportedQuantumCloudServices": ["IBM Quantum", "AQT"],
+    "localSimulator": true
   },
   {
     "name": "Liqui|>",
-    "licenses": [],
-    "programmingLanguages": [],
+    "licenses": ["Microsoft Research"],
+    "programmingLanguages": ["F#"],
     "compilerInputLanguages": [],
     "compilerOutputLanguages": [],
     "compilerOptimizationStrategies": [],
     "knowledgeReuses": [],
     "activeDevelopment": false,
-    "supportedQuantumCloudServices": [],
-    "localSimulator": null
+    "supportedQuantumCloudServices": ["none"],
+    "localSimulator": true
   },
   {
     "name": "JADE",
     "licenses": [],
-    "programmingLanguages": [],
+    "programmingLanguages": ["C++"],
     "compilerInputLanguages": [],
     "compilerOutputLanguages": [],
     "compilerOptimizationStrategies": [],
@@ -121,51 +109,39 @@
   },
   {
     "name": "OpenQL",
-    "licenses": [],
-    "programmingLanguages": [],
-    "compilerInputLanguages": [],
+    "licenses": ["Apache 2.0"],
+    "programmingLanguages": ["C++", "Python"],
+    "compilerInputLanguages": ["cQASM", "eQASM"],
     "compilerOutputLanguages": [],
     "compilerOptimizationStrategies": [],
     "knowledgeReuses": [],
-    "activeDevelopment": null,
-    "supportedQuantumCloudServices": [],
-    "localSimulator": null
+    "activeDevelopment": true,
+    "supportedQuantumCloudServices": ["none"],
+    "localSimulator": true
   },
   {
-    "name": "Tensorflow Quantum",
-    "licenses": [],
-    "programmingLanguages": [],
-    "compilerInputLanguages": [],
-    "compilerOutputLanguages": [],
+    "name": "pytket",
+    "licenses": ["Non-commercial"],
+    "programmingLanguages": ["Python"],
+    "compilerInputLanguages": ["OpenQASM", "Quipper"],
+    "compilerOutputLanguages": ["OpenQASM"],
     "compilerOptimizationStrategies": [],
     "knowledgeReuses": [],
-    "activeDevelopment": null,
-    "supportedQuantumCloudServices": [],
-    "localSimulator": null
-  },
-  {
-    "name": "tket",
-    "licenses": [],
-    "programmingLanguages": [],
-    "compilerInputLanguages": [],
-    "compilerOutputLanguages": [],
-    "compilerOptimizationStrategies": [],
-    "knowledgeReuses": [],
-    "activeDevelopment": null,
-    "supportedQuantumCloudServices": [],
-    "localSimulator": null
+    "activeDevelopment": true,
+    "supportedQuantumCloudServices": ["AQT", "AWS Braket", "Cirq", "Honeywell Quantum Systems", "ProjectQ", "Pyquil", "PyZX", "Qiskit", "Q#", "Qulacs"],
+    "localSimulator": true
   },
   {
     "name": "Pennylane",
-    "licenses": [],
-    "programmingLanguages": [],
-    "compilerInputLanguages": [],
-    "compilerOutputLanguages": [],
+    "licenses": ["Apache 2.0"],
+    "programmingLanguages": ["Python"],
+    "compilerInputLanguages": ["Qiskit", "OpenQASM", "PyQuil", "Quil"],
+    "compilerOutputLanguages": ["Plugins"],
     "compilerOptimizationStrategies": [],
     "knowledgeReuses": [],
-    "activeDevelopment": null,
+    "activeDevelopment": true,
     "supportedQuantumCloudServices": [],
-    "localSimulator": null
+    "localSimulator": true
   },
   {
     "name": "Quantum Development Kit",
@@ -178,5 +154,29 @@
     "activeDevelopment": true,
     "supportedQuantumCloudServices": ["Azure Quantum"],
     "localSimulator": true
+  },
+  {
+    "name": "Q-Ctrl",
+    "licenses": [],
+    "programmingLanguages": [],
+    "compilerInputLanguages": [],
+    "compilerOutputLanguages": [],
+    "compilerOptimizationStrategies": [],
+    "knowledgeReuses": [],
+    "activeDevelopment": null,
+    "supportedQuantumCloudServices": [],
+    "localSimulator": null
+  },
+  {
+    "name": "TriQ",
+    "licenses": [],
+    "programmingLanguages": [],
+    "compilerInputLanguages": [],
+    "compilerOutputLanguages": [],
+    "compilerOptimizationStrategies": [],
+    "knowledgeReuses": [],
+    "activeDevelopment": null,
+    "supportedQuantumCloudServices": [],
+    "localSimulator": null
   }
 ]
