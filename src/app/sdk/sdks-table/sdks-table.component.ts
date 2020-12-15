@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { SdkService } from '../sdk.service';
 import { SdkFilterUpdateService } from '../sdk-filter/sdk-filter-update.service';
 import { Sdk } from '../sdk.model';
+import { QcsFilterUpdateService } from '../../quantum-cloud-service/qcs-filter/qcs-filter-update.service';
 
 @Component({
   selector: 'app-sdks-table',
@@ -14,7 +15,7 @@ export class SdksTableComponent implements OnInit {
   dataSource;
   private sdkFilter: Sdk;
 
-  constructor(private sdkService: SdkService, private sdkFilterUpdateService: SdkFilterUpdateService) { }
+  constructor(private sdkService: SdkService, private sdkFilterUpdateService: SdkFilterUpdateService, private qcsFilterUpdateService: QcsFilterUpdateService) { }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.sdkService.getSdks());
@@ -65,6 +66,7 @@ export class SdksTableComponent implements OnInit {
 
   supportedQuantumCloudServiceClicked(supportedQuantumCloudService: string): void {
     this.sdkFilterUpdateService.toggleSupportedQuantumCloudServices(supportedQuantumCloudService);
+    this.qcsFilterUpdateService.toggleName(supportedQuantumCloudService);
   }
 
   localSimulatorClicked(localSimulator: boolean): void {

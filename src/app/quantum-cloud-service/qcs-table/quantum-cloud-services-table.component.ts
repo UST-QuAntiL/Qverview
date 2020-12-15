@@ -3,6 +3,7 @@ import { QcsService } from '../qcs.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { QcsFilterUpdateService } from '../qcs-filter/qcs-filter-update.service';
 import { QuantumCloudService } from '../quantum-cloud-service.model';
+import { SdkFilterUpdateService } from '../../sdk/sdk-filter/sdk-filter-update.service';
 
 @Component({
   selector: 'app-quantum-cloud-services-table',
@@ -21,7 +22,7 @@ export class QuantumCloudServicesTableComponent implements OnInit {
   ];
   private qcsFilter: QuantumCloudService;
 
-  constructor(private qcsService: QcsService, private qcsFilterUpdateService: QcsFilterUpdateService) { }
+  constructor(private qcsService: QcsService, private qcsFilterUpdateService: QcsFilterUpdateService, private sdkFilterUpdateService: SdkFilterUpdateService) { }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.qcsService.getQcs());
@@ -42,6 +43,11 @@ export class QuantumCloudServicesTableComponent implements OnInit {
     return this.qcsFilter;
   }
 
+  nameClicked(name: string): void {
+    this.qcsFilterUpdateService.toggleName(name);
+    this.sdkFilterUpdateService.toggleSupportedQuantumCloudServices(name);
+  }
+
   accessMethodClicked(accessMethod: string): void {
     this.qcsFilterUpdateService.toggleAccessMethod(accessMethod);
   }
@@ -57,5 +63,4 @@ export class QuantumCloudServicesTableComponent implements OnInit {
   assemblyLanguageClicked(assemblyLanguage: string): void {
     this.qcsFilterUpdateService.toggleAssemblyLanguage(assemblyLanguage);
   }
-
 }

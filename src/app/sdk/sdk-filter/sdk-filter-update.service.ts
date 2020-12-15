@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Sdk } from '../sdk.model';
+import { QuantumCloudService } from '../../quantum-cloud-service/quantum-cloud-service.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,52 +11,51 @@ export class SdkFilterUpdateService {
   private subject = new Subject<Sdk>();
   private sdkFilter: Sdk;
 
-  constructor() {
-  }
+  constructor() {}
 
-  static isActive(sdk: Sdk, filter: Sdk): boolean {
+  static isActive(sdk: Sdk, sdkFilter: Sdk): boolean {
     let result = true;
-    for (const x of filter.licenses) {
+    for (const x of sdkFilter.licenses) {
       if (!sdk.licenses.includes(x)) {
         result = false;
       }
     }
-    for (const x of filter.programmingLanguages) {
+    for (const x of sdkFilter.programmingLanguages) {
       if (!sdk.programmingLanguages.includes(x)) {
         result = false;
       }
     }
-    for (const x of filter.compilerInputLanguages) {
+    for (const x of sdkFilter.compilerInputLanguages) {
       if (!sdk.compilerInputLanguages.includes(x)) {
         result = false;
       }
     }
-    for (const x of filter.compilerOutputLanguages) {
+    for (const x of sdkFilter.compilerOutputLanguages) {
       if (!sdk.compilerOutputLanguages.includes(x)) {
         result = false;
       }
     }
-    for (const x of filter.compilerOptimizationStrategies) {
+    for (const x of sdkFilter.compilerOptimizationStrategies) {
       if (!sdk.compilerOptimizationStrategies.includes(x)) {
         result = false;
       }
     }
-    for (const x of filter.knowledgeReuses) {
+    for (const x of sdkFilter.knowledgeReuses) {
       if (!sdk.knowledgeReuses.includes(x)) {
         result = false;
       }
     }
-    if (result && filter.activeDevelopment != null &&
-      filter.activeDevelopment !== sdk.activeDevelopment) {
+    if (result && sdkFilter.activeDevelopment != null &&
+      sdkFilter.activeDevelopment !== sdk.activeDevelopment) {
       result = false;
     }
-    for (const x of filter.supportedQuantumCloudServices) {
+    for (const x of sdkFilter.supportedQuantumCloudServices) {
       if (!sdk.supportedQuantumCloudServices.includes(x)) {
         result = false;
       }
     }
-    if (result && filter.localSimulator != null &&
-      filter.localSimulator !== sdk.localSimulator) {
+    if (result && sdkFilter.localSimulator != null &&
+      sdkFilter.localSimulator !== sdk.localSimulator) {
       result = false;
     }
     return result;
@@ -139,10 +139,12 @@ export class SdkFilterUpdateService {
   }
 
   toggleSupportedQuantumCloudServices(supportedQuantumCloudService: string): void {
-    const index = this.sdkFilter.supportedQuantumCloudServices.indexOf(supportedQuantumCloudService, 0);
-    if (index >= 0) {
-      this.sdkFilter.supportedQuantumCloudServices.splice(index, 1);
+    if (this.sdkFilter.supportedQuantumCloudServices.includes(supportedQuantumCloudService)) {
+      this.sdkFilter.supportedQuantumCloudServices.pop();
     } else {
+      if (this.sdkFilter.supportedQuantumCloudServices.length > 0) {
+        this.sdkFilter.supportedQuantumCloudServices.pop();
+      }
       this.sdkFilter.supportedQuantumCloudServices.push(supportedQuantumCloudService);
     }
     this.updateFilter();

@@ -14,13 +14,15 @@ export class QcsFilterUpdateService {
 
   static isActive(qcs: QuantumCloudService, filter: QuantumCloudService): boolean {
     let result = true;
+    if (filter.name !== '' && qcs.name !== filter.name) {
+      result = false;
+    }
     for (const x of filter.accessMethods) {
       if (!qcs.accessMethods.includes(x)) {
         result = false;
       }
     }
-    if (result && filter.serviceModel !== '' &&
-      qcs.serviceModel !== filter.serviceModel) {
+    if (filter.serviceModel !== '' && qcs.serviceModel !== filter.serviceModel) {
       result = false;
     }
     for (const x of filter.resources) {
@@ -42,6 +44,15 @@ export class QcsFilterUpdateService {
 
   get events$(): Observable<QuantumCloudService> {
     return this.subject.asObservable();
+  }
+
+  toggleName(name: string): void {
+    if (this.qcsFilter.name === '') {
+      this.qcsFilter.name = name;
+    } else {
+      this.qcsFilter.name = '';
+    }
+    this.updateFilter();
   }
 
   toggleAccessMethod(accessMethod: string): void {

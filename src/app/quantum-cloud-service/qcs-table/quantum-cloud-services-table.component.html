@@ -3,7 +3,11 @@
     <table mat-table [dataSource]="dataSource">
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef>Name</th>
-            <td mat-cell *matCellDef="let qcs">{{qcs.name}}</td>
+            <td mat-cell *matCellDef="let qcs">
+              <button mat-button [ngClass]="{'filter-active': (getActiveFilter().name == qcs.name)}" (click)="nameClicked(qcs.name)">
+                {{qcs.name}}
+              </button>
+            </td>
         </ng-container>
         <ng-container matColumnDef="accessMethods">
             <th mat-header-cell *matHeaderCellDef>Access Methods</th>
