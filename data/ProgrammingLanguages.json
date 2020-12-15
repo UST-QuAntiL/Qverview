@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Python",
+    "type": "High-Level",
+    "syntaxImplementation": "standalone",
+    "standardization": "proprietary"
+  },
+  {
+    "name": "OpenQASM",
+    "type": "Assembly",
+    "syntaxImplementation": "standalone",
+    "standardization": "proprietary"
+  },
+  {
+      "name": "Orquestra YAML",
+      "type": "Workflow Language",
+      "syntaxImplementation": "standalone",
+      "standardization": "no"
+    }
+]

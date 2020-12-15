@@ -7,7 +7,7 @@ import { Orchestrator } from '../orchestrator.model';
 @Component({
   selector: 'app-orchestrators-table',
   templateUrl: './orchestrators-table.component.html',
-  styleUrls: [ '../../app.component.scss', './orchestrators-table.component.scss']
+  styleUrls: ['../../app.component.scss', './orchestrators-table.component.scss']
 })
 export class OrchestratorsTableComponent implements OnInit {
 
