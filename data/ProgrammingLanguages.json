@@ -1,20 +1,32 @@
 [
   {
     "name": "Python",
-    "type": "High-Level",
+    "type": "High-Level Programming Language",
     "syntaxImplementation": "standalone",
     "standardization": "proprietary"
   },
   {
     "name": "OpenQASM",
-    "type": "Assembly",
+    "type": "Assembly Language",
     "syntaxImplementation": "standalone",
     "standardization": "proprietary"
   },
   {
-      "name": "Orquestra YAML",
-      "type": "Workflow Language",
-      "syntaxImplementation": "standalone",
-      "standardization": "no"
-    }
+    "name": "Orquestra YAML",
+    "type": "Workflow Language",
+    "syntaxImplementation": "standalone",
+    "standardization": ""
+  },
+  {
+    "name": "Quil",
+    "type": "Assembly Language",
+    "syntaxImplementation": "standalone",
+    "standardization": ""
+  },
+  {
+    "name": "QMASM",
+    "type": "Assembly Language",
+    "syntaxImplementation": "standalone",
+    "standardization": ""
+  }
 ]

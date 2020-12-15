@@ -103,7 +103,7 @@
     "compilerOutputLanguages": [],
     "compilerOptimizationStrategies": [],
     "knowledgeReuses": [],
-    "activeDevelopment": null,
+    "activeDevelopment": false,
     "supportedQuantumCloudServices": [],
     "localSimulator": null
   },
@@ -166,5 +166,17 @@
     "activeDevelopment": null,
     "supportedQuantumCloudServices": [],
     "localSimulator": null
+  },
+  {
+    "name": "Quantum Development Kit",
+    "licenses": ["MIT"],
+    "programmingLanguages": ["Q#", "Q#+Python", "Q#+C#"],
+    "compilerInputLanguages": [],
+    "compilerOutputLanguages": [],
+    "compilerOptimizationStrategies": [],
+    "knowledgeReuses": [],
+    "activeDevelopment": true,
+    "supportedQuantumCloudServices": ["Azure Quantum"],
+    "localSimulator": true
   }
 ]
