@@ -15,6 +15,8 @@ import { SdkFilterComponent } from './sdk/sdk-filter/sdk-filter.component';
 import { OrchestratorFilterComponent } from './orchestrator/orchestrator-filter/orchestrator-filter.component';
 import { QcsFilterComponent } from './quantum-cloud-service/qcs-filter/qcs-filter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProgrammingLanguageTableComponent } from './programming-language/programming-language-table/programming-language-table.component';
+import { ProgrammingLanguageFilterComponent } from './programming-language/programming-language-filter/programming-language-filter.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     QuantumExecutionResourcesTableComponent,
     SdkFilterComponent,
     OrchestratorFilterComponent,
-    QcsFilterComponent
+    QcsFilterComponent,
+    ProgrammingLanguageTableComponent,
+    ProgrammingLanguageFilterComponent
   ],
   imports: [
     BrowserModule,
