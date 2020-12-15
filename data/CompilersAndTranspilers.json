@@ -1,0 +1,14 @@
+[
+  {
+    "name": "tket",
+    "inputLanguages": ["OpenQASM"],
+    "outputLanguages": ["OpenQASM"],
+    "optimizationStrategies": ["hardware-dependent"]
+  },
+  {
+    "name": "quilc",
+    "inputLanguages": ["Python + Pyquil"],
+    "outputLanguages": ["QUIL"],
+    "optimizationStrategies": ["hardware-dependent"]
+  }
+]

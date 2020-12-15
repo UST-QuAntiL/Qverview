@@ -17,6 +17,8 @@ import { QcsFilterComponent } from './quantum-cloud-service/qcs-filter/qcs-filte
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProgrammingLanguageTableComponent } from './programming-language/programming-language-table/programming-language-table.component';
 import { ProgrammingLanguageFilterComponent } from './programming-language/programming-language-filter/programming-language-filter.component';
+import { CompilerTableComponent } from './compiler/compiler-table/compiler-table.component';
+import { CompilerFilterComponent } from './compiler/compiler-filter/compiler-filter.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ProgrammingLanguageFilterComponent } from './programming-language/progr
     OrchestratorFilterComponent,
     QcsFilterComponent,
     ProgrammingLanguageTableComponent,
-    ProgrammingLanguageFilterComponent
+    ProgrammingLanguageFilterComponent,
+    CompilerTableComponent,
+    CompilerFilterComponent
   ],
   imports: [
     BrowserModule,
