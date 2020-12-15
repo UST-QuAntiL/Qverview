@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuantumComputationResourcesTableComponent } from './quantum-computation-resources-table.component';
+import { QuantumExecutionResourcesTableComponent } from './quantum-execution-resources-table.component';
 
 describe('QuantumComputationResourcesTableComponent', () => {
-  let component: QuantumComputationResourcesTableComponent;
-  let fixture: ComponentFixture<QuantumComputationResourcesTableComponent>;
+  let component: QuantumExecutionResourcesTableComponent;
+  let fixture: ComponentFixture<QuantumExecutionResourcesTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuantumComputationResourcesTableComponent ]
+      declarations: [ QuantumExecutionResourcesTableComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QuantumComputationResourcesTableComponent);
+    fixture = TestBed.createComponent(QuantumExecutionResourcesTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

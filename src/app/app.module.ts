@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { SdksTableComponent } from './sdk/sdks-table/sdks-table.component';
 import { OrchestratorsTableComponent } from './orchestrator/orchestrators-table/orchestrators-table.component';
 import { QuantumCloudServicesTableComponent } from './quantum-cloud-service/qcs-table/quantum-cloud-services-table.component';
-import { QuantumComputationResourcesTableComponent } from './quantum-computation-resource/quantum-computation-resources-table/quantum-computation-resources-table.component';
+import { QuantumExecutionResourcesTableComponent } from './quantum-execution-resource/quantum-execution-resources-table/quantum-execution-resources-table.component';
 import { SdkFilterComponent } from './sdk/sdk-filter/sdk-filter.component';
 import { OrchestratorFilterComponent } from './orchestrator/orchestrator-filter/orchestrator-filter.component';
 import { QcsFilterComponent } from './quantum-cloud-service/qcs-filter/qcs-filter.component';
@@ -22,7 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SdksTableComponent,
     OrchestratorsTableComponent,
     QuantumCloudServicesTableComponent,
-    QuantumComputationResourcesTableComponent,
+    QuantumExecutionResourcesTableComponent,
     SdkFilterComponent,
     OrchestratorFilterComponent,
     QcsFilterComponent

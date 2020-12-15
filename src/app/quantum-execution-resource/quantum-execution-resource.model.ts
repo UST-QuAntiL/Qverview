@@ -1,4 +1,4 @@
-export interface QuantumComputationResource {
+export interface QuantumExecutionResource {
     name: string;
     type: string;
     computationModel: string;
