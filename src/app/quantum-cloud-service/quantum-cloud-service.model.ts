@@ -3,5 +3,5 @@ export interface QuantumCloudService {
     accessMethods: string[];
     serviceModel: string;
     resources: string[];
-    assemblyLanguage: string;
+    assemblyLanguages: string[];
 }

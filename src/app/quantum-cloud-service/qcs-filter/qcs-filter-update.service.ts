@@ -28,9 +28,10 @@ export class QcsFilterUpdateService {
         result = false;
       }
     }
-    if (result && filter.assemblyLanguage !== '' &&
-      qcs.assemblyLanguage !== filter.assemblyLanguage) {
-      result = false;
+    for (const x of filter.assemblyLanguages) {
+      if (!qcs.assemblyLanguages.includes(x)) {
+        result = false;
+      }
     }
     return result;
   }
@@ -73,10 +74,11 @@ export class QcsFilterUpdateService {
   }
 
   toggleAssemblyLanguage(assemblyLanguage: string): void {
-    if (this.qcsFilter.assemblyLanguage === '') {
-      this.qcsFilter.assemblyLanguage = assemblyLanguage;
+    const index = this.qcsFilter.assemblyLanguages.indexOf(assemblyLanguage, 0);
+    if (index >= 0) {
+      this.qcsFilter.assemblyLanguages.splice(index, 1);
     } else {
-      this.qcsFilter.assemblyLanguage = '';
+      this.qcsFilter.assemblyLanguages.push(assemblyLanguage);
     }
     this.updateFilter();
   }
@@ -87,7 +89,7 @@ export class QcsFilterUpdateService {
       accessMethods: [],
       serviceModel: '',
       resources: [],
-      assemblyLanguage: ''
+      assemblyLanguages: []
     };
     this.updateFilter();
   }

@@ -17,7 +17,7 @@ export class QuantumCloudServicesTableComponent implements OnInit {
     'accessMethods',
     'serviceModel',
     'resources',
-    'assemblyLanguage'
+    'assemblyLanguages'
   ];
   private qcsFilter: QuantumCloudService;
 

@@ -18,6 +18,6 @@
   </div>
   <div>
     Assembly Language:
-    <button class="filter-active" *ngIf="qcsFilter.assemblyLanguage != ''" (click)="assemblyLanguageClicked(qcsFilter.assemblyLanguage)">{{qcsFilter.assemblyLanguage}}</button>
+    <button class="filter-active" *ngFor="let x of qcsFilter.assemblyLanguages" (click)="assemblyLanguageClicked(x)">{{x}}</button>
   </div>
 </div>
