@@ -56,10 +56,6 @@ export class SdksTableComponent implements OnInit {
     this.sdkFilterUpdateService.toggleCompilerOptimizationStrategy(compilerOptimizationStrategy);
   }
 
-  knowledgeReuseClicked(knowledgeReuse: string): void {
-    this.sdkFilterUpdateService.toggleKnowledgeReuse(knowledgeReuse);
-  }
-
   activeDevelopmentClicked(activeDevelopment: boolean): void {
     this.sdkFilterUpdateService.toggleActiveDevelopment(activeDevelopment);
   }

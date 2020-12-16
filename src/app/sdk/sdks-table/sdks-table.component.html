@@ -2,7 +2,7 @@
 <div *ngIf="dataSource">
     <table mat-table [dataSource]="dataSource">
         <ng-container matColumnDef="name">
-            <th mat-header-cell class="w-100" *matHeaderCellDef [attr.rowspan]="2">Name</th>
+            <th mat-header-cell class="w-150" *matHeaderCellDef [attr.rowspan]="2">Name</th>
             <td mat-cell *matCellDef="let sdk">{{sdk.name}}</td>
         </ng-container>
         <ng-container matColumnDef="licenses">
@@ -12,7 +12,7 @@
             </td>
         </ng-container>
         <ng-container matColumnDef="programmingLanguages">
-            <th mat-header-cell class="w-200" *matHeaderCellDef [attr.rowspan]="2">Programming Languages</th>
+            <th mat-header-cell class="w-100" *matHeaderCellDef [attr.rowspan]="2">Programming Languages</th>
             <td mat-cell *matCellDef="let sdk">
                 <button mat-button *ngFor="let x of sdk.programmingLanguages" [ngClass]="{'filter-active': (getActiveFilter().programmingLanguages.includes(x))}" (click)="programmingLanguageClicked(x)">{{x}}</button>
             </td>
@@ -22,33 +22,21 @@
         <!-- This column doesn't generate <td> items, so no need to add a definition for them -->
       </ng-container>
         <ng-container matColumnDef="compilerInputLanguages">
-            <th mat-header-cell class="w-200" *matHeaderCellDef>Input Languages</th>
+            <th mat-header-cell class="w-100" *matHeaderCellDef>Input Languages</th>
             <td mat-cell *matCellDef="let sdk">
                 <button mat-button *ngFor="let x of sdk.compilerInputLanguages" [ngClass]="{'filter-active': (getActiveFilter().compilerInputLanguages.includes(x))}" (click)="compilerInputLanguageClicked(x)">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="compilerOutputLanguages">
-            <th mat-header-cell class="w-200" *matHeaderCellDef>Output Languages</th>
+            <th mat-header-cell class="w-100" *matHeaderCellDef>Output Languages</th>
             <td mat-cell *matCellDef="let sdk">
                 <button mat-button *ngFor="let x of sdk.compilerOutputLanguages" [ngClass]="{'filter-active': (getActiveFilter().compilerOutputLanguages.includes(x))}" (click)="compilerOutputLanguageClicked(x)">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="compilerOptimizationStrategies">
-            <th mat-header-cell class="w-150" *matHeaderCellDef>Optimization Strategies</th>
+            <th mat-header-cell class="w-100" *matHeaderCellDef>Optimization Strategies</th>
             <td mat-cell *matCellDef="let sdk">
                 <button mat-button *ngFor="let x of sdk.compilerOptimizationStrategies" [ngClass]="{'filter-active': (getActiveFilter().compilerOptimizationStrategies.includes(x))}" (click)="compilerOptimizationStrategyClicked(x)">{{x}}</button>
-            </td>
-        </ng-container>
-        <ng-container matColumnDef="knowledgeReuses">
-            <th mat-header-cell class="w-200" *matHeaderCellDef [attr.rowspan]="2">Knowledge Reuses</th>
-            <td mat-cell *matCellDef="let sdk">
-                <button mat-button *ngFor="let x of sdk.knowledgeReuses" [ngClass]="{'filter-active': (getActiveFilter().knowledgeReuses.includes(x))}" (click)="knowledgeReuseClicked(x)">{{x}}</button>
-            </td>
-        </ng-container>
-        <ng-container matColumnDef="activeDevelopment">
-            <th mat-header-cell class="w-75" *matHeaderCellDef [attr.rowspan]="2">Active Development</th>
-            <td mat-cell *matCellDef="let sdk">
-                <button mat-button [ngClass]="{'filter-active': (getActiveFilter().activeDevelopment == sdk.activeDevelopment)}" (click)="activeDevelopmentClicked(sdk.activeDevelopment)">{{sdk.activeDevelopment}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="supportedQuantumCloudServices">
@@ -58,6 +46,12 @@
                 <button mat-button *ngFor="let x of sdk.supportedQuantumCloudServices" [ngClass]="{'filter-active': (getActiveFilter().supportedQuantumCloudServices.includes(x))}" (click)="supportedQuantumCloudServiceClicked(x)">{{x}}</button>
             </td>
         </ng-container>
+        <ng-container matColumnDef="activeDevelopment">
+          <th mat-header-cell class="w-75" *matHeaderCellDef [attr.rowspan]="2">Active Development</th>
+          <td mat-cell *matCellDef="let sdk">
+            <button mat-button [ngClass]="{'filter-active': (getActiveFilter().activeDevelopment == sdk.activeDevelopment)}" (click)="activeDevelopmentClicked(sdk.activeDevelopment)">{{sdk.activeDevelopment}}</button>
+          </td>
+        </ng-container>
         <ng-container matColumnDef="localSimulator">
             <th mat-header-cell class="w-75" *matHeaderCellDef [attr.rowspan]="2">Local Simulator</th>
             <td mat-cell *matCellDef="let sdk">
@@ -66,8 +60,8 @@
         </ng-container>
 
 
-        <tr mat-header-row *matHeaderRowDef="['name','licenses', 'programmingLanguages', 'compiler', 'knowledgeReuses', 'activeDevelopment', 'supportedQuantumCloudServices', 'localSimulator']"></tr>
+        <tr mat-header-row *matHeaderRowDef="['name','licenses', 'programmingLanguages', 'compiler', 'supportedQuantumCloudServices', 'activeDevelopment', 'localSimulator']"></tr>
         <tr mat-header-row *matHeaderRowDef="['compilerInputLanguages', 'compilerOutputLanguages', 'compilerOptimizationStrategies']"></tr>
-        <tr mat-row *matRowDef="let row; columns: ['name','licenses', 'programmingLanguages', 'compilerInputLanguages', 'compilerOutputLanguages', 'compilerOptimizationStrategies', 'knowledgeReuses', 'activeDevelopment', 'supportedQuantumCloudServices', 'localSimulator']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['name','licenses', 'programmingLanguages', 'compilerInputLanguages', 'compilerOutputLanguages', 'compilerOptimizationStrategies', 'supportedQuantumCloudServices', 'activeDevelopment', 'localSimulator']"></tr>
     </table>
 </div>

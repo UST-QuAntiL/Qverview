@@ -31,12 +31,6 @@
         </span>
     </div>
     <div>
-        Knowledge Reuses:
-        <span *ngFor="let x of sdkFilter.knowledgeReuses">
-            <button class="filter-active" (click)="knowledgeReuseClicked(x)">{{x}}</button>
-        </span>
-    </div>
-    <div>
         Active Development:
         <button class="filter-active" *ngIf="sdkFilter.activeDevelopment != null" (click)="activeDevelopmentClicked(sdkFilter.activeDevelopment)">{{sdkFilter.activeDevelopment}}</button>
     </div>

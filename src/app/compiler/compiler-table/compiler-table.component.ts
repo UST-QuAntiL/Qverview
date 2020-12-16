@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CompilerService } from '../compiler.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { CompilerFilterUpdateService } from '../compiler-filter/compiler-filter-update.service';
-import { QuantumCloudService } from '../../quantum-cloud-service/quantum-cloud-service.model';
-import { QcsFilterUpdateService } from '../../quantum-cloud-service/qcs-filter/qcs-filter-update.service';
 import { Compiler } from '../compiler.model';
 
 @Component({

@@ -48,6 +48,27 @@
     "resources": ["Rigetti Aspen-8"],
     "assemblyLanguages": []
   },
+  {
+    "name": "AQT Cloud",
+    "accessMethods": ["SDK (3rd party)", "REST"],
+    "serviceModel": "QCaaS",
+    "resources": ["AQT Innsbruck", "AQT QASM Simulator", "AQT QASM Simulator Noise"],
+    "assemblyLanguages": []
+  },
+  {
+    "name": "1Qloud",
+    "accessMethods": [],
+    "serviceModel": "QCaaS",
+    "resources": [],
+    "assemblyLanguages": []
+  },
+  {
+    "name": "QC Ware Forge",
+    "accessMethods": [],
+    "serviceModel": "QCaaS",
+    "resources": ["TrappedIon?", "Superconducting?", "Annealer?", "GPU Simulator", "CPU Simulator"],
+    "assemblyLanguages": []
+  },
 
 
 

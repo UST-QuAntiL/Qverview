@@ -5,7 +5,6 @@ export interface Sdk {
     compilerInputLanguages: string[];
     compilerOutputLanguages: string[];
     compilerOptimizationStrategies: string[];
-    knowledgeReuses: string[];
     activeDevelopment: boolean;
     supportedQuantumCloudServices: string[];
     localSimulator: boolean;

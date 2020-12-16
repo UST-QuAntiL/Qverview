@@ -143,33 +143,58 @@
   {
     "name": "D-Wave One (Ranier)",
     "type": "QPU",
-    "computationModel": "Circuit-Model",
+    "computationModel": "Annealing",
     "vendor": "D-Wave"
   },
   {
     "name": "D-Wave Two",
     "type": "QPU",
-    "computationModel": "Circuit-Model",
+    "computationModel": "Annealing",
     "vendor": "D-Wave"
   },
   {
     "name": "D-Wave 2X",
     "type": "QPU",
-    "computationModel": "Circuit-Model",
+    "computationModel": "Annealing",
     "vendor": "D-Wave"
   },
   {
     "name": "D-Wave 2000Q",
     "type": "QPU",
-    "computationModel": "Circuit-Model",
+    "computationModel": "Annealing",
     "vendor": "D-Wave"
   },
   {
     "name": "D-Wave Advantage",
     "type": "QPU",
+    "computationModel": "Annealing",
+    "vendor": "D-Wave"
+  },
+
+
+
+
+
+  {
+    "name": "AQT Innsbruck",
+    "type": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "D-Wave"
   },
+  {
+    "name": "AQT QASM Simulator",
+    "type": "Simulator",
+    "computationModel": "Circuit-Model",
+    "vendor": "D-Wave"
+  },
+  {
+    "name": "AQT QASM Simulator Noise",
+    "type": "Simulator",
+    "computationModel": "Circuit-Model",
+    "vendor": "D-Wave"
+  },
+
+
 
 
 

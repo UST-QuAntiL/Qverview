@@ -39,11 +39,6 @@ export class SdkFilterUpdateService {
         result = false;
       }
     }
-    for (const x of sdkFilter.knowledgeReuses) {
-      if (!sdk.knowledgeReuses.includes(x)) {
-        result = false;
-      }
-    }
     if (result && sdkFilter.activeDevelopment != null &&
       sdkFilter.activeDevelopment !== sdk.activeDevelopment) {
       result = false;
@@ -118,16 +113,6 @@ export class SdkFilterUpdateService {
     this.updateFilter();
   }
 
-  toggleKnowledgeReuse(knowledgeReuse: string): void {
-    const index = this.sdkFilter.knowledgeReuses.indexOf(knowledgeReuse, 0);
-    if (index >= 0) {
-      this.sdkFilter.knowledgeReuses.splice(index, 1);
-    } else {
-      this.sdkFilter.knowledgeReuses.push(knowledgeReuse);
-    }
-    this.updateFilter();
-  }
-
   toggleActiveDevelopment(activeDevelopment: boolean): void {
     if (this.sdkFilter.activeDevelopment == null) {
       this.sdkFilter.activeDevelopment = activeDevelopment;
@@ -166,7 +151,6 @@ export class SdkFilterUpdateService {
       compilerInputLanguages: [],
       compilerOutputLanguages: [],
       compilerOptimizationStrategies: [],
-      knowledgeReuses: [],
       activeDevelopment: null,
       supportedQuantumCloudServices: [],
       localSimulator: null
