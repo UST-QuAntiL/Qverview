@@ -52,6 +52,12 @@ export class SdkService {
     if (filter.quantumCloudService !== '' && !sdk.supportedQuantumCloudServices.includes(filter.quantumCloudService)) {
       result = false;
     }
+    if (filter.activeDevelopment !== '' && sdk.activeDevelopment !== filter.activeDevelopment) {
+      result = false;
+    }
+    if (filter.localSimulator !== '' && sdk.localSimulator !== filter.localSimulator) {
+      result = false;
+    }
 
     // cross-table filtering: QCS
     let cloudServices = false;

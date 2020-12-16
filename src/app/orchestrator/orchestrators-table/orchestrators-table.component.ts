@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrchestratorService} from '../orchestrator.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Orchestrator } from '../orchestrator.model';
+import { FilterService } from '../../filter/filter.service';
 
 @Component({
   selector: 'app-orchestrators-table',
@@ -18,25 +19,30 @@ export class OrchestratorsTableComponent implements OnInit {
     'activeDevelopment',
     'productionReady'
   ];
-  private orchestratorFilter: Orchestrator;
 
-  constructor(private orchestratorService: OrchestratorService) {}
+  constructor(private orchestratorService: OrchestratorService, private filterService: FilterService) {}
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.orchestratorService.getOrchestrators());
-
+    this.dataSource = new MatTableDataSource(this.orchestratorService.getAllOrchestrators());
+    this.filterService.events$.subscribe(filter => {
+      this.dataSource = new MatTableDataSource(this.orchestratorService.getActiveOrchestrators());
+    });
   }
 
 
   licenseClicked(license: string): void {
+    this.filterService.toggleLicense(license);
   }
 
   prorammingLanguageClicked(prorammingLanguage: string): void {
+    this.filterService.toggleProgrammingLanguage(prorammingLanguage);
   }
 
-  activeDevelopmentClicked(activeDevelopment: boolean): void {
+  activeDevelopmentClicked(activeDevelopment: string): void {
+    this.filterService.toggleActiveDevelopment(activeDevelopment);
   }
 
-  productionReadyClicked(productionReady: boolean): void {
+  productionReadyClicked(productionReady: string): void {
+    this.filterService.toggleProductionReady(productionReady);
   }
 }

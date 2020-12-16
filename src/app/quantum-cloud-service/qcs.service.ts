@@ -4,6 +4,7 @@ import { QuantumCloudService } from './quantum-cloud-service.model';
 import cloudServicesJson from '../../../data/CloudServices.json';
 import { FilterService } from '../filter/filter.service';
 import { QuantumExecutionResourceService } from '../quantum-execution-resource/quantum-execution-resource.service';
+import { SdkService } from '../sdk/sdk.service';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +45,7 @@ export class QcsService {
       result = false;
     }
 
-    // cross-table filtering
+    // cross-table filtering: Resources
     let resources = false;
     for (const availableResources of this.qerService.getActiveQuantumExecutionResources()) {
       if (qcs.resources.includes(availableResources.name)) {
@@ -54,6 +55,7 @@ export class QcsService {
     if (!resources) {
       result = false;
     }
+
 
     return result;
   }

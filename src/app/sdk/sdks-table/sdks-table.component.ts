@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { SdkService } from '../sdk.service';
-import { Sdk } from '../sdk.model';
 import { FilterService } from '../../filter/filter.service';
 
 @Component({
@@ -12,7 +11,6 @@ import { FilterService } from '../../filter/filter.service';
 export class SdksTableComponent implements OnInit {
 
   dataSource;
-  private sdkFilter: Sdk;
 
   constructor(private sdkService: SdkService, private filterService: FilterService) {
   }
