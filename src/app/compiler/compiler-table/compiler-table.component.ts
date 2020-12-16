@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CompilerService } from '../compiler.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { CompilerFilterUpdateService } from '../compiler-filter/compiler-filter-update.service';
 import { Compiler } from '../compiler.model';
+import { FilterService } from '../../filter/filter.service';
 
 @Component({
   selector: 'app-compiler-table',
@@ -19,38 +19,28 @@ export class CompilerTableComponent implements OnInit {
     'optimizationStrategies'
   ];
 
-  private compilerFilter: Compiler;
-
-  constructor(private compilerService: CompilerService, private compilerFilterUpdateService: CompilerFilterUpdateService) { }
+  constructor(private compilerService: CompilerService, private filterService: FilterService) { }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.compilerService.getCompilers());
-    this.dataSource.filterPredicate = (data, filter: Compiler) => {
-      return CompilerFilterUpdateService.isActive(data, filter);
-    };
-
-    this.compilerFilterUpdateService.event$.subscribe(filterUpdateEvent => {
-      this.compilerFilter = filterUpdateEvent;
-      this.dataSource.filter = filterUpdateEvent;
+    this.dataSource = new MatTableDataSource(this.compilerService.getAllCompilers());
+    this.filterService.events$.subscribe(filter => {
+      this.dataSource = new MatTableDataSource(this.compilerService.getActiveCompilers());
     });
   }
 
-  getActiveFilter(): Compiler {
-    if (this.compilerFilter == null) {
-      this.compilerFilterUpdateService.clear();
-    }
-    return this.compilerFilter;
+  nameClicked(name: string): void {
+    this.filterService.toggleCompiler(name);
   }
 
   inputLanguageClicked(inputLanguage: string): void {
-    this.compilerFilterUpdateService.toggleInputLanguage(inputLanguage);
+    this.filterService.toggleAssemblyLanguage(inputLanguage);
   }
 
   outputLanguageClicked(outputLanguage: string): void {
-    this.compilerFilterUpdateService.toggleOutputLanguage(outputLanguage);
+    this.filterService.toggleAssemblyLanguage(outputLanguage);
   }
 
   optimizationStrategyClicked(optimizationStrategy: string): void {
-    this.compilerFilterUpdateService.toggleOptimizationStrategy(optimizationStrategy);
+    this.filterService.toggleOptimizationStrategy(optimizationStrategy);
   }
 }

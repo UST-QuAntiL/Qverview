@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { QcsService } from '../qcs.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { QcsFilterUpdateService } from '../qcs-filter/qcs-filter-update.service';
 import { QuantumCloudService } from '../quantum-cloud-service.model';
-import { SdkFilterUpdateService } from '../../sdk/sdk-filter/sdk-filter-update.service';
-import { QerFilterUpdateService } from '../../quantum-execution-resource/quantum-execution-resource-filter/qer-filter-update.service';
+import { QuantumExecutionResourceService } from '../../quantum-execution-resource/quantum-execution-resource.service';
+import { FilterService } from '../../filter/filter.service';
 
 @Component({
   selector: 'app-quantum-cloud-services-table',
@@ -23,46 +22,33 @@ export class QuantumCloudServicesTableComponent implements OnInit {
   ];
   private qcsFilter: QuantumCloudService;
 
-  constructor(private qcsService: QcsService, private qcsFilterUpdateService: QcsFilterUpdateService, private sdkFilterUpdateService: SdkFilterUpdateService, private qerFilterUpdateService: QerFilterUpdateService) { }
+  constructor(private qcsService: QcsService, private qerService: QuantumExecutionResourceService, private filterService: FilterService) { }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.qcsService.getQcs());
-    this.dataSource.filterPredicate = (data, filter: QuantumCloudService) => {
-      return QcsFilterUpdateService.isActive(data, filter);
-    };
+    this.dataSource = new MatTableDataSource(this.qcsService.getAllQuantumExecutionResources());
 
-    this.qcsFilterUpdateService.events$.subscribe(filterUpdateEvent => {
-      this.qcsFilter = filterUpdateEvent;
-      this.dataSource.filter = filterUpdateEvent;
+    this.filterService.events$.subscribe(filter => {
+      this.dataSource = new MatTableDataSource(this.qcsService.getActiveQuantumExecutionResources());
     });
   }
 
-  getActiveFilter(): QuantumCloudService {
-    if (this.qcsFilter == null) {
-      this.qcsFilterUpdateService.clear();
-    }
-    return this.qcsFilter;
-  }
-
   nameClicked(name: string): void {
-    this.qcsFilterUpdateService.toggleName(name);
-    this.sdkFilterUpdateService.toggleSupportedQuantumCloudServices(name);
+    this.filterService.toggleQuantumCloudService(name);
   }
 
   accessMethodClicked(accessMethod: string): void {
-    this.qcsFilterUpdateService.toggleAccessMethod(accessMethod);
+    this.filterService.toggleAccessMethod(accessMethod);
   }
 
   serviceModelClicked(serviceModel: string): void {
-    this.qcsFilterUpdateService.toggleServiceModel(serviceModel);
+    this.filterService.toggleServiceModel(serviceModel);
   }
 
   resourceClicked(resource: string): void {
-    this.qcsFilterUpdateService.toggleResource(resource);
-    this.qerFilterUpdateService.toggleName(resource);
+    this.filterService.toggleQuantumExecutionResource(resource);
   }
 
   assemblyLanguageClicked(assemblyLanguage: string): void {
-    this.qcsFilterUpdateService.toggleAssemblyLanguage(assemblyLanguage);
+    this.filterService.toggleAssemblyLanguage(assemblyLanguage);
   }
 }

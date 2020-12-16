@@ -4,7 +4,7 @@
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef>Name</th>
             <td mat-cell *matCellDef="let qer">
-              <button mat-button [ngClass]="{'filter-active': (getActiveFilter().name == qer.name)}" (click)="nameClicked(qer.name)">
+              <button mat-button (click)="nameClicked(qer.name)">
                 {{qer.name}}
               </button>
             </td>
@@ -12,7 +12,7 @@
         <ng-container matColumnDef="type">
             <th mat-header-cell *matHeaderCellDef>Type</th>
             <td mat-cell *matCellDef="let qer">
-              <button mat-button [ngClass]="{'filter-active': (getActiveFilter().type == qer.type)}" (click)="typeClicked(qer.type)">
+              <button mat-button  (click)="typeClicked(qer.type)">
                 {{qer.type}}
               </button>
             </td>
@@ -20,7 +20,7 @@
         <ng-container matColumnDef="computationModel">
             <th mat-header-cell *matHeaderCellDef>Computation Model</th>
             <td mat-cell *matCellDef="let qer">
-              <button mat-button [ngClass]="{'filter-active': (getActiveFilter().computationModel == qer.computationModel)}" (click)="computationModelClicked(qer.computationModel)">
+              <button mat-button (click)="computationModelClicked(qer.computationModel)">
               {{qer.computationModel}}
               </button>
             </td>
@@ -28,7 +28,7 @@
         <ng-container matColumnDef="vendor">
             <th mat-header-cell *matHeaderCellDef>Vendor</th>
             <td mat-cell *matCellDef="let qer">
-              <button mat-button [ngClass]="{'filter-active': (getActiveFilter().vendor == qer.vendor)}" (click)="vendorClicked(qer.vendor)">
+              <button mat-button (click)="vendorClicked(qer.vendor)">
                 {{qer.vendor}}
               </button>
             </td>

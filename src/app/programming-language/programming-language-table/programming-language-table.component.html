@@ -3,24 +3,28 @@
   <table mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="name">
       <th mat-header-cell class="w-150" *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let programmingLanguage">{{programmingLanguage.name}}</td>
+      <td mat-cell *matCellDef="let programmingLanguage">
+        <button mat-button (click)="nameClicked(programmingLanguage.name)">
+          {{programmingLanguage.name}}
+        </button>
+      </td>
     </ng-container>
     <ng-container matColumnDef="type">
       <th mat-header-cell class="w-200" *matHeaderCellDef>Type</th>
       <td mat-cell *matCellDef="let programmingLanguage">
-        <button mat-button [ngClass]="{'filter-active': (getActiveFilter().type === programmingLanguage.type)}" (click)="typeClicked(programmingLanguage.type)">{{programmingLanguage.type}}</button>
+        <button mat-button (click)="typeClicked(programmingLanguage.type)">{{programmingLanguage.type}}</button>
       </td>
     </ng-container>
     <ng-container matColumnDef="syntaxImplementation">
       <th mat-header-cell class="w-100" *matHeaderCellDef>Syntax Implementation</th>
       <td mat-cell *matCellDef="let programmingLanguage">
-        <button mat-button [ngClass]="{'filter-active': (getActiveFilter().syntaxImplementation === programmingLanguage.syntaxImplementation)}" (click)="syntaxImplementationClicked(programmingLanguage.syntaxImplementation)">{{programmingLanguage.syntaxImplementation}}</button>
+        <button mat-button  (click)="syntaxImplementationClicked(programmingLanguage.syntaxImplementation)">{{programmingLanguage.syntaxImplementation}}</button>
       </td>
     </ng-container>
     <ng-container matColumnDef="standardization">
       <th mat-header-cell class="w-100" *matHeaderCellDef>Standardization</th>
       <td mat-cell *matCellDef="let programmingLanguage">
-        <button mat-button [ngClass]="{'filter-active': (getActiveFilter().standardization === programmingLanguage.standardization)}" (click)="standardizationClicked(programmingLanguage.standardization)">{{programmingLanguage.standardization}}</button>
+        <button mat-button (click)="standardizationClicked(programmingLanguage.standardization)">{{programmingLanguage.standardization}}</button>
       </td>
     </ng-container>
 

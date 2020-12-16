@@ -6,9 +6,9 @@
     "compilerInputLanguages": ["OpenQASM"],
     "compilerOutputLanguages": ["OpenQASM"],
     "compilerOptimizationStrategies": ["hardware-specific", "hardware-independent"],
-    "activeDevelopment": true,
+    "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["IBM Quantum", "AQT Cloud"],
-    "localSimulator": true
+    "localSimulator": "true"
   },
   {
     "name": "Strawberry Fields",
@@ -17,9 +17,9 @@
     "compilerInputLanguages": ["-"],
     "compilerOutputLanguages": ["Blackbird"],
     "compilerOptimizationStrategies": ["hardware-independent", "hardware-specific"],
-    "activeDevelopment": true,
+    "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["Xanadu Cloud Platform"],
-    "localSimulator": true
+    "localSimulator": "true"
   },
   {
     "name": "XACC",
@@ -28,9 +28,9 @@
     "compilerInputLanguages": ["Quil", "OpenQASM"],
     "compilerOutputLanguages": ["XASM", "Quil", "OpenQASM"],
     "compilerOptimizationStrategies": ["hardware-independent", "hardware-specific"],
-    "activeDevelopment": true,
+    "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["IBM Quantum", "Rigetti QCS", "D-Wave Leap"],
-    "localSimulator": true
+    "localSimulator": "true"
   },
   {
     "name": "Ocean",
@@ -39,9 +39,9 @@
     "compilerInputLanguages": ["BQM"],
     "compilerOutputLanguages": ["BQM"],
     "compilerOptimizationStrategies": ["-"],
-    "activeDevelopment": true,
+    "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["D-Wave Leap"],
-    "localSimulator": true
+    "localSimulator": "true"
   },
   {
     "name": "Cirq",
@@ -50,9 +50,9 @@
     "compilerInputLanguages": ["OpenQASM", "Quirk", "Cirq-JSON"],
     "compilerOutputLanguages": ["Cirq-JSON"],
     "compilerOptimizationStrategies": ["hardware-independent", "hardware-specific"],
-    "activeDevelopment": true,
+    "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["Google Cloud", "AQT Cloud", "Pasqal"],
-    "localSimulator": true
+    "localSimulator": "true"
   },
   {
     "name": "Forest",
@@ -61,9 +61,9 @@
     "compilerInputLanguages": ["Python+PyQuil"],
     "compilerOutputLanguages": ["Quil"],
     "compilerOptimizationStrategies": ["hardware-specific", "hardware-independent"],
-    "activeDevelopment": true,
+    "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["Rigetti QCS"],
-    "localSimulator": true
+    "localSimulator": "true"
   },
   {
     "name": "ProjectQ",
@@ -72,9 +72,9 @@
     "compilerInputLanguages": ["-"],
     "compilerOutputLanguages": ["OpenQASM"],
     "compilerOptimizationStrategies": ["hardware-specific", "hardware-independent"],
-    "activeDevelopment": false,
+    "activeDevelopment": "false",
     "supportedQuantumCloudServices": ["IBM Quantum", "AQT Cloud"],
-    "localSimulator": true
+    "localSimulator": "true"
   },
   {
     "name": "Liqui|>",
@@ -83,9 +83,9 @@
     "compilerInputLanguages": ["-"],
     "compilerOutputLanguages": ["-"],
     "compilerOptimizationStrategies": ["hardware-specific", "hardware-independent"],
-    "activeDevelopment": false,
+    "activeDevelopment": "false",
     "supportedQuantumCloudServices": ["-"],
-    "localSimulator": true
+    "localSimulator": "true"
   },
   {
     "name": "JADE",
@@ -94,9 +94,9 @@
     "compilerInputLanguages": ["N/A"],
     "compilerOutputLanguages": ["N/A"],
     "compilerOptimizationStrategies": ["-"],
-    "activeDevelopment": false,
+    "activeDevelopment": "false",
     "supportedQuantumCloudServices": ["-"],
-    "localSimulator": true
+    "localSimulator": "true"
   },
   {
     "name": "pytket",
@@ -105,9 +105,9 @@
     "compilerInputLanguages": ["OpenQASM", "Quipper"],
     "compilerOutputLanguages": ["OpenQASM"],
     "compilerOptimizationStrategies": ["hardware-independent", "hardware-specific"],
-    "activeDevelopment": true,
+    "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["IBM Quantum", "AQT Cloud", "AWS Braket", "Google Cloud", "Honeywell Quantum Systems", "Rigetti QCS", "Azure Quantum"],
-    "localSimulator": true
+    "localSimulator": "true"
   },
   {
     "name": "Quantum Development Kit",
@@ -116,9 +116,9 @@
     "compilerInputLanguages": ["Q#", "Python+Q#", "C#+Q#"],
     "compilerOutputLanguages": ["-"],
     "compilerOptimizationStrategies": ["N/A"],
-    "activeDevelopment": true,
+    "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["Azure Quantum"],
-    "localSimulator": true
+    "localSimulator": "true"
   },
   {
     "name": "Amazon Braket Python SDK",
@@ -127,9 +127,9 @@
     "compilerInputLanguages": ["-"],
     "compilerOutputLanguages": ["N/A"],
     "compilerOptimizationStrategies": ["-"],
-    "activeDevelopment": true,
+    "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["AWS Braket"],
-    "localSimulator": true
+    "localSimulator": "true"
   },
   {
     "name": "1Qbit QDK",
@@ -160,8 +160,8 @@
     "compilerInputLanguages": ["N/A"],
     "compilerOutputLanguages": ["N/A"],
     "compilerOptimizationStrategies": ["N/A"],
-    "activeDevelopment": true,
+    "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["QC Ware Forge"],
-    "localSimulator": false
+    "localSimulator": "false"
   }
 ]

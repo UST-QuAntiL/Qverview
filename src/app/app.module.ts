@@ -11,15 +11,10 @@ import { SdksTableComponent } from './sdk/sdks-table/sdks-table.component';
 import { OrchestratorsTableComponent } from './orchestrator/orchestrators-table/orchestrators-table.component';
 import { QuantumCloudServicesTableComponent } from './quantum-cloud-service/qcs-table/quantum-cloud-services-table.component';
 import { QuantumExecutionResourcesTableComponent } from './quantum-execution-resource/quantum-execution-resources-table/quantum-execution-resources-table.component';
-import { SdkFilterComponent } from './sdk/sdk-filter/sdk-filter.component';
-import { OrchestratorFilterComponent } from './orchestrator/orchestrator-filter/orchestrator-filter.component';
-import { QcsFilterComponent } from './quantum-cloud-service/qcs-filter/qcs-filter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProgrammingLanguageTableComponent } from './programming-language/programming-language-table/programming-language-table.component';
-import { ProgrammingLanguageFilterComponent } from './programming-language/programming-language-filter/programming-language-filter.component';
 import { CompilerTableComponent } from './compiler/compiler-table/compiler-table.component';
-import { CompilerFilterComponent } from './compiler/compiler-filter/compiler-filter.component';
-import { QuantumExecutionResourceFilterComponent } from './quantum-execution-resource/quantum-execution-resource-filter/quantum-execution-resource-filter.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +23,9 @@ import { QuantumExecutionResourceFilterComponent } from './quantum-execution-res
     OrchestratorsTableComponent,
     QuantumCloudServicesTableComponent,
     QuantumExecutionResourcesTableComponent,
-    SdkFilterComponent,
-    OrchestratorFilterComponent,
-    QcsFilterComponent,
     ProgrammingLanguageTableComponent,
-    ProgrammingLanguageFilterComponent,
     CompilerTableComponent,
-    CompilerFilterComponent,
-    QuantumExecutionResourceFilterComponent
+    FilterComponent
   ],
   imports: [
     BrowserModule,

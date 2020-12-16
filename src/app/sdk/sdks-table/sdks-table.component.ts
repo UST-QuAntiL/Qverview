@@ -1,71 +1,63 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { SdkService } from '../sdk.service';
-import { SdkFilterUpdateService } from '../sdk-filter/sdk-filter-update.service';
 import { Sdk } from '../sdk.model';
-import { QcsFilterUpdateService } from '../../quantum-cloud-service/qcs-filter/qcs-filter-update.service';
+import { FilterService } from '../../filter/filter.service';
 
 @Component({
   selector: 'app-sdks-table',
   templateUrl: './sdks-table.component.html',
-  styleUrls: [  '../../app.component.scss', './sdks-table.component.scss' ]
+  styleUrls: ['../../app.component.scss', './sdks-table.component.scss']
 })
 export class SdksTableComponent implements OnInit {
 
   dataSource;
   private sdkFilter: Sdk;
 
-  constructor(private sdkService: SdkService, private sdkFilterUpdateService: SdkFilterUpdateService, private qcsFilterUpdateService: QcsFilterUpdateService) { }
+  constructor(private sdkService: SdkService, private filterService: FilterService) {
+  }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.sdkService.getSdks());
-    this.dataSource.filterPredicate = (data, filter: Sdk) => {
-      return SdkFilterUpdateService.isActive(data, filter);
-    };
 
-    this.sdkFilterUpdateService.events$.subscribe(filterUpdateEvent => {
-      this.sdkFilter = filterUpdateEvent;
-      this.dataSource.filter = filterUpdateEvent;
+    this.filterService.events$.subscribe(filter => {
+      this.dataSource = new MatTableDataSource(this.sdkService.getActiveSdks());
     });
   }
 
-  getActiveFilter(): Sdk {
-    if (this.sdkFilter == null) {
-      this.sdkFilterUpdateService.clear();
-    }
-    return this.sdkFilter;
+  nameClicked(name: any): void {
+    this.filterService.toggleSdk(name);
   }
 
   licensesClicked(license: string): void {
-    this.sdkFilterUpdateService.toggleLicense(license);
+    this.filterService.toggleLicense(license);
   }
 
   programmingLanguageClicked(language: string): void {
-    this.sdkFilterUpdateService.toggleProgrammingLanguage(language);
+    this.filterService.toggleProgrammingLanguage(language);
   }
 
   compilerInputLanguageClicked(compilerInputLanguage: string): void {
-    this.sdkFilterUpdateService.toggleCompilerInputLanguage(compilerInputLanguage);
+    this.filterService.toggleAssemblyLanguage(compilerInputLanguage);
   }
 
   compilerOutputLanguageClicked(compilerOutputLanguage: string): void {
-    this.sdkFilterUpdateService.toggleCompilerOutputLanguage(compilerOutputLanguage);
+    this.filterService.toggleAssemblyLanguage(compilerOutputLanguage);
   }
 
   compilerOptimizationStrategyClicked(compilerOptimizationStrategy: string): void {
-    this.sdkFilterUpdateService.toggleCompilerOptimizationStrategy(compilerOptimizationStrategy);
+    this.filterService.toggleOptimizationStrategy(compilerOptimizationStrategy);
   }
 
-  activeDevelopmentClicked(activeDevelopment: boolean): void {
-    this.sdkFilterUpdateService.toggleActiveDevelopment(activeDevelopment);
+  activeDevelopmentClicked(activeDevelopment: string): void {
+    this.filterService.toggleActiveDevelopment(activeDevelopment);
   }
 
   supportedQuantumCloudServiceClicked(supportedQuantumCloudService: string): void {
-    this.sdkFilterUpdateService.toggleSupportedQuantumCloudServices(supportedQuantumCloudService);
-    this.qcsFilterUpdateService.toggleName(supportedQuantumCloudService);
+    this.filterService.toggleQuantumCloudService(supportedQuantumCloudService);
   }
 
-  localSimulatorClicked(localSimulator: boolean): void {
-    this.sdkFilterUpdateService.toggleLocalSimulator(localSimulator);
+  localSimulatorClicked(localSimulator: string): void {
+    this.filterService.toggleLocalSimulator(localSimulator);
   }
 }

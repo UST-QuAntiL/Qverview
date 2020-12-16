@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { QuantumExecutionResourceService } from '../quantum-execution-resource.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { QerFilterUpdateService } from '../quantum-execution-resource-filter/qer-filter-update.service';
 import { QuantumExecutionResource } from '../quantum-execution-resource.model';
-import { QcsFilterUpdateService } from '../../quantum-cloud-service/qcs-filter/qcs-filter-update.service';
+import { FilterService } from '../../filter/filter.service';
 
 @Component({
   selector: 'app-quantum-computation-resources-table',
@@ -21,41 +20,29 @@ export class QuantumExecutionResourcesTableComponent implements OnInit {
   ];
   private qerFilter: QuantumExecutionResource;
 
-  constructor(private qcrS: QuantumExecutionResourceService, private qerFilterUpdateService: QerFilterUpdateService, private qcsFilterUpdateService: QcsFilterUpdateService) {}
+  constructor(private quantumExecutionResourceService: QuantumExecutionResourceService, private filterService: FilterService) {}
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.qcrS.getQuantumComputationResource());
-    this.dataSource.filterPredicate = (data, filter: QuantumExecutionResource) => {
-      return QerFilterUpdateService.isActive(data, filter);
-    };
+    this.dataSource = new MatTableDataSource(this.quantumExecutionResourceService.getAllQuantumExecutionResources());
 
-    this.qerFilterUpdateService.events$.subscribe(filterUpdateEvent => {
-      this.qerFilter = filterUpdateEvent;
-      this.dataSource.filter = filterUpdateEvent;
+    this.filterService.events$.subscribe( filter => {
+      this.dataSource = new MatTableDataSource(this.quantumExecutionResourceService.getActiveQuantumExecutionResources());
     });
   }
 
-  getActiveFilter(): QuantumExecutionResource {
-    if (this.qerFilter == null) {
-      this.qerFilterUpdateService.clear();
-    }
-    return this.qerFilter;
-  }
-
   nameClicked(name: string): void {
-    this.qerFilterUpdateService.toggleName(name);
-    this.qcsFilterUpdateService.toggleResource(name);
+    this.filterService.toggleQuantumExecutionResource(name);
   }
 
   typeClicked(type: string): void {
-    this.qerFilterUpdateService.toggleType(type);
+    this.filterService.toggleResourceType(type);
   }
 
   computationModelClicked(computationModel: string): void {
-    this.qerFilterUpdateService.toggleComputationModel(computationModel);
+    this.filterService.toggleComputationModel(computationModel);
   }
 
   vendorClicked(vendor: string): void {
-    this.qerFilterUpdateService.toggleVendor(vendor);
+    this.filterService.toggleVendor(vendor);
   }
 }

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrchestratorFilterComponent } from './orchestrator-filter.component';
+import { FilterComponent } from './filter.component';
 
-describe('OrchestratorFilterComponent', () => {
-  let component: OrchestratorFilterComponent;
-  let fixture: ComponentFixture<OrchestratorFilterComponent>;
+describe('FilterComponent', () => {
+  let component: FilterComponent;
+  let fixture: ComponentFixture<FilterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrchestratorFilterComponent ]
+      declarations: [ FilterComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrchestratorFilterComponent);
+    fixture = TestBed.createComponent(FilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
