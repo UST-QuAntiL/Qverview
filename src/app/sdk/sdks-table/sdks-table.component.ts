@@ -16,46 +16,38 @@ export class SdksTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.sdkService.getSdks());
+    this.dataSource = new MatTableDataSource(this.sdkService.getAllSdks());
 
     this.filterService.events$.subscribe(filter => {
       this.dataSource = new MatTableDataSource(this.sdkService.getActiveSdks());
     });
   }
 
-  nameClicked(name: any): void {
-    this.filterService.toggleSdk(name);
-  }
-
   licensesClicked(license: string): void {
-    this.filterService.toggleLicense(license);
+    // this.filterService.toggleLicense(license);
   }
 
   programmingLanguageClicked(language: string): void {
-    this.filterService.toggleProgrammingLanguage(language);
+    // this.filterService.toggleProgrammingLanguage(language);
   }
 
   compilerInputLanguageClicked(compilerInputLanguage: string): void {
-    this.filterService.toggleAssemblyLanguage(compilerInputLanguage);
+    // this.filterService.toggleAssemblyLanguage(compilerInputLanguage);
   }
 
   compilerOutputLanguageClicked(compilerOutputLanguage: string): void {
-    this.filterService.toggleAssemblyLanguage(compilerOutputLanguage);
-  }
-
-  compilerOptimizationStrategyClicked(compilerOptimizationStrategy: string): void {
-    this.filterService.toggleOptimizationStrategy(compilerOptimizationStrategy);
+    // this.filterService.toggleAssemblyLanguage(compilerOutputLanguage);
   }
 
   activeDevelopmentClicked(activeDevelopment: string): void {
-    this.filterService.toggleActiveDevelopment(activeDevelopment);
+    // this.filterService.toggleActiveDevelopment(activeDevelopment);
   }
 
   supportedQuantumCloudServiceClicked(supportedQuantumCloudService: string): void {
-    this.filterService.toggleQuantumCloudService(supportedQuantumCloudService);
+    // this.filterService.toggleQuantumCloudService(supportedQuantumCloudService);
   }
 
   localSimulatorClicked(localSimulator: string): void {
-    this.filterService.toggleLocalSimulator(localSimulator);
+    // this.filterService.toggleLocalSimulator(localSimulator);
   }
 }

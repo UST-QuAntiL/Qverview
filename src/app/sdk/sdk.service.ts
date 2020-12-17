@@ -4,8 +4,6 @@ import { Sdk } from './sdk.model';
 import softwareDevelopmentKitsJson from '../../../data/SoftwareDevelopmentKits.json';
 import { FilterService } from '../filter/filter.service';
 import { Filter } from '../filter/filter.model';
-import { QcsService } from '../quantum-cloud-service/qcs.service';
-import { ProgrammingLanguageService } from '../programming-language/programming-language.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,18 +12,18 @@ export class SdkService {
 
   sdks: Sdk[] = softwareDevelopmentKitsJson;
 
-  constructor(private filterService: FilterService, private qcsService: QcsService, private languageService: ProgrammingLanguageService) {
+  constructor(private filterService: FilterService) {
   }
 
-  getSdks(): Sdk[] {
+  getAllSdks(): Sdk[] {
     return this.sdks;
   }
 
   getActiveSdks(): Sdk[] {
     const activeSdks: Sdk[] = [];
-    for (const x of this.sdks) {
-      if (this.isActive(x)) {
-        activeSdks.push(x);
+    for (const sdk of this.sdks) {
+      if (this.isActive(sdk)) {
+        activeSdks.push(sdk);
       }
     }
     return activeSdks;
@@ -34,53 +32,39 @@ export class SdkService {
   isActive(sdk: Sdk): boolean {
     const filter: Filter = this.filterService.getActiveFilter();
     let result = true;
-    if (filter.sdk !== '' && sdk.name !== filter.sdk) {
+    if (filter.sdks.length > 0 && !filter.sdks.includes(sdk.name)) {
       result = false;
     }
-    if (filter.license !== '' && !sdk.licenses.includes(filter.license)) {
+    if (!this.supportsOneOf(filter.licenses, sdk.licenses)) {
       result = false;
     }
-    if (filter.programmingLanguage !== '' && !sdk.programmingLanguages.includes(filter.programmingLanguage)) {
+    if (!this.supportsOneOf(filter.programmingLanguages, sdk.programmingLanguages)) {
       result = false;
     }
-    if (filter.assemblyLanguage !== '' && !sdk.compilerInputLanguages.includes(filter.assemblyLanguage) && !sdk.compilerOutputLanguages.includes(filter.assemblyLanguage)) {
+    if (!this.supportsOneOf(filter.inputLanguages, sdk.compilerInputLanguages)) {
       result = false;
     }
-    if (filter.optimizationStrategy !== '' && !sdk.compilerOptimizationStrategies.includes(filter.optimizationStrategy)) {
+    if (!this.supportsOneOf(filter.outputLanguages, sdk.compilerOutputLanguages)) {
       result = false;
     }
-    if (filter.quantumCloudService !== '' && !sdk.supportedQuantumCloudServices.includes(filter.quantumCloudService)) {
+    if (!this.supportsOneOf(filter.optimizationStrategies, sdk.compilerOptimizationStrategies)) {
       result = false;
     }
-    if (filter.activeDevelopment !== '' && sdk.activeDevelopment !== filter.activeDevelopment) {
+    if (!this.supportsOneOf(filter.quantumCloudServices, sdk.supportedQuantumCloudServices)) {
       result = false;
     }
-    if (filter.localSimulator !== '' && sdk.localSimulator !== filter.localSimulator) {
-      result = false;
-    }
+    return result;
+  }
 
-    // cross-table filtering: QCS
-    let cloudServices = false;
-    for (const activeQer of this.qcsService.getActiveQuantumExecutionResources()) {
-      if (sdk.supportedQuantumCloudServices.includes(activeQer.name)) {
-        cloudServices = true;
+  private supportsOneOf(filter: string[], obj: string[]): boolean {
+    if (filter.length === 0) {
+      return true;
+    }
+    for (const x of filter) {
+      if (obj.includes(x)) {
+        return true;
       }
     }
-    if (!cloudServices) {
-      result = false;
-    }
-
-    // cross-table filtering: Programming Language
-    // let languages = false;
-    // for (const activeLanguage of this.languageService.getActiveProgrammingLanguages()) {
-    //   if (sdk.programmingLanguages.includes(activeLanguage.name)) {
-    //     languages = true;
-    //   }
-    // }
-    // if (!languages) {
-    //   result = false;
-    // }
-
-    return result;
+    return false;
   }
 }

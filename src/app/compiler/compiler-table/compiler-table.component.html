@@ -4,13 +4,13 @@
     <ng-container matColumnDef="name">
       <th mat-header-cell class="w-150" *matHeaderCellDef [attr.rowspan]="2">Name</th>
       <td mat-cell *matCellDef="let compiler">
-        <button mat-button [ngClass]="{'filter-active' : filterService.getActiveFilter().compiler === compiler.name}" (click)="nameClicked(compiler.name)">{{compiler.name}}</button>
+        <button mat-button>{{compiler.name}}</button>
       </td>
     </ng-container>
     <ng-container matColumnDef="inputLanguages">
       <th mat-header-cell class="w-200" *matHeaderCellDef>Input Languages</th>
       <td mat-cell *matCellDef="let compiler">
-        <button mat-button *ngFor="let x of compiler.inputLanguages" [ngClass]="{'filter-active' : filterService.getActiveFilter().assemblyLanguage === x}" (click)="inputLanguageClicked(x)">
+        <button mat-button *ngFor="let x of compiler.inputLanguages">
           {{x}}
         </button>
       </td>
@@ -18,7 +18,7 @@
     <ng-container matColumnDef="outputLanguages">
       <th mat-header-cell class="w-200" *matHeaderCellDef>Output Languages</th>
       <td mat-cell *matCellDef="let compiler">
-        <button mat-button *ngFor="let x of compiler.outputLanguages" [ngClass]="{'filter-active' : filterService.getActiveFilter().assemblyLanguage === x}" (click)="outputLanguageClicked(x)">
+        <button mat-button *ngFor="let x of compiler.outputLanguages" >
           {{x}}
         </button>
       </td>
@@ -26,7 +26,7 @@
     <ng-container matColumnDef="optimizationStrategies">
       <th mat-header-cell class="w-150" *matHeaderCellDef>Optimization Strategies</th>
       <td mat-cell *matCellDef="let compiler">
-        <button mat-button *ngFor="let x of compiler.optimizationStrategies" [ngClass]="{'filter-active' : filterService.getActiveFilter().optimizationStrategy === x}" (click)="optimizationStrategyClicked(x)">
+        <button mat-button *ngFor="let x of compiler.optimizationStrategies">
           {{x}}
         </button>
       </td>

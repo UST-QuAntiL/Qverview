@@ -30,19 +30,15 @@ export class OrchestratorsTableComponent implements OnInit {
   }
 
 
-  licenseClicked(license: string): void {
-    this.filterService.toggleLicense(license);
-  }
-
   prorammingLanguageClicked(prorammingLanguage: string): void {
-    this.filterService.toggleProgrammingLanguage(prorammingLanguage);
+    // this.filterService.toggleProgrammingLanguage(prorammingLanguage);
   }
 
   activeDevelopmentClicked(activeDevelopment: string): void {
-    this.filterService.toggleActiveDevelopment(activeDevelopment);
+    // this.filterService.toggleActiveDevelopment(activeDevelopment);
   }
 
   productionReadyClicked(productionReady: string): void {
-    this.filterService.toggleProductionReady(productionReady);
+    // this.filterService.toggleProductionReady(productionReady);
   }
 }

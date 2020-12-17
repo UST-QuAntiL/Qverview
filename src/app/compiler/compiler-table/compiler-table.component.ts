@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CompilerService } from '../compiler.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { Compiler } from '../compiler.model';
 import { FilterService } from '../../filter/filter.service';
 
 @Component({
@@ -26,21 +25,5 @@ export class CompilerTableComponent implements OnInit {
     this.filterService.events$.subscribe(filter => {
       this.dataSource = new MatTableDataSource(this.compilerService.getActiveCompilers());
     });
-  }
-
-  nameClicked(name: string): void {
-    this.filterService.toggleCompiler(name);
-  }
-
-  inputLanguageClicked(inputLanguage: string): void {
-    this.filterService.toggleAssemblyLanguage(inputLanguage);
-  }
-
-  outputLanguageClicked(outputLanguage: string): void {
-    this.filterService.toggleAssemblyLanguage(outputLanguage);
-  }
-
-  optimizationStrategyClicked(optimizationStrategy: string): void {
-    this.filterService.toggleOptimizationStrategy(optimizationStrategy);
   }
 }

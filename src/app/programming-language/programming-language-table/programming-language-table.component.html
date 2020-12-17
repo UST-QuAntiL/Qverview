@@ -4,7 +4,7 @@
     <ng-container matColumnDef="name">
       <th mat-header-cell class="w-150" *matHeaderCellDef>Name</th>
       <td mat-cell *matCellDef="let programmingLanguage">
-        <button mat-button [ngClass]="{'filter-active' : filterService.getActiveFilter().programmingLanguage === programmingLanguage.name}" (click)="nameClicked(programmingLanguage.name)">
+        <button mat-button [ngClass]="{'filter-active' : filterService.getActiveFilter().programmingLanguages === programmingLanguage.name}" (click)="nameClicked(programmingLanguage.name)">
           {{programmingLanguage.name}}
         </button>
       </td>

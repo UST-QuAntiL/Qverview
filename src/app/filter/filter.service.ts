@@ -11,27 +11,26 @@ export class FilterService {
   private filter: Filter = {
     orchestrator: '',
     productionReady: '',
-    license: '',
+    licenses: [],
     activeDevelopment: '',
-    programmingLanguage: '',
+    programmingLanguages: [],
     languageType: '',
     syntaxImplementation: '',
     standardization: '',
     compiler: '',
-    inputLanguage: '',
-    outputLanguage: '',
-    optimizationStrategy: '',
-    sdk: '',
+    inputLanguages: [],
+    outputLanguages: [],
+    optimizationStrategies: [],
+    sdks: [],
     localSimulator: '',
-    quantumCloudService: '',
-    accessMethod: '',
-    serviceModel: '',
-    resource: '',
-    assemblyLanguage: '',
-    quantumExecutionResource: '',
-    resourceType: '',
-    computationModel: '',
-    vendor: ''
+    quantumCloudServices: [],
+    accessMethods: [],
+    serviceModels: [],
+    assemblyLanguages: [],
+    quantumExecutionResources: [],
+    executionTypes: '',
+    computationModels: [],
+    vendors: []
   };
 
   constructor() {
@@ -45,187 +44,76 @@ export class FilterService {
     return this.subject.asObservable();
   }
 
-  toggleOrchestrator(value: string): void {
-    if (this.filter.orchestrator !== value) {
-      this.filter.orchestrator = value;
-    } else {
-      this.filter.orchestrator = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleProductionReady(value: string): void {
-    if (this.filter.productionReady !== value) {
-      this.filter.productionReady = value;
-    } else {
-      this.filter.productionReady = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleLicense(value: string): void {
-    if (this.filter.license !== value) {
-      this.filter.license = value;
-    } else {
-      this.filter.license = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleActiveDevelopment(value: string): void {
-    if (this.filter.activeDevelopment !== value) {
-      this.filter.activeDevelopment = value;
-    } else {
-      this.filter.activeDevelopment = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleProgrammingLanguage(value: string): void {
-    if (this.filter.programmingLanguage !== value) {
-      this.filter.programmingLanguage = value;
-    } else {
-      this.filter.programmingLanguage = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleLanguageType(value: string): void {
-    if (this.filter.languageType !== value) {
-      this.filter.languageType = value;
-    } else {
-      this.filter.languageType = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleStandardization(value: string): void {
-    if (this.filter.standardization !== value) {
-      this.filter.standardization = value;
-    } else {
-      this.filter.standardization = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleSyntaxImplementation(value: string): void {
-    if (this.filter.syntaxImplementation !== value) {
-      this.filter.syntaxImplementation = value;
-    } else {
-      this.filter.syntaxImplementation = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleCompiler(value: string): void {
-    if (this.filter.compiler !== value) {
-      this.filter.compiler = value;
-    } else {
-      this.filter.compiler = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleAssemblyLanguage(value: string): void {
-    if (this.filter.assemblyLanguage !== value) {
-      this.filter.assemblyLanguage = value;
-    } else {
-      this.filter.assemblyLanguage = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleOptimizationStrategy(value: string): void {
-    if (this.filter.optimizationStrategy !== value) {
-      this.filter.optimizationStrategy = value;
-    } else {
-      this.filter.optimizationStrategy = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleSdk(value: string): void {
-    if (this.filter.sdk !== value) {
-      this.filter.sdk = value;
-    } else {
-      this.filter.sdk = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleLocalSimulator(value: string): void {
-    if (this.filter.localSimulator !== value) {
-      this.filter.localSimulator = value;
-    } else {
-      this.filter.localSimulator = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleQuantumCloudService(value: string): void {
-    if (this.filter.quantumCloudService !== value) {
-      this.filter.quantumCloudService = value;
-    } else {
-      this.filter.quantumCloudService = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleAccessMethod(value: string): void {
-    if (this.filter.accessMethod !== value) {
-      this.filter.accessMethod = value;
-    } else {
-      this.filter.accessMethod = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleServiceModel(value: string): void {
-    if (this.filter.serviceModel !== value) {
-      this.filter.serviceModel = value;
-    } else {
-      this.filter.serviceModel = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleQuantumExecutionResource(value: string): void {
-    if (this.filter.quantumExecutionResource !== value) {
-      this.filter.quantumExecutionResource = value;
-    } else {
-      this.filter.quantumExecutionResource = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleResourceType(value: string): void {
-    if (this.filter.resourceType !== value) {
-      this.filter.resourceType = value;
-    } else {
-      this.filter.resourceType = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleComputationModel(value: string): void {
-    if (this.filter.computationModel !== value) {
-      this.filter.computationModel = value;
-    } else {
-      this.filter.computationModel = '';
-    }
-    this.updateFilter();
-  }
-
-  toggleVendor(value: string): void {
-    if (this.filter.vendor !== value) {
-      this.filter.vendor = value;
-    } else {
-      this.filter.vendor = '';
-    }
-    this.updateFilter();
-  }
-
   getActiveFilter(): Filter {
     return this.filter;
+  }
+
+  setSdkFilter(sdks: string[]): void {
+    this.filter.sdks = sdks;
+    this.updateFilter();
+  }
+
+  setLicenseFilter(selectedLicenses: string[]): void {
+    this.filter.licenses = selectedLicenses;
+    this.updateFilter();
+  }
+
+  setProgrammingLanguageFilter(programmingLanguages: string[]): void {
+    this.filter.programmingLanguages = programmingLanguages;
+    this.updateFilter();
+  }
+
+  setOutputLanguageFilter(outputLanguages: string[]): void {
+    this.filter.outputLanguages = outputLanguages;
+    this.updateFilter();
+  }
+
+  setInputLanguageFilter(inputLanguages: string[]): void {
+    this.filter.inputLanguages = inputLanguages;
+    this.updateFilter();
+  }
+
+  setOptimizationStrategyFilter(selectedOptimizationStrategies: string[]): void {
+    this.filter.optimizationStrategies = selectedOptimizationStrategies;
+    this.updateFilter();
+  }
+
+  setQcsFilter(selectedQuantumCloudServices: string[]): void {
+    this.filter.quantumCloudServices = selectedQuantumCloudServices;
+    this.updateFilter();
+  }
+
+  setAccessMethodFilter(accessMethods: string[]): void {
+    this.filter.accessMethods = accessMethods;
+    this.updateFilter();
+  }
+
+  setServiceModelFilter(serviceModels: string[]): void {
+    this.filter.serviceModels = serviceModels;
+    this.updateFilter();
+  }
+
+  setAssemblyLanguageFilter(assemblyLanguages: string[]): void {
+    this.filter.assemblyLanguages = assemblyLanguages;
+    this.updateFilter();
+  }
+
+  setQerFilter(quantumExecutionResources: string[]): void {
+    this.filter.quantumExecutionResources = quantumExecutionResources;
+    this.updateFilter();
+  }
+
+  setExecutionTypeFilter(executionType: string): void {
+    this.filter.executionTypes = executionType;
+  }
+
+  setComputationModelFilter(computationModels: string[]): void {
+    this.filter.computationModels = computationModels;
+    this.updateFilter();
+  }
+
+  setVendorFilter(vendors: string[]): void {
+    this.filter.vendors = vendors;
+    this.updateFilter();
   }
 }

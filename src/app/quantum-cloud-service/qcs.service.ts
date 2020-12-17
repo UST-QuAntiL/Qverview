@@ -3,7 +3,7 @@ import { QuantumCloudService } from './quantum-cloud-service.model';
 // @ts-ignore
 import cloudServicesJson from '../../../data/CloudServices.json';
 import { FilterService } from '../filter/filter.service';
-import { QuantumExecutionResourceService } from '../quantum-execution-resource/quantum-execution-resource.service';
+import { Filter } from '../filter/filter.model';
 import { SdkService } from '../sdk/sdk.service';
 
 @Injectable({
@@ -13,7 +13,8 @@ export class QcsService {
 
   qcs: QuantumCloudService[] = cloudServicesJson;
 
-  constructor(private filterService: FilterService, private qerService: QuantumExecutionResourceService) { }
+  constructor(private filterService: FilterService, private sdkService: SdkService) {
+  }
 
   getAllQuantumExecutionResources(): QuantumCloudService[] {
     return this.qcs;
@@ -29,34 +30,41 @@ export class QcsService {
     return result;
   }
 
-  private isActive(qcs: QuantumCloudService): boolean {
-    const filter = this.filterService.getActiveFilter();
-    let result = true;
-    if (filter.quantumCloudService !== '' && qcs.name !== filter.quantumCloudService) {
-      result = false;
+  getNamesOfActiveQuantumExecutionResource(): string[] {
+    const result: string[] = [];
+    for (const x of this.getActiveQuantumExecutionResources()) {
+      result.push(x.name);
     }
-    if (filter.assemblyLanguage !== '' && !qcs.assemblyLanguages.includes(filter.assemblyLanguage)) {
-      result = false;
-    }
-    if (filter.serviceModel !== '' && qcs.serviceModel !== filter.serviceModel) {
-      result = false;
-    }
-    if (filter.accessMethod !== '' && !qcs.accessMethods.includes(filter.accessMethod)) {
-      result = false;
-    }
+    return result;
+  }
 
-    // cross-table filtering: Resources
-    let resources = false;
-    for (const availableResources of this.qerService.getActiveQuantumExecutionResources()) {
-      if (qcs.resources.includes(availableResources.name)) {
-        resources = true;
+  private isActive(qcs: QuantumCloudService): boolean {
+    const filter: Filter = this.filterService.getActiveFilter();
+    let result = true;
+    if (filter.quantumCloudServices.length > 0 && !filter.quantumCloudServices.includes(qcs.name)) {
+      result = false;
+    }
+    if (!this.supportsOneOf(filter.accessMethods, qcs.accessMethods)) {
+      result = false;
+    }
+    if (filter.serviceModels.length > 0 && !filter.serviceModels.includes(qcs.serviceModel)) {
+      result = false;
+    }
+    if (!this.supportsOneOf(filter.assemblyLanguages, qcs.assemblyLanguages)) {
+      result = false;
+    }
+    return result;
+  }
+
+  private supportsOneOf(filter: string[], obj: string[]): boolean {
+    if (filter.length === 0) {
+      return true;
+    }
+    for (const x of filter) {
+      if (obj.includes(x)) {
+        return true;
       }
     }
-    if (!resources) {
-      result = false;
-    }
-
-
-    return result;
+    return false;
   }
 }

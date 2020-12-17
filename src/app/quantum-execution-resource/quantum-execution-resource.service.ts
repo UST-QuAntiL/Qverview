@@ -3,6 +3,7 @@ import { QuantumExecutionResource } from './quantum-execution-resource.model';
 // @ts-ignore
 import quantumExecutionResources from '../../../data/QuantumExecutionResources.json';
 import { FilterService } from '../filter/filter.service';
+import { Filter } from '../filter/filter.model';
 
 
 
@@ -30,21 +31,33 @@ export class QuantumExecutionResourceService {
     return result;
   }
 
-  isActive(quantumExecutionResource: QuantumExecutionResource): boolean {
-    const filter = this.filterService.getActiveFilter();
+  isActive(qer: QuantumExecutionResource): boolean {
+    const filter: Filter = this.filterService.getActiveFilter();
     let result = true;
-    if (filter.quantumExecutionResource !== '' && filter.quantumExecutionResource !== quantumExecutionResource.name) {
+    if (filter.quantumExecutionResources.length > 0 && !filter.quantumExecutionResources.includes(qer.name)) {
       result = false;
     }
-    if (filter.resourceType !== '' && filter.resourceType !== quantumExecutionResource.type) {
+    if (filter.executionTypes.length > 0 && !filter.executionTypes.includes(qer.executionType)) {
       result = false;
     }
-    if (filter.computationModel !== '' && filter.computationModel !== quantumExecutionResource.computationModel) {
+    if (filter.computationModels.length > 0 && !filter.computationModels.includes(qer.computationModel)) {
       result = false;
     }
-    if (filter.vendor !== '' && filter.vendor !== quantumExecutionResource.vendor) {
+    if (filter.vendors.length > 0 && !filter.vendors.includes(qer.vendor)) {
       result = false;
     }
     return result;
+  }
+
+  private supportsOneOf(filter: string[], obj: string[]): boolean {
+    if (filter.length === 0) {
+      return true;
+    }
+    for (const x of filter) {
+      if (obj.includes(x)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

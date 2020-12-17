@@ -4,19 +4,19 @@
         <ng-container matColumnDef="name">
             <th mat-header-cell class="w-150" *matHeaderCellDef [attr.rowspan]="2">Name</th>
             <td mat-cell *matCellDef="let sdk">
-              <button mat-button [ngClass]="{'filter-active' : filterService.getActiveFilter().sdk === sdk.name}" (click)="nameClicked(sdk.name)">{{sdk.name}}</button>
+              <button mat-button>{{sdk.name}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="licenses">
             <th mat-header-cell class="w-100" *matHeaderCellDef [attr.rowspan]="2">Licenses</th>
             <td mat-cell *matCellDef="let sdk">
-                <button mat-button *ngFor="let x of sdk.licenses" [ngClass]="{'filter-active' : filterService.getActiveFilter().license === x}" (click)="licensesClicked(x)">{{x}}</button>
+                <button mat-button *ngFor="let x of sdk.licenses" [ngClass]="{'filter-active' : filterService.getActiveFilter().licenses === x}" (click)="licensesClicked(x)">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="programmingLanguages">
             <th mat-header-cell class="w-100" *matHeaderCellDef [attr.rowspan]="2">Programming Languages</th>
             <td mat-cell *matCellDef="let sdk">
-                <button mat-button *ngFor="let x of sdk.programmingLanguages" [ngClass]="{'filter-active' : filterService.getActiveFilter().programmingLanguage === x}" (click)="programmingLanguageClicked(x)">{{x}}</button>
+                <button mat-button *ngFor="let x of sdk.programmingLanguages" [ngClass]="{'filter-active' : filterService.getActiveFilter().programmingLanguages === x}" (click)="programmingLanguageClicked(x)">{{x}}</button>
             </td>
         </ng-container>
       <ng-container matColumnDef="compiler">
@@ -26,26 +26,26 @@
         <ng-container matColumnDef="compilerInputLanguages">
             <th mat-header-cell class="w-100" *matHeaderCellDef>Input Languages</th>
             <td mat-cell *matCellDef="let sdk">
-                <button mat-button *ngFor="let x of sdk.compilerInputLanguages" [ngClass]="{'filter-active' : filterService.getActiveFilter().assemblyLanguage === x}" (click)="compilerInputLanguageClicked(x)">{{x}}</button>
+                <button mat-button *ngFor="let x of sdk.compilerInputLanguages" [ngClass]="{'filter-active' : filterService.getActiveFilter().assemblyLanguages === x}" (click)="compilerInputLanguageClicked(x)">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="compilerOutputLanguages">
             <th mat-header-cell class="w-100" *matHeaderCellDef>Output Languages</th>
             <td mat-cell *matCellDef="let sdk">
-                <button mat-button *ngFor="let x of sdk.compilerOutputLanguages" [ngClass]="{'filter-active' : filterService.getActiveFilter().assemblyLanguage === x}" (click)="compilerOutputLanguageClicked(x)">{{x}}</button>
+                <button mat-button *ngFor="let x of sdk.compilerOutputLanguages" [ngClass]="{'filter-active' : filterService.getActiveFilter().assemblyLanguages === x}" (click)="compilerOutputLanguageClicked(x)">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="compilerOptimizationStrategies">
             <th mat-header-cell class="w-100" *matHeaderCellDef>Optimization Strategies</th>
             <td mat-cell *matCellDef="let sdk">
-                <button mat-button *ngFor="let x of sdk.compilerOptimizationStrategies" [ngClass]="{'filter-active' : filterService.getActiveFilter().optimizationStrategy === x}" (click)="compilerOptimizationStrategyClicked(x)">{{x}}</button>
+                <button mat-button *ngFor="let x of sdk.compilerOptimizationStrategies" [ngClass]="{'filter-active' : filterService.getActiveFilter().optimizationStrategies === x}">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="supportedQuantumCloudServices">
             <th mat-header-cell class="w-200" *matHeaderCellDef [attr.rowspan]="2">Supported Quantum Cloud Services
             </th>
             <td mat-cell *matCellDef="let sdk">
-                <button mat-button *ngFor="let x of sdk.supportedQuantumCloudServices" [ngClass]="{'filter-active' : filterService.getActiveFilter().quantumCloudService === x}" (click)="supportedQuantumCloudServiceClicked(x)">{{x}}</button>
+                <button mat-button *ngFor="let x of sdk.supportedQuantumCloudServices" [ngClass]="{'filter-active' : filterService.getActiveFilter().quantumCloudServices === x}" (click)="supportedQuantumCloudServiceClicked(x)">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="activeDevelopment">

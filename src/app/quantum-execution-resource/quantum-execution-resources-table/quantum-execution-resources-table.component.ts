@@ -31,18 +31,18 @@ export class QuantumExecutionResourcesTableComponent implements OnInit {
   }
 
   nameClicked(name: string): void {
-    this.filterService.toggleQuantumExecutionResource(name);
+    // this.filterService.toggleQuantumExecutionResource(name);
   }
 
   typeClicked(type: string): void {
-    this.filterService.toggleResourceType(type);
+    // this.filterService.toggleResourceType(type);
   }
 
   computationModelClicked(computationModel: string): void {
-    this.filterService.toggleComputationModel(computationModel);
+    // this.filterService.toggleComputationModel(computationModel);
   }
 
   vendorClicked(vendor: string): void {
-    this.filterService.toggleVendor(vendor);
+    // this.filterService.toggleVendor(vendor);
   }
 }

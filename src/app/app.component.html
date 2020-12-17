@@ -1,19 +1,24 @@
-<h1>Qverview</h1>
-<ul>
-  <li><a href="#sdks">Software Development Kits</a></li>
-  <li><a href="#cqs">Quantum Cloud Services</a></li>
-  <li><a href="#resources">Quantum Execution Resources</a></li>
-  <li><a href="#programming-languages">Programming Languages</a></li>
-  <li><a href="#compilers">Compilers and Transpilers</a></li>
-  <li><a href="#orchestrators">Quantum-Classical Integration</a></li>
-</ul>
 
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <app-filter></app-filter>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <h1>Qverview</h1>
+    <ul>
+      <li><a href="#sdks">Software Development Kits</a></li>
+      <li><a href="#cqs">Quantum Cloud Services</a></li>
+      <li><a href="#resources">Quantum Execution Resources</a></li>
+      <li><a href="#programming-languages">Programming Languages</a></li>
+      <li><a href="#compilers">Compilers and Transpilers</a></li>
+      <li><a href="#orchestrators">Quantum-Classical Integration</a></li>
+    </ul>
+    <app-sdks-table id="sdks"></app-sdks-table>
+    <app-quantum-cloud-services-table id="cqs"></app-quantum-cloud-services-table>
+    <app-quantum-computation-resources-table id="resources"></app-quantum-computation-resources-table>
+    <app-programming-language-table id="programming-languages"></app-programming-language-table>
+    <app-compiler-table id="compilers"></app-compiler-table>
+    <app-orchestrators-table id="orchestrators"></app-orchestrators-table>
+  </mat-sidenav-content>
 
-<app-sdks-table id="sdks"></app-sdks-table>
-<app-quantum-cloud-services-table id="cqs"></app-quantum-cloud-services-table>
-<app-quantum-computation-resources-table id="resources"></app-quantum-computation-resources-table>
-<app-programming-language-table id="programming-languages"></app-programming-language-table>
-<app-compiler-table id="compilers"></app-compiler-table>
-<app-orchestrators-table id="orchestrators"></app-orchestrators-table>
-
-
+</mat-sidenav-container>

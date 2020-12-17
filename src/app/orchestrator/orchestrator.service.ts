@@ -28,23 +28,6 @@ export class OrchestratorService {
   }
 
   isActive(orchestrator: Orchestrator): boolean {
-    const filter = this.filterService.getActiveFilter();
-    let result = true;
-    if (filter.orchestrator !== '' && filter.orchestrator !== orchestrator.name) {
-      result = false;
-    }
-    if (filter.license !== '' && !orchestrator.licenses.includes(filter.license)) {
-      result = false;
-    }
-    if (filter.programmingLanguage !== '' && !orchestrator.programmingLanguages.includes(filter.programmingLanguage)) {
-      result = false;
-    }
-    if (filter.activeDevelopment !== '' && filter.activeDevelopment !== orchestrator.activeDevelopment) {
-      result = false;
-    }
-    if (filter.productionReady !== '' && filter.productionReady !== orchestrator.productionReady) {
-      result = false;
-    }
-    return result;
+    return true;
   }
 }

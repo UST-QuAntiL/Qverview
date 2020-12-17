@@ -31,18 +31,18 @@ export class ProgrammingLanguageTableComponent implements OnInit {
   }
 
   nameClicked(name: string): void {
-    this.filterService.toggleProgrammingLanguage(name);
+    // this.filterService.toggleProgrammingLanguage(name);
   }
 
   typeClicked(type: string): void {
-    this.filterService.toggleLanguageType(type);
+    // this.filterService.toggleLanguageType(type);
   }
 
   syntaxImplementationClicked(syntaxImplementation: string): void {
-    this.filterService.toggleSyntaxImplementation(syntaxImplementation);
+    // this.filterService.toggleSyntaxImplementation(syntaxImplementation);
   }
 
   standardizationClicked(standardization: string): void {
-    this.filterService.toggleStandardization(standardization);
+    // this.filterService.toggleStandardization(standardization);
   }
 }

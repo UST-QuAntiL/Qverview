@@ -1,6 +1,6 @@
 export interface QuantumExecutionResource {
     name: string;
-    type: string;
+    executionType: string;
     computationModel: string;
     vendor: string;
 }

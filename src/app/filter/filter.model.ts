@@ -1,32 +1,30 @@
 export interface Filter {
-
   orchestrator: string;
   productionReady: string;
 
-  license: string;
+  licenses: string[];
   activeDevelopment: string;
 
-  programmingLanguage: string;
+  programmingLanguages: string[];
   languageType: string;
   syntaxImplementation: string;
   standardization: string;
 
   compiler: string;
-  inputLanguage: string;
-  outputLanguage: string;
-  optimizationStrategy: string;
+  inputLanguages: string[];
+  outputLanguages: string[];
+  optimizationStrategies: string[];
 
-  sdk: string;
+  sdks: string[];
   localSimulator: string;
 
-  quantumCloudService: string;
-  accessMethod: string;
-  serviceModel: string;
-  resource: string;
-  assemblyLanguage: string;
+  quantumCloudServices: string[];
+  accessMethods: string[];
+  serviceModels: string[];
+  assemblyLanguages: string[];
 
-  quantumExecutionResource: string;
-  resourceType: string;
-  computationModel: string;
-  vendor: string;
+  quantumExecutionResources: string[];
+  executionTypes: string;
+  computationModels: string[];
+  vendors: string[];
 }

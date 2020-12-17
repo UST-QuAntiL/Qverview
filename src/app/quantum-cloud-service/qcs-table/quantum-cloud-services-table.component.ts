@@ -33,22 +33,22 @@ export class QuantumCloudServicesTableComponent implements OnInit {
   }
 
   nameClicked(name: string): void {
-    this.filterService.toggleQuantumCloudService(name);
+    // this.filterService.toggleQuantumCloudService(name);
   }
 
   accessMethodClicked(accessMethod: string): void {
-    this.filterService.toggleAccessMethod(accessMethod);
+    // this.filterService.toggleAccessMethod(accessMethod);
   }
 
   serviceModelClicked(serviceModel: string): void {
-    this.filterService.toggleServiceModel(serviceModel);
+    // this.filterService.toggleServiceModel(serviceModel);
   }
 
   resourceClicked(resource: string): void {
-    this.filterService.toggleQuantumExecutionResource(resource);
+    // this.filterService.toggleQuantumExecutionResource(resource);
   }
 
   assemblyLanguageClicked(assemblyLanguage: string): void {
-    this.filterService.toggleAssemblyLanguage(assemblyLanguage);
+    // this.filterService.toggleAssemblyLanguage(assemblyLanguage);
   }
 }

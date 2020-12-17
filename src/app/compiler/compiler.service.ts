@@ -30,17 +30,6 @@ export class CompilerService {
   }
 
   private isActive(compiler: Compiler): boolean {
-    const filter = this.filterService.getActiveFilter();
-    let result = true;
-    if (filter.compiler !== '' && compiler.name !== filter.compiler) {
-      result = false;
-    }
-    if (filter.assemblyLanguage !== '' && !compiler.inputLanguages.includes(filter.assemblyLanguage) && !compiler.outputLanguages.includes(filter.assemblyLanguage)) {
-      result = false;
-    }
-    if (filter.optimizationStrategy !== '' && !compiler.optimizationStrategies.includes(filter.optimizationStrategy)) {
-      result = false;
-    }
-    return result;
+    return true;
   }
 }
