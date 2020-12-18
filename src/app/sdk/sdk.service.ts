@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { Sdk } from './sdk.model';
 // @ts-ignore
 import softwareDevelopmentKitsJson from '../../../data/SoftwareDevelopmentKits.json';
-import { FilterService } from '../filter/filter.service';
-import { Filter } from '../filter/filter.model';
+import { SdkFilterModel } from '../filter/sdkFilter.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,27 +11,26 @@ export class SdkService {
 
   sdks: Sdk[] = softwareDevelopmentKitsJson;
 
-  constructor(private filterService: FilterService) {
+  constructor() {
   }
 
   getAllSdks(): Sdk[] {
     return this.sdks;
   }
 
-  getActiveSdks(): Sdk[] {
-    const activeSdks: Sdk[] = [];
-    for (const sdk of this.sdks) {
-      if (this.isActive(sdk)) {
-        activeSdks.push(sdk);
+  getFilteredSdks(sdkFilter: SdkFilterModel): Sdk[] {
+    const result: Sdk[] = [];
+    for (const x of this.getAllSdks()) {
+      if (this.isActive(x, sdkFilter)) {
+        result.push(x);
       }
     }
-    return activeSdks;
+    return result;
   }
 
-  isActive(sdk: Sdk): boolean {
-    const filter: Filter = this.filterService.getActiveFilter();
+  isActive(sdk: Sdk, filter: SdkFilterModel): boolean {
     let result = true;
-    if (filter.sdks.length > 0 && !filter.sdks.includes(sdk.name)) {
+    if (filter.names.length > 0 && !filter.names.includes(sdk.name)) {
       result = false;
     }
     if (!this.supportsOneOf(filter.licenses, sdk.licenses)) {
@@ -41,23 +39,30 @@ export class SdkService {
     if (!this.supportsOneOf(filter.programmingLanguages, sdk.programmingLanguages)) {
       result = false;
     }
-    if (!this.supportsOneOf(filter.inputLanguages, sdk.compilerInputLanguages)) {
+    if (!this.supportsOneOf(filter.compilerInputLanguages, sdk.compilerInputLanguages)) {
       result = false;
     }
-    if (!this.supportsOneOf(filter.outputLanguages, sdk.compilerOutputLanguages)) {
+    if (!this.supportsOneOf(filter.compilerOutputLanguages, sdk.compilerOutputLanguages)) {
       result = false;
     }
-    if (!this.supportsOneOf(filter.optimizationStrategies, sdk.compilerOptimizationStrategies)) {
+    if (!this.supportsOneOf(filter.compilerOptimizationStrategies, sdk.compilerOptimizationStrategies)) {
       result = false;
     }
-    if (!this.supportsOneOf(filter.quantumCloudServices, sdk.supportedQuantumCloudServices)) {
+    if (filter.activeDevelopment !== '' && filter.activeDevelopment !== sdk.activeDevelopment) {
       result = false;
     }
+    if (!this.supportsOneOf(filter.supportedQuantumCloudServices, sdk.supportedQuantumCloudServices)) {
+      result = false;
+    }
+    if (filter.localSimulator !== '' && filter.localSimulator !== sdk.localSimulator) {
+      result = false;
+    }
+
     return result;
   }
 
   private supportsOneOf(filter: string[], obj: string[]): boolean {
-    if (filter.length === 0) {
+    if (filter == null || filter.length === 0) {
       return true;
     }
     for (const x of filter) {

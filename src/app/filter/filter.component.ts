@@ -4,6 +4,10 @@ import { FilterService } from './filter.service';
 import { QuantumExecutionResourceService } from '../quantum-execution-resource/quantum-execution-resource.service';
 import { QcsService } from '../quantum-cloud-service/qcs.service';
 import { MatCheckboxChange } from '@angular/material/checkbox';
+import { Sdk } from '../sdk/sdk.model';
+import { SdkFilterModel } from './sdkFilter.model';
+import { QcsFilterModel } from './QcsFilter.model';
+import { QuantumCloudService } from '../quantum-cloud-service/quantum-cloud-service.model';
 
 @Component({
   selector: 'app-filter',
@@ -44,7 +48,8 @@ export class FilterComponent implements OnInit {
   vendors: string[] = [];
   selectedVendors: string[] = [];
 
-  constructor(private filterService: FilterService, private sdkService: SdkService, private qcsService: QcsService, private qerService: QuantumExecutionResourceService) {
+  constructor(private filterService: FilterService, private sdkService: SdkService, private qcsService: QcsService,
+              private qerService: QuantumExecutionResourceService) {
   }
 
   ngOnInit(): void {
@@ -94,85 +99,78 @@ export class FilterComponent implements OnInit {
     });
   }
 
-  changeSdkSelection(): void {
-    this.filterService.setSdkFilter(this.selectedSdks);
-  }
+  changeSomething(): void {
+    const sdkFilter: SdkFilterModel = {
+      names: this.selectedSdks,
+      licenses: this.selectedLicenses,
+      programmingLanguages: this.selectedProgrammingLanguages,
+      compilerInputLanguages: this.selectedInputLanguages,
+      compilerOutputLanguages: this.selectedOutputLanguages,
+      compilerOptimizationStrategies: this.selectedOptimizationStrategies,
+      activeDevelopment: '',
+      supportedQuantumCloudServices: [],
+      localSimulator: '',
+    };
+    let filteredSdks: Sdk[] = this.sdkService.getFilteredSdks(sdkFilter);
 
-  changeLicenseSelection(): void {
-    this.filterService.setLicenseFilter(this.selectedLicenses);
-  }
-
-  changeProgrammingLanguageSelection(): void {
-    this.filterService.setProgrammingLanguageFilter(this.selectedProgrammingLanguages);
-  }
-
-  changeInputLanguages(): void {
-    this.filterService.setInputLanguageFilter(this.selectedInputLanguages);
-  }
-
-  changeOutputLanguages(): void {
-    this.filterService.setOutputLanguageFilter(this.selectedOutputLanguages);
-  }
-
-  changeOptimizationStrategySelection(): void {
-    this.filterService.setOptimizationStrategyFilter(this.selectedOptimizationStrategies);
-  }
-
-  changeQuantumCloudServiceSelection(): void {
-    this.filterService.setQcsFilter(this.selectedQuantumCloudServices);
-  }
-
-  changeAccessMethodSelection(): void {
-    this.filterService.setAccessMethodFilter(this.selectedAccessMethods);
-    this.crossTable();
-  }
-
-  changeServiceModelSelection(): void {
-    this.filterService.setServiceModelFilter(this.selectedServiceModels);
-  }
-
-  changeAssemblyLanguageSelection(): void {
-    this.filterService.setAssemblyLanguageFilter(this.selectedAssemblyLanguages);
-  }
-
-  changeQerSelection(): void {
-    this.filterService.setQerFilter(this.selectedQuantumExecutionResources);
-  }
-
-  changeExecutionTypeSelection(): void {
-    this.filterService.setExecutionTypeFilter(this.selectedExecutionType);
-  }
-
-  changeComputationModelSelection(): void {
-    this.filterService.setComputationModelFilter(this.selectedComputationModels);
-  }
-
-  changeVendorSelection(): void {
-    this.filterService.setVendorFilter(this.selectedVendors);
-  }
-
-  crossTable(): void {
+    const qcsFilter: QcsFilterModel = {
+      names: this.selectedQuantumCloudServices,
+      accessMethods: this.selectedAccessMethods,
+      serviceModels: this.selectedServiceModels,
+      resources: [],
+      assemblyLanguages: this.selectedAssemblyLanguages,
+    };
+    let filteredQcs: QuantumCloudService[] = this.qcsService.getFilteredQcs(qcsFilter);
     if (this.sdkCrossTableQcs) {
-      const allActiveQcsFromSdk: string[] = [];
-      this.sdkService.getActiveSdks().forEach(value => {
-        value.supportedQuantumCloudServices.forEach(qcs => {
-          if (!allActiveQcsFromSdk.includes(qcs)) {
-            allActiveQcsFromSdk.push(qcs);
-          }
-        });
-      });
-      console.log(allActiveQcsFromSdk);
 
-      console.log(this.qcsService.getNamesOfActiveQuantumExecutionResource());
+      let hasChanged = true;
+      while (hasChanged) {
+        const oldSdks = filteredSdks.length;
+        const oldQcs = filteredQcs.length;
 
-      const filteredArray = allActiveQcsFromSdk.filter(value => this.qcsService.getNamesOfActiveQuantumExecutionResource().includes(value));
-      console.log(filteredArray);
-      this.selectedQuantumCloudServices = filteredArray;
+        filteredQcs = filteredQcs.filter(value => this.qcsIsSupportedBySdks(filteredSdks, value));
+        filteredSdks = filteredSdks.filter(value => this.sdkIsSupportedByQcs(filteredQcs, value));
+
+        hasChanged = (oldSdks !== filteredSdks.length || oldQcs !== filteredQcs.length);
+      }
+
     }
-    this.changeQuantumCloudServiceSelection();
+
+    this.filterService.setSdkFilter(filteredSdks);
+    this.filterService.setQcsFilter(filteredQcs);
   }
 
   changeCrossTable($event: MatCheckboxChange): void {
     this.sdkCrossTableQcs = $event.checked;
+    this.changeSomething();
+  }
+
+  private qcsIsSupportedBySdks(sdks: Sdk[], quantumCloudService: QuantumCloudService): boolean {
+    const allSupportedQcs: string[] = [];
+    sdks.forEach(sdk => {
+      sdk.supportedQuantumCloudServices.forEach(value => {
+        if (!allSupportedQcs.includes(value)) {
+          allSupportedQcs.push(value);
+        }
+      });
+    });
+    return allSupportedQcs.includes(quantumCloudService.name);
+  }
+
+  private sdkIsSupportedByQcs(qcss: QuantumCloudService[], sdk: Sdk): boolean {
+    const namesOfAllActiveCloudServices: string[] = [];
+    qcss.forEach(qcs => {
+      if (!namesOfAllActiveCloudServices.includes(qcs.name)) {
+        namesOfAllActiveCloudServices.push(qcs.name);
+      }
+    });
+
+    let result = false;
+    sdk.supportedQuantumCloudServices.forEach(qcs => {
+      if (namesOfAllActiveCloudServices.includes(qcs)) {
+        result = true;
+      }
+    });
+    return result;
   }
 }

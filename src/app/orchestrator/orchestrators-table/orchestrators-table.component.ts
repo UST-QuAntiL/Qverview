@@ -24,9 +24,6 @@ export class OrchestratorsTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.orchestratorService.getAllOrchestrators());
-    this.filterService.events$.subscribe(filter => {
-      this.dataSource = new MatTableDataSource(this.orchestratorService.getActiveOrchestrators());
-    });
   }
 
 

@@ -8,7 +8,7 @@ import { FilterService } from '../../filter/filter.service';
 @Component({
   selector: 'app-quantum-cloud-services-table',
   templateUrl: './quantum-cloud-services-table.component.html',
-  styleUrls: [  '../../app.component.scss', './quantum-cloud-services-table.component.scss' ]
+  styleUrls: ['../../app.component.scss', './quantum-cloud-services-table.component.scss']
 })
 export class QuantumCloudServicesTableComponent implements OnInit {
 
@@ -22,13 +22,14 @@ export class QuantumCloudServicesTableComponent implements OnInit {
   ];
   private qcsFilter: QuantumCloudService;
 
-  constructor(private qcsService: QcsService, private qerService: QuantumExecutionResourceService, private filterService: FilterService) { }
+  constructor(private qcsService: QcsService, private qerService: QuantumExecutionResourceService, private filterService: FilterService) {
+  }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.qcsService.getAllQuantumExecutionResources());
 
-    this.filterService.events$.subscribe(filter => {
-      this.dataSource = new MatTableDataSource(this.qcsService.getActiveQuantumExecutionResources());
+    this.filterService.qcsFilterEvent$.subscribe(filter => {
+      this.dataSource = filter;
     });
   }
 

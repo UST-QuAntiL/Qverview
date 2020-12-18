@@ -1,119 +1,32 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { Filter } from './filter.model';
+import { Sdk } from '../sdk/sdk.model';
+import { QuantumCloudService } from '../quantum-cloud-service/quantum-cloud-service.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilterService {
 
-  private subject = new Subject<Filter>();
-  private filter: Filter = {
-    orchestrator: '',
-    productionReady: '',
-    licenses: [],
-    activeDevelopment: '',
-    programmingLanguages: [],
-    languageType: '',
-    syntaxImplementation: '',
-    standardization: '',
-    compiler: '',
-    inputLanguages: [],
-    outputLanguages: [],
-    optimizationStrategies: [],
-    sdks: [],
-    localSimulator: '',
-    quantumCloudServices: [],
-    accessMethods: [],
-    serviceModels: [],
-    assemblyLanguages: [],
-    quantumExecutionResources: [],
-    executionTypes: '',
-    computationModels: [],
-    vendors: []
-  };
+  private sdkFilterSubject = new Subject<Sdk[]>();
+  private qcsFilterSubject = new Subject<QuantumCloudService[]>();
 
   constructor() {
   }
 
-  updateFilter(): void {
-    this.subject.next(this.filter);
+  get sdkFilterEvent$(): Observable<Sdk[]> {
+    return this.sdkFilterSubject.asObservable();
   }
 
-  get events$(): Observable<Filter> {
-    return this.subject.asObservable();
+  setSdkFilter(sdkFilterModel: Sdk[]): void {
+    this.sdkFilterSubject.next(sdkFilterModel);
   }
 
-  getActiveFilter(): Filter {
-    return this.filter;
+  get qcsFilterEvent$(): Observable<QuantumCloudService[]> {
+    return this.qcsFilterSubject.asObservable();
   }
 
-  setSdkFilter(sdks: string[]): void {
-    this.filter.sdks = sdks;
-    this.updateFilter();
-  }
-
-  setLicenseFilter(selectedLicenses: string[]): void {
-    this.filter.licenses = selectedLicenses;
-    this.updateFilter();
-  }
-
-  setProgrammingLanguageFilter(programmingLanguages: string[]): void {
-    this.filter.programmingLanguages = programmingLanguages;
-    this.updateFilter();
-  }
-
-  setOutputLanguageFilter(outputLanguages: string[]): void {
-    this.filter.outputLanguages = outputLanguages;
-    this.updateFilter();
-  }
-
-  setInputLanguageFilter(inputLanguages: string[]): void {
-    this.filter.inputLanguages = inputLanguages;
-    this.updateFilter();
-  }
-
-  setOptimizationStrategyFilter(selectedOptimizationStrategies: string[]): void {
-    this.filter.optimizationStrategies = selectedOptimizationStrategies;
-    this.updateFilter();
-  }
-
-  setQcsFilter(selectedQuantumCloudServices: string[]): void {
-    this.filter.quantumCloudServices = selectedQuantumCloudServices;
-    this.updateFilter();
-  }
-
-  setAccessMethodFilter(accessMethods: string[]): void {
-    this.filter.accessMethods = accessMethods;
-    this.updateFilter();
-  }
-
-  setServiceModelFilter(serviceModels: string[]): void {
-    this.filter.serviceModels = serviceModels;
-    this.updateFilter();
-  }
-
-  setAssemblyLanguageFilter(assemblyLanguages: string[]): void {
-    this.filter.assemblyLanguages = assemblyLanguages;
-    this.updateFilter();
-  }
-
-  setQerFilter(quantumExecutionResources: string[]): void {
-    this.filter.quantumExecutionResources = quantumExecutionResources;
-    this.updateFilter();
-  }
-
-  setExecutionTypeFilter(executionType: string): void {
-    this.filter.executionTypes = executionType;
-  }
-
-  setComputationModelFilter(computationModels: string[]): void {
-    this.filter.computationModels = computationModels;
-    this.updateFilter();
-  }
-
-  setVendorFilter(vendors: string[]): void {
-    this.filter.vendors = vendors;
-    this.updateFilter();
+  setQcsFilter(filteredQcs: QuantumCloudService[]): void {
+    this.qcsFilterSubject.next(filteredQcs);
   }
 }

@@ -18,8 +18,8 @@ export class SdksTableComponent implements OnInit {
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.sdkService.getAllSdks());
 
-    this.filterService.events$.subscribe(filter => {
-      this.dataSource = new MatTableDataSource(this.sdkService.getActiveSdks());
+    this.filterService.sdkFilterEvent$.subscribe(filter => {
+      this.dataSource = new MatTableDataSource(filter);
     });
   }
 

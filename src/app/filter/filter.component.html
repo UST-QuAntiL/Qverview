@@ -4,42 +4,42 @@
   <form>
     <mat-form-field>
       <mat-label>SDKs</mat-label>
-      <mat-select [(value)]="selectedSdks" (selectionChange)="changeSdkSelection()" multiple>
+      <mat-select [(value)]="selectedSdks" (selectionChange)="changeSomething()" multiple>
         <mat-option *ngFor="let sdk of sdks" [value]="sdk">{{sdk}}</mat-option>
       </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field>
       <mat-label>License</mat-label>
-      <mat-select [(value)]="selectedLicenses" (selectionChange)="changeLicenseSelection()" multiple>
+      <mat-select [(value)]="selectedLicenses" (selectionChange)="changeSomething()" multiple>
         <mat-option *ngFor="let license of licenses" [value]="license">{{license}}</mat-option>
       </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field>
       <mat-label>Programming Language</mat-label>
-      <mat-select [(value)]="selectedProgrammingLanguages" (selectionChange)="changeProgrammingLanguageSelection()" multiple>
+      <mat-select [(value)]="selectedProgrammingLanguages" (selectionChange)="changeSomething()" multiple>
         <mat-option *ngFor="let language of programmingLanguages" [value]="language">{{language}}</mat-option>
       </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field>
       <mat-label>Input Languages</mat-label>
-      <mat-select [(value)]="selectedInputLanguages" (selectionChange)="changeInputLanguages()" multiple>
+      <mat-select [(value)]="selectedInputLanguages" (selectionChange)="changeSomething()" multiple>
         <mat-option *ngFor="let language of inputLanguages" [value]="language">{{language}}</mat-option>
       </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field>
       <mat-label>Output Languages</mat-label>
-      <mat-select [(value)]="selectedOutputLanguages" (selectionChange)="changeOutputLanguages()" multiple>
+      <mat-select [(value)]="selectedOutputLanguages" (selectionChange)="changeSomething()" multiple>
         <mat-option *ngFor="let language of outputLanguages" [value]="language">{{language}}</mat-option>
       </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field>
       <mat-label>Optimization Strategy</mat-label>
-      <mat-select [(value)]="selectedOptimizationStrategies" multiple (selectionChange)="changeOptimizationStrategySelection()">
+      <mat-select [(value)]="selectedOptimizationStrategies" multiple (selectionChange)="changeSomething()">
         <mat-option *ngFor="let optimizationStrategy of optimizationStrategies" [value]="optimizationStrategy">{{optimizationStrategy}}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -53,28 +53,28 @@
     <br>
     <mat-form-field>
       <mat-label>Quantum Cloud Services</mat-label>
-      <mat-select [(value)]="selectedQuantumCloudServices" multiple (selectionChange)="changeQuantumCloudServiceSelection()">
+      <mat-select [(value)]="selectedQuantumCloudServices" multiple (selectionChange)="changeSomething()">
         <mat-option *ngFor="let qcs of quantumCloudServices" [value]="qcs">{{qcs}}</mat-option>
       </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field>
       <mat-label>Access Method</mat-label>
-      <mat-select [(value)]="selectedAccessMethods" multiple (selectionChange)="changeAccessMethodSelection()">
+      <mat-select [(value)]="selectedAccessMethods" multiple (selectionChange)="changeSomething()">
         <mat-option *ngFor="let accessMethod of accessMethods" [value]="accessMethod">{{accessMethod}}</mat-option>
       </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field>
       <mat-label>Service Model</mat-label>
-      <mat-select [(value)]="selectedServiceModels" multiple (selectionChange)="changeServiceModelSelection()">
+      <mat-select [(value)]="selectedServiceModels" multiple (selectionChange)="changeSomething()">
         <mat-option *ngFor="let serviceModel of serviceModels" [value]="serviceModel">{{serviceModel}}</mat-option>
       </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field>
       <mat-label>Assembly Language</mat-label>
-      <mat-select [(value)]="selectedAssemblyLanguages" multiple (selectionChange)="changeAssemblyLanguageSelection()">
+      <mat-select [(value)]="selectedAssemblyLanguages" multiple (selectionChange)="changeSomething()">
         <mat-option *ngFor="let assemblyLanguage of assemblyLanguages" [value]="assemblyLanguage">{{assemblyLanguage}}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -84,28 +84,28 @@
   <form>
     <mat-form-field>
       <mat-label>Quantum Execution Resources</mat-label>
-      <mat-select [(value)]="selectedQuantumExecutionResources" multiple (selectionChange)="changeQerSelection()">
+      <mat-select [(value)]="selectedQuantumExecutionResources" multiple (selectionChange)="changeSomething()">
         <mat-option *ngFor="let qer of quantumExecutionResources" [value]="qer">{{qer}}</mat-option>
       </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field>
       <mat-label>Execution Type</mat-label>
-      <mat-select [(value)]="selectedExecutionType" multiple (selectionChange)="changeExecutionTypeSelection()">
+      <mat-select [(value)]="selectedExecutionType" multiple (selectionChange)="changeSomething()">
         <mat-option *ngFor="let executionType of executionTypes" [value]="executionType">{{executionType}}</mat-option>
       </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field>
       <mat-label>Computation Model</mat-label>
-      <mat-select [(value)]="selectedComputationModels" multiple (selectionChange)="changeComputationModelSelection()">
+      <mat-select [(value)]="selectedComputationModels" multiple (selectionChange)="changeSomething()">
         <mat-option *ngFor="let computationModel of computationModels" [value]="computationModel">{{computationModel}}</mat-option>
       </mat-select>
     </mat-form-field>
     <br>
     <mat-form-field>
       <mat-label>Vendor</mat-label>
-      <mat-select [(value)]="selectedVendors" multiple (selectionChange)="changeVendorSelection()">
+      <mat-select [(value)]="selectedVendors" multiple (selectionChange)="changeSomething()">
         <mat-option *ngFor="let vendor of vendors" [value]="vendor">{{vendor}}</mat-option>
       </mat-select>
     </mat-form-field>

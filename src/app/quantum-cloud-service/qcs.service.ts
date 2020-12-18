@@ -3,8 +3,10 @@ import { QuantumCloudService } from './quantum-cloud-service.model';
 // @ts-ignore
 import cloudServicesJson from '../../../data/CloudServices.json';
 import { FilterService } from '../filter/filter.service';
-import { Filter } from '../filter/filter.model';
 import { SdkService } from '../sdk/sdk.service';
+import { QcsFilterModel } from '../filter/QcsFilter.model';
+import { Sdk } from '../sdk/sdk.model';
+import { SdkFilterModel } from '../filter/sdkFilter.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,44 +22,37 @@ export class QcsService {
     return this.qcs;
   }
 
-  getActiveQuantumExecutionResources(): QuantumCloudService[] {
+  getFilteredQcs(filter: QcsFilterModel): QuantumCloudService[] {
     const result: QuantumCloudService[] = [];
     for (const x of this.getAllQuantumExecutionResources()) {
-      if (this.isActive(x)) {
+      if (this.isActive(x, filter)) {
         result.push(x);
       }
     }
     return result;
   }
 
-  getNamesOfActiveQuantumExecutionResource(): string[] {
-    const result: string[] = [];
-    for (const x of this.getActiveQuantumExecutionResources()) {
-      result.push(x.name);
-    }
-    return result;
-  }
-
-  private isActive(qcs: QuantumCloudService): boolean {
-    const filter: Filter = this.filterService.getActiveFilter();
-    let result = true;
-    if (filter.quantumCloudServices.length > 0 && !filter.quantumCloudServices.includes(qcs.name)) {
-      result = false;
+  isActive(qcs: QuantumCloudService, filter: QcsFilterModel): boolean {
+    if (filter.names.length > 0 && !filter.names.includes(qcs.name)) {
+      return false;
     }
     if (!this.supportsOneOf(filter.accessMethods, qcs.accessMethods)) {
-      result = false;
+      return false;
     }
     if (filter.serviceModels.length > 0 && !filter.serviceModels.includes(qcs.serviceModel)) {
-      result = false;
+      return false;
+    }
+    if (!this.supportsOneOf(filter.resources, qcs.resources)) {
+      return false;
     }
     if (!this.supportsOneOf(filter.assemblyLanguages, qcs.assemblyLanguages)) {
-      result = false;
+      return false;
     }
-    return result;
+    return true;
   }
 
   private supportsOneOf(filter: string[], obj: string[]): boolean {
-    if (filter.length === 0) {
+    if (filter == null || filter.length === 0) {
       return true;
     }
     for (const x of filter) {

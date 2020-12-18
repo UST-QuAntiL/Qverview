@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Orchestrator } from './orchestrator.model';
 // @ts-ignore
 import orchestratorsJson from '../../../data/Orchestrators.json';
-import { FilterService } from '../filter/filter.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +10,7 @@ export class OrchestratorService {
 
   orchestrators: Orchestrator[] = orchestratorsJson;
 
-  constructor(private filterService: FilterService) { }
+  constructor() { }
 
   getAllOrchestrators(): Orchestrator[] {
     return this.orchestrators;
