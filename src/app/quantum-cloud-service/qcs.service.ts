@@ -4,9 +4,7 @@ import { QuantumCloudService } from './quantum-cloud-service.model';
 import cloudServicesJson from '../../../data/CloudServices.json';
 import { FilterService } from '../filter/filter.service';
 import { SdkService } from '../sdk/sdk.service';
-import { QcsFilterModel } from '../filter/QcsFilter.model';
-import { Sdk } from '../sdk/sdk.model';
-import { SdkFilterModel } from '../filter/sdkFilter.model';
+import { QcsFilterModel } from '../filter/qcsFilter.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +16,13 @@ export class QcsService {
   constructor(private filterService: FilterService, private sdkService: SdkService) {
   }
 
-  getAllQuantumExecutionResources(): QuantumCloudService[] {
+  getAllQuantumCloudServicesResources(): QuantumCloudService[] {
     return this.qcs;
   }
 
   getFilteredQcs(filter: QcsFilterModel): QuantumCloudService[] {
     const result: QuantumCloudService[] = [];
-    for (const x of this.getAllQuantumExecutionResources()) {
+    for (const x of this.getAllQuantumCloudServicesResources()) {
       if (this.isActive(x, filter)) {
         result.push(x);
       }

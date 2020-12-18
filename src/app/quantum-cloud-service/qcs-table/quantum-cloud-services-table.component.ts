@@ -26,7 +26,7 @@ export class QuantumCloudServicesTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.qcsService.getAllQuantumExecutionResources());
+    this.dataSource = new MatTableDataSource(this.qcsService.getAllQuantumCloudServicesResources());
 
     this.filterService.qcsFilterEvent$.subscribe(filter => {
       this.dataSource = filter;

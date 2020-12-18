@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule} from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { SdksTableComponent } from './sdk/sdks-table/sdks-table.component';
@@ -41,7 +42,8 @@ import { FilterComponent } from './filter/filter.component';
     MatSelectModule,
     ReactiveFormsModule,
     MatCheckboxModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

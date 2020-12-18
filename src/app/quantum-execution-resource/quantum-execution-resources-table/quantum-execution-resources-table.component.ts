@@ -14,7 +14,7 @@ export class QuantumExecutionResourcesTableComponent implements OnInit {
   dataSource;
   displayedColumns = [
     'name',
-    'type',
+    'executionType',
     'computationModel',
     'vendor'
   ];
@@ -24,6 +24,7 @@ export class QuantumExecutionResourcesTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.quantumExecutionResourceService.getAllQuantumExecutionResources());
+    this.filterService.qerFilterEvent$.subscribe(qer => this.dataSource = qer);
   }
 
   nameClicked(name: string): void {

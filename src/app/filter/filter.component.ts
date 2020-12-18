@@ -6,8 +6,10 @@ import { QcsService } from '../quantum-cloud-service/qcs.service';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { Sdk } from '../sdk/sdk.model';
 import { SdkFilterModel } from './sdkFilter.model';
-import { QcsFilterModel } from './QcsFilter.model';
+import { QcsFilterModel } from './qcsFilter.model';
 import { QuantumCloudService } from '../quantum-cloud-service/quantum-cloud-service.model';
+import { QerFilterModel } from './qerFilter.model';
+import { QuantumExecutionResource } from '../quantum-execution-resource/quantum-execution-resource.model';
 
 @Component({
   selector: 'app-filter',
@@ -39,10 +41,11 @@ export class FilterComponent implements OnInit {
   assemblyLanguages: string[] = [];
   selectedAssemblyLanguages: string[] = [];
 
+  qcsCrossTableQer = false;
   quantumExecutionResources: string[] = [];
   selectedQuantumExecutionResources: string[] = [];
   executionTypes: string[] = [];
-  selectedExecutionType = '';
+  selectedExecutionType = [];
   computationModels: string[] = [];
   selectedComputationModels: string[] = [];
   vendors: string[] = [];
@@ -61,7 +64,7 @@ export class FilterComponent implements OnInit {
       this.addAll(sdk.compilerOutputLanguages, this.outputLanguages);
       this.addAll(sdk.compilerOptimizationStrategies, this.optimizationStrategies);
     }
-    for (const qcs of this.qcsService.getAllQuantumExecutionResources()) {
+    for (const qcs of this.qcsService.getAllQuantumCloudServicesResources()) {
       this.quantumCloudServices.push(qcs.name);
       this.addAll(qcs.accessMethods, this.accessMethods);
       if (!this.serviceModels.includes(qcs.serviceModel)) {
@@ -121,28 +124,34 @@ export class FilterComponent implements OnInit {
       assemblyLanguages: this.selectedAssemblyLanguages,
     };
     let filteredQcs: QuantumCloudService[] = this.qcsService.getFilteredQcs(qcsFilter);
-    if (this.sdkCrossTableQcs) {
 
-      let hasChanged = true;
-      while (hasChanged) {
-        const oldSdks = filteredSdks.length;
-        const oldQcs = filteredQcs.length;
+    const qerFilter: QerFilterModel = {
+      names: this.selectedQuantumExecutionResources,
+      executionType: this.selectedExecutionType,
+      computationModels: this.selectedComputationModels,
+      vendors: this.selectedVendors
+    };
+    let filteredQers: QuantumExecutionResource[] = this.qerService.getFilteredQers(qerFilter);
 
+    let hasChanged = true;
+    while (hasChanged) {
+      const oldSdks = filteredSdks.length;
+      const oldQcs = filteredQcs.length;
+      const oldQers = filteredQers.length;
+      if (this.sdkCrossTableQcs) {
         filteredQcs = filteredQcs.filter(value => this.qcsIsSupportedBySdks(filteredSdks, value));
         filteredSdks = filteredSdks.filter(value => this.sdkIsSupportedByQcs(filteredQcs, value));
-
-        hasChanged = (oldSdks !== filteredSdks.length || oldQcs !== filteredQcs.length);
       }
-
+      if (this.qcsCrossTableQer) {
+        filteredQers = filteredQers.filter(value => this.qerIsSupportedByQcs(filteredQcs, value));
+        filteredQcs = filteredQcs.filter(value => this.qcsIsSupportedByQer(filteredQers, value));
+      }
+      hasChanged = (oldSdks !== filteredSdks.length || oldQcs !== filteredQcs.length || oldQers !== filteredQers.length);
     }
 
     this.filterService.setSdkFilter(filteredSdks);
     this.filterService.setQcsFilter(filteredQcs);
-  }
-
-  changeCrossTable($event: MatCheckboxChange): void {
-    this.sdkCrossTableQcs = $event.checked;
-    this.changeSomething();
+    this.filterService.setQerFilter(filteredQers);
   }
 
   private qcsIsSupportedBySdks(sdks: Sdk[], quantumCloudService: QuantumCloudService): boolean {
@@ -172,5 +181,44 @@ export class FilterComponent implements OnInit {
       }
     });
     return result;
+  }
+
+  private qerIsSupportedByQcs(qcss: QuantumCloudService[], qer: QuantumExecutionResource): boolean {
+    const namesOfAllSupportedQers: string[] = [];
+    qcss.forEach(qcs => {
+      qcs.resources.forEach(value => {
+        if (!namesOfAllSupportedQers.includes(value)) {
+          namesOfAllSupportedQers.push(value);
+        }
+      });
+    });
+    return namesOfAllSupportedQers.includes(qer.name);
+  }
+
+  private qcsIsSupportedByQer(qers: QuantumExecutionResource[], qcs: QuantumCloudService): boolean {
+    const namesOfAllActiveQers: string[] = [];
+    qers.forEach(qer => {
+      if (!namesOfAllActiveQers.includes(qer.name)) {
+        namesOfAllActiveQers.push(qer.name);
+      }
+    });
+
+    let result = false;
+    qcs.resources.forEach(qer => {
+      if (namesOfAllActiveQers.includes(qer)) {
+        result = true;
+      }
+    });
+    return result;
+  }
+
+  toggleSdkCrossTableQcs(): void {
+    this.sdkCrossTableQcs = !this.sdkCrossTableQcs;
+    this.changeSomething();
+  }
+
+  toggleQcsCrossTableQer(): void {
+    this.qcsCrossTableQer = !this.qcsCrossTableQer;
+    this.changeSomething();
   }
 }

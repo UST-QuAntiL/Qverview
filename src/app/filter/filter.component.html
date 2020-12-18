@@ -45,12 +45,21 @@
     </mat-form-field>
   </form>
 
+  <div class="interoperability">
+    <div class="lock-button">
+      <button mat-icon-button color="primary" (click)="toggleSdkCrossTableQcs()">
+        <mat-icon *ngIf="sdkCrossTableQcs">sync</mat-icon>
+        <mat-icon class="grey-icon" *ngIf="!sdkCrossTableQcs">sync_disabled</mat-icon>
+      </button>
+    </div>
+    <div class="text">
+      Only show SDK that can be used to access the selected Quantum Cloud Services.
+      And only show Quantum Cloud Services that are supported by the current selection of SDKs.
+    </div>
+  </div>
+
   <h3 class="filter-heading">QCS</h3>
-
   <form>
-
-    <mat-checkbox (change)="changeCrossTable($event)">Only show supported QCS</mat-checkbox>
-    <br>
     <mat-form-field>
       <mat-label>Quantum Cloud Services</mat-label>
       <mat-select [(value)]="selectedQuantumCloudServices" multiple (selectionChange)="changeSomething()">
@@ -79,6 +88,19 @@
       </mat-select>
     </mat-form-field>
   </form>
+
+  <div class="interoperability">
+    <div class="lock-button">
+      <button mat-icon-button color="primary" (click)="toggleQcsCrossTableQer()">
+        <mat-icon *ngIf="qcsCrossTableQer">sync</mat-icon>
+        <mat-icon class="grey-icon" *ngIf="!qcsCrossTableQer">sync_disabled</mat-icon>
+      </button>
+    </div>
+    <div class="text">
+      Only show Quantum Cloud Services that provide Access to the selected Quantum Execution Resources.
+      And only show Quantum Execution Resources that are supported by the current selection of Quantum Cloud Services.
+    </div>
+  </div>
 
   <h3 class="filter-heading">Execution Resources</h3>
   <form>

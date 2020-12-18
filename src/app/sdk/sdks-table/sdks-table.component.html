@@ -4,19 +4,19 @@
         <ng-container matColumnDef="name">
             <th mat-header-cell class="w-150" *matHeaderCellDef [attr.rowspan]="2">Name</th>
             <td mat-cell *matCellDef="let sdk">
-              <button mat-button>{{sdk.name}}</button>
+              <button class="button-in-table" mat-button>{{sdk.name}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="licenses">
             <th mat-header-cell class="w-100" *matHeaderCellDef [attr.rowspan]="2">Licenses</th>
             <td mat-cell *matCellDef="let sdk">
-                <button mat-button *ngFor="let x of sdk.licenses" (click)="licensesClicked(x)">{{x}}</button>
+                <button class="button-in-table" mat-button *ngFor="let x of sdk.licenses" (click)="licensesClicked(x)">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="programmingLanguages">
             <th mat-header-cell class="w-100" *matHeaderCellDef [attr.rowspan]="2">Programming Languages</th>
             <td mat-cell *matCellDef="let sdk">
-                <button mat-button *ngFor="let x of sdk.programmingLanguages" (click)="programmingLanguageClicked(x)">{{x}}</button>
+                <button class="button-in-table" mat-button *ngFor="let x of sdk.programmingLanguages" (click)="programmingLanguageClicked(x)">{{x}}</button>
             </td>
         </ng-container>
       <ng-container matColumnDef="compiler">
@@ -26,38 +26,38 @@
         <ng-container matColumnDef="compilerInputLanguages">
             <th mat-header-cell class="w-100" *matHeaderCellDef>Input Languages</th>
             <td mat-cell *matCellDef="let sdk">
-                <button mat-button *ngFor="let x of sdk.compilerInputLanguages" (click)="compilerInputLanguageClicked(x)">{{x}}</button>
+                <button class="button-in-table" mat-button *ngFor="let x of sdk.compilerInputLanguages" (click)="compilerInputLanguageClicked(x)">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="compilerOutputLanguages">
             <th mat-header-cell class="w-100" *matHeaderCellDef>Output Languages</th>
             <td mat-cell *matCellDef="let sdk">
-                <button mat-button *ngFor="let x of sdk.compilerOutputLanguages" (click)="compilerOutputLanguageClicked(x)">{{x}}</button>
+                <button class="button-in-table" mat-button *ngFor="let x of sdk.compilerOutputLanguages" (click)="compilerOutputLanguageClicked(x)">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="compilerOptimizationStrategies">
             <th mat-header-cell class="w-100" *matHeaderCellDef>Optimization Strategies</th>
             <td mat-cell *matCellDef="let sdk">
-                <button mat-button *ngFor="let x of sdk.compilerOptimizationStrategies">{{x}}</button>
+                <button class="button-in-table" mat-button *ngFor="let x of sdk.compilerOptimizationStrategies">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="supportedQuantumCloudServices">
             <th mat-header-cell class="w-200" *matHeaderCellDef [attr.rowspan]="2">Supported Quantum Cloud Services
             </th>
             <td mat-cell *matCellDef="let sdk">
-                <button mat-button *ngFor="let x of sdk.supportedQuantumCloudServices" (click)="supportedQuantumCloudServiceClicked(x)">{{x}}</button>
+                <button class="button-in-table" mat-button *ngFor="let x of sdk.supportedQuantumCloudServices" (click)="supportedQuantumCloudServiceClicked(x)">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="activeDevelopment">
           <th mat-header-cell class="w-75" *matHeaderCellDef [attr.rowspan]="2">Active Development</th>
           <td mat-cell *matCellDef="let sdk">
-            <button mat-button (click)="activeDevelopmentClicked(sdk.activeDevelopment)">{{sdk.activeDevelopment}}</button>
+            <button class="button-in-table" mat-button (click)="activeDevelopmentClicked(sdk.activeDevelopment)">{{sdk.activeDevelopment}}</button>
           </td>
         </ng-container>
         <ng-container matColumnDef="localSimulator">
             <th mat-header-cell class="w-75" *matHeaderCellDef [attr.rowspan]="2">Local Simulator</th>
             <td mat-cell *matCellDef="let sdk">
-                <button mat-button (click)="localSimulatorClicked(sdk.localSimulator)">{{sdk.localSimulator}}</button>
+                <button class="button-in-table" mat-button (click)="localSimulatorClicked(sdk.localSimulator)">{{sdk.localSimulator}}</button>
             </td>
         </ng-container>
 

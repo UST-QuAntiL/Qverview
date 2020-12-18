@@ -4,7 +4,7 @@
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef>Name</th>
             <td mat-cell *matCellDef="let qcs">
-              <button mat-button (click)="nameClicked(qcs.name)">
+              <button mat-button class="button-in-table" (click)="nameClicked(qcs.name)">
                 {{qcs.name}}
               </button>
             </td>
@@ -12,25 +12,25 @@
         <ng-container matColumnDef="accessMethods">
             <th mat-header-cell *matHeaderCellDef>Access Methods</th>
             <td mat-cell *matCellDef="let qcs">
-                <button mat-button *ngFor="let x of qcs.accessMethods"  (click)="accessMethodClicked(x)">{{x}}</button>
+                <button mat-button class="button-in-table" *ngFor="let x of qcs.accessMethods"  (click)="accessMethodClicked(x)">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="serviceModel">
             <th mat-header-cell *matHeaderCellDef>Service Model</th>
             <td mat-cell *matCellDef="let qcs">
-                <button mat-button  (click)="serviceModelClicked(qcs.serviceModel)">{{qcs.serviceModel}}</button>
+                <button mat-button class="button-in-table" (click)="serviceModelClicked(qcs.serviceModel)">{{qcs.serviceModel}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="resources">
             <th mat-header-cell *matHeaderCellDef>Resources</th>
             <td mat-cell *matCellDef="let qcs">
-                <button mat-button *ngFor="let x of qcs.resources"  (click)="resourceClicked(x)">{{x}}</button>
+                <button mat-button class="button-in-table" *ngFor="let x of qcs.resources"  (click)="resourceClicked(x)">{{x}}</button>
             </td>
         </ng-container>
         <ng-container matColumnDef="assemblyLanguages">
             <th mat-header-cell *matHeaderCellDef>Assembly Language</th>
             <td mat-cell *matCellDef="let qcs">
-                <button mat-button *ngFor="let x of qcs.assemblyLanguages" (click)="assemblyLanguageClicked(x)">{{x}}</button>
+                <button mat-button class="button-in-table" *ngFor="let x of qcs.assemblyLanguages" (click)="assemblyLanguageClicked(x)">{{x}}</button>
             </td>
         </ng-container>
 
