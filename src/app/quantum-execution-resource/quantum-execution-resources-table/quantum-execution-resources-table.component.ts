@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { QuantumExecutionResourceService } from '../quantum-execution-resource.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { QuantumExecutionResource } from '../quantum-execution-resource.model';
 import { FilterService } from '../../filter/filter.service';
 
 @Component({
   selector: 'app-quantum-computation-resources-table',
   templateUrl: './quantum-execution-resources-table.component.html',
-  styleUrls: [  '../../app.component.scss', './quantum-execution-resources-table.component.scss' ]
+  styleUrls: ['../../app.component.scss', './quantum-execution-resources-table.component.scss']
 })
 export class QuantumExecutionResourcesTableComponent implements OnInit {
 
@@ -18,9 +17,9 @@ export class QuantumExecutionResourcesTableComponent implements OnInit {
     'computationModel',
     'vendor'
   ];
-  private qerFilter: QuantumExecutionResource;
 
-  constructor(private quantumExecutionResourceService: QuantumExecutionResourceService, private filterService: FilterService) {}
+  constructor(private quantumExecutionResourceService: QuantumExecutionResourceService, private filterService: FilterService) {
+  }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.quantumExecutionResourceService.getAllQuantumExecutionResources());

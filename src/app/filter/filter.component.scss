@@ -2,7 +2,7 @@
   color: dimgrey;
 }
 
-.mat-icon {
+.bigger {
   transform: scale(2);
 }
 
@@ -11,10 +11,26 @@
 }
 
 .interoperability {
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 200px;
+}
+
+.filter-heading {
+  font-size: large;
 }
 
 .text {
   width: 200px;
   font-size: x-small;
+}
+
+#filter-wrapper {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+mat-form-field {
+  height: 10px;
 }

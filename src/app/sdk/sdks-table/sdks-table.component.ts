@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { SdkService } from '../sdk.service';
 import { FilterService } from '../../filter/filter.service';
+import { Sdk } from '../sdk.model';
 
 @Component({
   selector: 'app-sdks-table',
@@ -11,12 +12,13 @@ import { FilterService } from '../../filter/filter.service';
 export class SdksTableComponent implements OnInit {
 
   dataSource;
+  // @ViewChild('sdkPaginator') paginator: MatPaginator;
 
   constructor(private sdkService: SdkService, private filterService: FilterService) {
   }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.sdkService.getAllSdks());
+    this.dataSource = new MatTableDataSource<Sdk>(this.sdkService.getAllSdks());
 
     this.filterService.sdkFilterEvent$.subscribe(filter => {
       this.dataSource = new MatTableDataSource(filter);

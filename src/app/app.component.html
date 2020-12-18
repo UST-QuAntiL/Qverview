@@ -1,18 +1,23 @@
+<p>
+  <mat-toolbar id="main-toolbar" color="primary">
+    <span>Qverview</span>
+  </mat-toolbar>
+</p>
 
-<mat-sidenav-container>
-  <mat-sidenav #drawer mode="side" opened>
+
+<mat-sidenav-container id="main">
+  <mat-sidenav [disableClose]="true" mode="side" opened>
     <app-filter></app-filter>
   </mat-sidenav>
   <mat-sidenav-content>
-    <button [ngClass]="{'hide': drawer.opened}" class="mat-raised-button mat-primary" (click)="drawer.toggle()">
-      Filter
-    </button>
-    <app-sdks-table id="sdks"></app-sdks-table>
-    <app-quantum-cloud-services-table id="cqs"></app-quantum-cloud-services-table>
-    <app-quantum-computation-resources-table id="resources"></app-quantum-computation-resources-table>
-    <app-programming-language-table id="programming-languages"></app-programming-language-table>
-    <app-compiler-table id="compilers"></app-compiler-table>
-    <app-orchestrators-table id="orchestrators"></app-orchestrators-table>
+    <div id="tables-wrapper">
+      <app-sdks-table class="" id="sdks"></app-sdks-table>
+      <app-quantum-cloud-services-table id="cqs"></app-quantum-cloud-services-table>
+      <app-quantum-computation-resources-table id="resources"></app-quantum-computation-resources-table>
+      <app-programming-language-table id="programming-languages"></app-programming-language-table>
+      <app-compiler-table id="compilers"></app-compiler-table>
+      <app-orchestrators-table id="orchestrators"></app-orchestrators-table>
+    </div>
   </mat-sidenav-content>
 
 

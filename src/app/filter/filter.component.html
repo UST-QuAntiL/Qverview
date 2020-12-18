@@ -1,6 +1,6 @@
 <div id="filter-wrapper">
-  <h2>Filter</h2>
-  <h3 class="filter-heading">SDKs</h3>
+  <h1>Filter</h1>
+  <span class="filter-heading">SDKs</span>
   <form>
     <mat-form-field>
       <mat-label>SDKs</mat-label>
@@ -48,8 +48,8 @@
   <div class="interoperability">
     <div class="lock-button">
       <button mat-icon-button color="primary" (click)="toggleSdkCrossTableQcs()">
-        <mat-icon *ngIf="sdkCrossTableQcs">sync</mat-icon>
-        <mat-icon class="grey-icon" *ngIf="!sdkCrossTableQcs">sync_disabled</mat-icon>
+        <mat-icon class="bigger" *ngIf="sdkCrossTableQcs">sync</mat-icon>
+        <mat-icon class="grey-icon bigger" *ngIf="!sdkCrossTableQcs">sync_disabled</mat-icon>
       </button>
     </div>
     <div class="text">
@@ -58,7 +58,7 @@
     </div>
   </div>
 
-  <h3 class="filter-heading">QCS</h3>
+  <span class="filter-heading">QCS</span>
   <form>
     <mat-form-field>
       <mat-label>Quantum Cloud Services</mat-label>
@@ -92,8 +92,8 @@
   <div class="interoperability">
     <div class="lock-button">
       <button mat-icon-button color="primary" (click)="toggleQcsCrossTableQer()">
-        <mat-icon *ngIf="qcsCrossTableQer">sync</mat-icon>
-        <mat-icon class="grey-icon" *ngIf="!qcsCrossTableQer">sync_disabled</mat-icon>
+        <mat-icon class="bigger" *ngIf="qcsCrossTableQer">sync</mat-icon>
+        <mat-icon class="grey-icon bigger" *ngIf="!qcsCrossTableQer">sync_disabled</mat-icon>
       </button>
     </div>
     <div class="text">
@@ -102,7 +102,7 @@
     </div>
   </div>
 
-  <h3 class="filter-heading">Execution Resources</h3>
+  <span class="filter-heading">Execution Resources</span>
   <form>
     <mat-form-field>
       <mat-label>Quantum Execution Resources</mat-label>
