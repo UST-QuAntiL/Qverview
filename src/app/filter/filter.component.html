@@ -1,6 +1,15 @@
 <div id="filter-wrapper">
-  <h1>Filter</h1>
-  <span class="filter-heading">SDKs</span>
+  <div id="filter-title-wrapper">
+    <div>
+      <span id="filter-title">Filter</span>
+    </div>
+    <div>
+      <button mat-mini-fab color="primary" class="clear-button" (click)="clearAll()">
+        <mat-icon class="clear-button-icon">delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <span class="filter-heading-text">SDKs</span>
   <form>
     <mat-form-field>
       <mat-label>SDKs</mat-label>
@@ -40,7 +49,8 @@
     <mat-form-field>
       <mat-label>Optimization Strategy</mat-label>
       <mat-select [(value)]="selectedOptimizationStrategies" multiple (selectionChange)="changeSomething()">
-        <mat-option *ngFor="let optimizationStrategy of optimizationStrategies" [value]="optimizationStrategy">{{optimizationStrategy}}</mat-option>
+        <mat-option *ngFor="let optimizationStrategy of optimizationStrategies"
+                    [value]="optimizationStrategy">{{optimizationStrategy}}</mat-option>
       </mat-select>
     </mat-form-field>
   </form>
@@ -58,7 +68,7 @@
     </div>
   </div>
 
-  <span class="filter-heading">QCS</span>
+  <span class="filter-heading-text">QCS</span>
   <form>
     <mat-form-field>
       <mat-label>Quantum Cloud Services</mat-label>
@@ -84,7 +94,8 @@
     <mat-form-field>
       <mat-label>Assembly Language</mat-label>
       <mat-select [(value)]="selectedAssemblyLanguages" multiple (selectionChange)="changeSomething()">
-        <mat-option *ngFor="let assemblyLanguage of assemblyLanguages" [value]="assemblyLanguage">{{assemblyLanguage}}</mat-option>
+        <mat-option *ngFor="let assemblyLanguage of assemblyLanguages"
+                    [value]="assemblyLanguage">{{assemblyLanguage}}</mat-option>
       </mat-select>
     </mat-form-field>
   </form>
@@ -102,7 +113,7 @@
     </div>
   </div>
 
-  <span class="filter-heading">Execution Resources</span>
+  <span class="filter-heading-text">Execution Resources</span>
   <form>
     <mat-form-field>
       <mat-label>Quantum Execution Resources</mat-label>
@@ -121,7 +132,8 @@
     <mat-form-field>
       <mat-label>Computation Model</mat-label>
       <mat-select [(value)]="selectedComputationModels" multiple (selectionChange)="changeSomething()">
-        <mat-option *ngFor="let computationModel of computationModels" [value]="computationModel">{{computationModel}}</mat-option>
+        <mat-option *ngFor="let computationModel of computationModels"
+                    [value]="computationModel">{{computationModel}}</mat-option>
       </mat-select>
     </mat-form-field>
     <br>

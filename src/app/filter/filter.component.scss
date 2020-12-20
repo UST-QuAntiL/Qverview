@@ -16,8 +16,19 @@
   width: 200px;
 }
 
-.filter-heading {
+.filter-heading-text {
   font-size: large;
+}
+
+#filter-title {
+  font-size: x-large;
+}
+
+#filter-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 .text {
@@ -30,7 +41,10 @@
   margin-left: 20px;
   margin-right: 20px;
 }
+mat-form-field { /* Changes the input styling to just about nothing so that button styling can take over */
+  font-size: 12px;
+}
 
-mat-form-field {
-  height: 10px;
+.clear-button {
+  transform: scale(0.8);
 }

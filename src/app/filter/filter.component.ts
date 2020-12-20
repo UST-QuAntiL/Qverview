@@ -18,38 +18,38 @@ import { QuantumExecutionResource } from '../quantum-execution-resource/quantum-
 })
 export class FilterComponent implements OnInit {
 
-  sdks: string[] = [];
-  selectedSdks: string[] = [];
-  licenses: string[] = [];
-  selectedLicenses: any;
-  programmingLanguages: string[] = [];
-  selectedProgrammingLanguages: string[] = [];
-  inputLanguages: string[] = [];
-  selectedInputLanguages: string[] = [];
-  outputLanguages: string[] = [];
-  selectedOutputLanguages: string[] = [];
-  optimizationStrategies: string[] = [];
-  selectedOptimizationStrategies: string[] = [];
+  sdks = [];
+  selectedSdks = [];
+  licenses = [];
+  selectedLicenses: any = [];
+  programmingLanguages = [];
+  selectedProgrammingLanguages = [];
+  inputLanguages = [];
+  selectedInputLanguages = [];
+  outputLanguages = [];
+  selectedOutputLanguages = [];
+  optimizationStrategies = [];
+  selectedOptimizationStrategies = [];
 
   sdkCrossTableQcs = false;
-  quantumCloudServices: string[] = [];
-  selectedQuantumCloudServices: string[] = [];
-  accessMethods: string[] = [];
-  selectedAccessMethods: string[] = [];
-  serviceModels: string[] = [];
-  selectedServiceModels: string[] = [];
-  assemblyLanguages: string[] = [];
-  selectedAssemblyLanguages: string[] = [];
+  quantumCloudServices = [];
+  selectedQuantumCloudServices = [];
+  accessMethods = [];
+  selectedAccessMethods = [];
+  serviceModels = [];
+  selectedServiceModels = [];
+  assemblyLanguages = [];
+  selectedAssemblyLanguages = [];
 
   qcsCrossTableQer = false;
-  quantumExecutionResources: string[] = [];
-  selectedQuantumExecutionResources: string[] = [];
-  executionTypes: string[] = [];
+  quantumExecutionResources = [];
+  selectedQuantumExecutionResources = [];
+  executionTypes = [];
   selectedExecutionType = [];
-  computationModels: string[] = [];
-  selectedComputationModels: string[] = [];
-  vendors: string[] = [];
-  selectedVendors: string[] = [];
+  computationModels = [];
+  selectedComputationModels = [];
+  vendors = [];
+  selectedVendors = [];
 
   constructor(private filterService: FilterService, private sdkService: SdkService, private qcsService: QcsService,
               private qerService: QuantumExecutionResourceService) {
@@ -94,7 +94,7 @@ export class FilterComponent implements OnInit {
     this.quantumCloudServices.sort();
   }
 
-  addAll(source: string[], target: string[]): void {
+  addAll(source, target): void {
     source.forEach(x => {
       if (!target.includes(x)) {
         target.push(x);
@@ -155,7 +155,7 @@ export class FilterComponent implements OnInit {
   }
 
   private qcsIsSupportedBySdks(sdks: Sdk[], quantumCloudService: QuantumCloudService): boolean {
-    const allSupportedQcs: string[] = [];
+    const allSupportedQcs = [];
     sdks.forEach(sdk => {
       sdk.supportedQuantumCloudServices.forEach(value => {
         if (!allSupportedQcs.includes(value)) {
@@ -167,7 +167,7 @@ export class FilterComponent implements OnInit {
   }
 
   private sdkIsSupportedByQcs(qcss: QuantumCloudService[], sdk: Sdk): boolean {
-    const namesOfAllActiveCloudServices: string[] = [];
+    const namesOfAllActiveCloudServices = [];
     qcss.forEach(qcs => {
       if (!namesOfAllActiveCloudServices.includes(qcs.name)) {
         namesOfAllActiveCloudServices.push(qcs.name);
@@ -184,7 +184,7 @@ export class FilterComponent implements OnInit {
   }
 
   private qerIsSupportedByQcs(qcss: QuantumCloudService[], qer: QuantumExecutionResource): boolean {
-    const namesOfAllSupportedQers: string[] = [];
+    const namesOfAllSupportedQers = [];
     qcss.forEach(qcs => {
       qcs.resources.forEach(value => {
         if (!namesOfAllSupportedQers.includes(value)) {
@@ -196,7 +196,7 @@ export class FilterComponent implements OnInit {
   }
 
   private qcsIsSupportedByQer(qers: QuantumExecutionResource[], qcs: QuantumCloudService): boolean {
-    const namesOfAllActiveQers: string[] = [];
+    const namesOfAllActiveQers = [];
     qers.forEach(qer => {
       if (!namesOfAllActiveQers.includes(qer.name)) {
         namesOfAllActiveQers.push(qer.name);
@@ -219,6 +219,25 @@ export class FilterComponent implements OnInit {
 
   toggleQcsCrossTableQer(): void {
     this.qcsCrossTableQer = !this.qcsCrossTableQer;
+    this.changeSomething();
+  }
+
+  clearAll(): void {
+    this.selectedSdks = [];
+    this.selectedLicenses = [];
+    this.selectedProgrammingLanguages = [];
+    this.selectedInputLanguages = [];
+    this.selectedOutputLanguages = [];
+    this.selectedOptimizationStrategies = [];
+    this.selectedQuantumCloudServices = [];
+    this.selectedAccessMethods = [];
+    this.selectedServiceModels = [];
+    this.selectedAssemblyLanguages = [];
+    this.selectedQuantumExecutionResources = [];
+    this.selectedExecutionType = [];
+    this.selectedComputationModels = [];
+    this.selectedVendors = [];
+
     this.changeSomething();
   }
 }
