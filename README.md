@@ -3,7 +3,6 @@ A running instance of Qverview can be found at: [https://ust-quantil.github.io/Q
 
 # Qverview
 Qverview is a comparison framework for various technologies in the area of quantum application development.
-supports a multi-criteria cross-category analysis of current technologies for quantum application development.
 It provides an overview of technologies, enables filtering, comparison and analysis of technologies, and enables to identify interoperabilities between different kinds of technologies.
 
 ## Data
