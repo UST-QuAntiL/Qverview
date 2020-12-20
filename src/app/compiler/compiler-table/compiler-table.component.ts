@@ -22,5 +22,6 @@ export class CompilerTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.compilerService.getAllCompilers());
+    this.filterService.searchEvent$.subscribe(value => this.dataSource.filter = value);
   }
 }

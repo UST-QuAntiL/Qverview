@@ -24,6 +24,7 @@ export class ProgrammingLanguageTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.programmingLanguageService.getProgrammingLanguages());
+    this.filterService.searchEvent$.subscribe(value => this.dataSource.filter = value);
   }
 
   nameClicked(name: string): void {
