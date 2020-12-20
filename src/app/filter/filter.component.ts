@@ -62,7 +62,6 @@ export class FilterComponent implements OnInit {
   vendors = [];
   selectedVendors = [];
 
-
   sdkPanelOpened = true;
 
   ngOnInit(): void {
@@ -309,5 +308,10 @@ export class FilterComponent implements OnInit {
   clearVendor(): void {
     this.selectedVendors = [];
     this.updateView();
+  }
+
+  searchAll(event: KeyboardEvent):void {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.filterService.search(filterValue.trim().toLowerCase());
   }
 }

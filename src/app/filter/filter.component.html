@@ -1,6 +1,13 @@
 <div id="filter-wrapper">
-  <div>
-    <span class="filter-title">Interoperability</span>
+  <div class="filter-title">
+    <mat-form-field id="search">
+      <mat-label>Search all</mat-label>
+      <input matInput (keyup)="searchAll($event)" placeholder="Search" #input>
+    </mat-form-field>
+  </div>
+
+  <div class="filter-title">
+    Interoperability
   </div>
   <mat-card>
     <div id="interoperability">
@@ -13,8 +20,8 @@
   </mat-card>
 
   <div id="filter-title-wrapper">
-    <div>
-      <span class="filter-title">Filter</span>
+    <div class="filter-title">
+      Filter
     </div>
     <div>
       <button mat-button id="clear-all" (click)="clearAll()">
@@ -27,7 +34,7 @@
     <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Software Development Kit (SDK)
+          Software Development Kit
         </mat-panel-title>
       </mat-expansion-panel-header>
 
@@ -104,7 +111,7 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Quantum Cloud Service (QCS)
+          Quantum Cloud Service
         </mat-panel-title>
       </mat-expansion-panel-header>
       <form>
@@ -161,7 +168,7 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Quantum Execution Resource (QER)
+          Quantum Execution Resource
         </mat-panel-title>
       </mat-expansion-panel-header>
       <form>

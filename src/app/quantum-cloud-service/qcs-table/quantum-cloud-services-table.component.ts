@@ -29,5 +29,9 @@ export class QuantumCloudServicesTableComponent implements OnInit{
     this.filterService.qcsFilterEvent$.subscribe(filter => {
       this.dataSource = filter;
     });
+
+    this.filterService.searchEvent$.subscribe(value => {
+      this.dataSource.filter = value;
+    });
   }
 }

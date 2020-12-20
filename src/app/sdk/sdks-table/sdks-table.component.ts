@@ -23,6 +23,10 @@ export class SdksTableComponent implements OnInit {
     this.filterService.sdkFilterEvent$.subscribe(filter => {
       this.dataSource = new MatTableDataSource(filter);
     });
+
+    this.filterService.searchEvent$.subscribe(value => {
+      this.dataSource.filter = value;
+    });
   }
 
   licensesClicked(license: string): void {

@@ -14,6 +14,7 @@ export class FilterService {
   private qerFilterSubject = new Subject<QuantumExecutionResource[]>();
   private syncSdkQcsSubject = new Subject<boolean>();
   private syncQcsQerSubject = new Subject<boolean>();
+  private searchSubject = new Subject<string>();
 
   constructor() {
   }
@@ -56,5 +57,13 @@ export class FilterService {
 
   setSyncQcsQer(value: boolean): void {
     this.syncQcsQerSubject.next(value);
+  }
+
+  search(filterValue: string):void {
+    this.searchSubject.next(filterValue);
+  }
+
+  get searchEvent$(): Observable<string> {
+    return this.searchSubject.asObservable();
   }
 }

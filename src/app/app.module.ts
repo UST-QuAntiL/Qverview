@@ -15,6 +15,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule} from '@angular/material/expansion';
 import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { SdksTableComponent } from './sdk/sdks-table/sdks-table.component';
@@ -59,7 +60,8 @@ import { SyncQcsQerButtonComponent } from './filter/sync-qcs-qer-button/sync-qcs
     MatPaginatorModule,
     MatTabsModule,
     MatExpansionModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
