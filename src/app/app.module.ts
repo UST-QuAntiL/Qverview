@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { AppComponent } from './app.component';
 import { SdksTableComponent } from './sdk/sdks-table/sdks-table.component';
@@ -22,6 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProgrammingLanguageTableComponent } from './programming-language/programming-language-table/programming-language-table.component';
 import { CompilerTableComponent } from './compiler/compiler-table/compiler-table.component';
 import { FilterComponent } from './filter/filter.component';
+import { SyncSdkQcsButtonComponent } from './filter/sync-sdk-qcs-button/sync-sdk-qcs-button.component';
+import { SyncQcsQerButtonComponent } from './filter/sync-qcs-qer-button/sync-qcs-qer-button.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { FilterComponent } from './filter/filter.component';
     QuantumExecutionResourcesTableComponent,
     ProgrammingLanguageTableComponent,
     CompilerTableComponent,
-    FilterComponent
+    FilterComponent,
+    SyncSdkQcsButtonComponent,
+    SyncQcsQerButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,8 @@ import { FilterComponent } from './filter/filter.component';
     MatIconModule,
     MatToolbarModule,
     MatDividerModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

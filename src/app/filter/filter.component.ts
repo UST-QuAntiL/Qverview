@@ -3,7 +3,6 @@ import { SdkService } from '../sdk/sdk.service';
 import { FilterService } from './filter.service';
 import { QuantumExecutionResourceService } from '../quantum-execution-resource/quantum-execution-resource.service';
 import { QcsService } from '../quantum-cloud-service/qcs.service';
-import { MatCheckboxChange } from '@angular/material/checkbox';
 import { Sdk } from '../sdk/sdk.model';
 import { SdkFilterModel } from './sdkFilter.model';
 import { QcsFilterModel } from './qcsFilter.model';
@@ -17,6 +16,18 @@ import { QuantumExecutionResource } from '../quantum-execution-resource/quantum-
   styleUrls: ['../app.component.scss', './filter.component.scss']
 })
 export class FilterComponent implements OnInit {
+
+  constructor(private filterService: FilterService, private sdkService: SdkService, private qcsService: QcsService,
+              private qerService: QuantumExecutionResourceService) {
+    this.filterService.syncSdkQcsEvent$.subscribe(value => {
+      this.sdkCrossTableQcs = value;
+      this.changeSomething();
+    });
+    this.filterService.syncQcsQerEvent$.subscribe(value => {
+      this.qcsCrossTableQer = value;
+      this.changeSomething();
+    });
+  }
 
   sdks = [];
   selectedSdks = [];
@@ -50,10 +61,6 @@ export class FilterComponent implements OnInit {
   selectedComputationModels = [];
   vendors = [];
   selectedVendors = [];
-
-  constructor(private filterService: FilterService, private sdkService: SdkService, private qcsService: QcsService,
-              private qerService: QuantumExecutionResourceService) {
-  }
 
   ngOnInit(): void {
     for (const sdk of this.sdkService.getAllSdks()) {
@@ -210,16 +217,6 @@ export class FilterComponent implements OnInit {
       }
     });
     return result;
-  }
-
-  toggleSdkCrossTableQcs(): void {
-    this.sdkCrossTableQcs = !this.sdkCrossTableQcs;
-    this.changeSomething();
-  }
-
-  toggleQcsCrossTableQer(): void {
-    this.qcsCrossTableQer = !this.qcsCrossTableQer;
-    this.changeSomething();
   }
 
   clearAll(): void {

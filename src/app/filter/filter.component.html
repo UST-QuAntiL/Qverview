@@ -57,10 +57,7 @@
 
   <div class="interoperability">
     <div class="lock-button">
-      <button mat-icon-button color="primary" (click)="toggleSdkCrossTableQcs()">
-        <mat-icon class="bigger" *ngIf="sdkCrossTableQcs">sync</mat-icon>
-        <mat-icon class="grey-icon bigger" *ngIf="!sdkCrossTableQcs">sync_disabled</mat-icon>
-      </button>
+    <app-sync-sdk-qcs-button class="vertical"></app-sync-sdk-qcs-button>
     </div>
     <div class="text">
       Only show SDK that can be used to access the selected Quantum Cloud Services.
@@ -102,10 +99,7 @@
 
   <div class="interoperability">
     <div class="lock-button">
-      <button mat-icon-button color="primary" (click)="toggleQcsCrossTableQer()">
-        <mat-icon class="bigger" *ngIf="qcsCrossTableQer">sync</mat-icon>
-        <mat-icon class="grey-icon bigger" *ngIf="!qcsCrossTableQer">sync_disabled</mat-icon>
-      </button>
+      <app-sync-qcs-qer-button class="vertical"></app-sync-qcs-qer-button>
     </div>
     <div class="text">
       Only show Quantum Cloud Services that provide Access to the selected Quantum Execution Resources.

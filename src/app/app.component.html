@@ -10,10 +10,17 @@
     <app-filter></app-filter>
   </mat-sidenav>
   <mat-sidenav-content>
+    <mat-toolbar id="navigation">
+      <a class="navigation-item" href="#sdks">Quantum SDKs</a>
+      <app-sync-sdk-qcs-button style="transform: rotate(90deg)"></app-sync-sdk-qcs-button>
+      <a class="navigation-item" href="#qcs">Quantum Cloud Services</a>
+      <app-sync-qcs-qer-button style="transform: rotate(90deg)"></app-sync-qcs-qer-button>
+      <a class="navigation-item" href="#qer">Quantum Execution Resources</a>
+    </mat-toolbar>
     <div id="tables-wrapper">
-      <app-sdks-table class="" id="sdks"></app-sdks-table>
-      <app-quantum-cloud-services-table id="cqs"></app-quantum-cloud-services-table>
-      <app-quantum-computation-resources-table id="resources"></app-quantum-computation-resources-table>
+      <app-sdks-table id="sdks"></app-sdks-table>
+      <app-quantum-cloud-services-table id="qcs"></app-quantum-cloud-services-table>
+      <app-quantum-computation-resources-table id="qer"></app-quantum-computation-resources-table>
       <app-programming-language-table id="programming-languages"></app-programming-language-table>
       <app-compiler-table id="compilers"></app-compiler-table>
       <app-orchestrators-table id="orchestrators"></app-orchestrators-table>

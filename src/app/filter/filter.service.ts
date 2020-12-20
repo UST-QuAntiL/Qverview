@@ -12,6 +12,8 @@ export class FilterService {
   private sdkFilterSubject = new Subject<Sdk[]>();
   private qcsFilterSubject = new Subject<QuantumCloudService[]>();
   private qerFilterSubject = new Subject<QuantumExecutionResource[]>();
+  private syncSdkQcsSubject = new Subject<boolean>();
+  private syncQcsQerSubject = new Subject<boolean>();
 
   constructor() {
   }
@@ -38,5 +40,21 @@ export class FilterService {
 
   setQerFilter(filteredQers: QuantumExecutionResource[]): void {
     this.qerFilterSubject.next(filteredQers);
+  }
+
+  get syncSdkQcsEvent$(): Observable<boolean> {
+    return this.syncSdkQcsSubject.asObservable();
+  }
+
+  setSyncSdkQcs(value: boolean): void {
+    this.syncSdkQcsSubject.next(value);
+  }
+
+  get syncQcsQerEvent$(): Observable<boolean> {
+    return this.syncQcsQerSubject.asObservable();
+  }
+
+  setSyncQcsQer(value: boolean): void {
+    this.syncQcsQerSubject.next(value);
   }
 }
