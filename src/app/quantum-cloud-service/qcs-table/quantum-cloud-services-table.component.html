@@ -1,39 +1,39 @@
-<div *ngIf="dataSource">
+<div *ngIf="dataSource" class="table-wrapper mat-elevation-z2">
   <table mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Quantum Cloud Services</th>
       <td mat-cell *matCellDef="let qcs">
-        <button mat-button class="button-in-table" (click)="nameClicked(qcs.name)">
+        <div class="element-in-table">
           {{qcs.name}}
-        </button>
+        </div>
       </td>
     </ng-container>
     <ng-container matColumnDef="accessMethods">
       <th mat-header-cell *matHeaderCellDef>Access Methods</th>
       <td mat-cell *matCellDef="let qcs">
-        <button mat-button class="button-in-table" *ngFor="let x of qcs.accessMethods">{{x}}</button>
+        <div class="element-in-table" *ngFor="let x of qcs.accessMethods">{{x}}</div>
       </td>
     </ng-container>
     <ng-container matColumnDef="serviceModel">
       <th mat-header-cell *matHeaderCellDef>Service Model</th>
       <td mat-cell *matCellDef="let qcs">
-        <button mat-button class="button-in-table">{{qcs.serviceModel}}</button>
+        <div class="element-in-table">{{qcs.serviceModel}}</div>
       </td>
     </ng-container>
     <ng-container matColumnDef="resources">
       <th mat-header-cell *matHeaderCellDef>Resources</th>
       <td mat-cell *matCellDef="let qcs">
-        <button mat-button class="button-in-table" *ngFor="let x of qcs.resources">{{x}}</button>
+        <div class="element-in-table" *ngFor="let x of qcs.resources">{{x}}</div>
       </td>
     </ng-container>
     <ng-container matColumnDef="assemblyLanguages">
       <th mat-header-cell *matHeaderCellDef>Assembly Language</th>
       <td mat-cell *matCellDef="let qcs">
-        <button mat-button class="button-in-table" *ngFor="let x of qcs.assemblyLanguages">{{x}}</button>
+        <div class="element-in-table" *ngFor="let x of qcs.assemblyLanguages">{{x}}</div>
       </td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 </div>

@@ -1,39 +1,38 @@
-<h2>Compilers and Transpilers</h2>
-<div *ngIf="dataSource">
+<div *ngIf="dataSource" class="table-wrapper mat-elevation-z2">
   <table mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="name">
-      <th mat-header-cell class="w-150" *matHeaderCellDef [attr.rowspan]="2">Name</th>
+      <th mat-header-cell class="w-150" *matHeaderCellDef [attr.rowspan]="2">Compiler & Transpiler</th>
       <td mat-cell *matCellDef="let compiler">
-        <button mat-button class="button-in-table">{{compiler.name}}</button>
+        <div class="element-in-table">{{compiler.name}}</div>
       </td>
     </ng-container>
     <ng-container matColumnDef="inputLanguages">
       <th mat-header-cell class="w-200" *matHeaderCellDef>Input Languages</th>
       <td mat-cell *matCellDef="let compiler">
-        <button mat-button class="button-in-table" *ngFor="let x of compiler.inputLanguages">
+        <div class="element-in-table" *ngFor="let x of compiler.inputLanguages">
           {{x}}
-        </button>
+        </div>
       </td>
     </ng-container>
     <ng-container matColumnDef="outputLanguages">
       <th mat-header-cell class="w-200" *matHeaderCellDef>Output Languages</th>
       <td mat-cell *matCellDef="let compiler">
-        <button mat-button class="button-in-table" *ngFor="let x of compiler.outputLanguages" >
+        <div class="element-in-table" *ngFor="let x of compiler.outputLanguages" >
           {{x}}
-        </button>
+        </div>
       </td>
     </ng-container>
     <ng-container matColumnDef="optimizationStrategies">
       <th mat-header-cell class="w-150" *matHeaderCellDef>Optimization Strategies</th>
       <td mat-cell *matCellDef="let compiler">
-        <button mat-button class="button-in-table" *ngFor="let x of compiler.optimizationStrategies">
+        <div class="element-in-table" *ngFor="let x of compiler.optimizationStrategies">
           {{x}}
-        </button>
+        </div>
       </td>
     </ng-container>
 
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 </div>

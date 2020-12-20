@@ -12,7 +12,17 @@ import { Sdk } from '../sdk.model';
 export class SdksTableComponent implements OnInit {
 
   dataSource;
-  // @ViewChild('sdkPaginator') paginator: MatPaginator;
+  displayedColumns = [
+    'name',
+    'licenses',
+    'programmingLanguages',
+    'compilerInputLanguages',
+    'compilerOutputLanguages',
+    'compilerOptimizationStrategies',
+    'supportedQuantumCloudServices',
+    'activeDevelopment',
+    'localSimulator'
+  ];
 
   constructor(private sdkService: SdkService, private filterService: FilterService) {
   }
