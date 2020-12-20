@@ -43,18 +43,6 @@ button.button-in-table {
 }
 
 table {
+  margin-top: 20px;
   width: 100%;
-}
-
-
-#navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
-a.navigation-item {
-  color: black;
-  text-decoration: none;
 }

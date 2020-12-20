@@ -21,11 +21,11 @@ export class FilterComponent implements OnInit {
               private qerService: QuantumExecutionResourceService) {
     this.filterService.syncSdkQcsEvent$.subscribe(value => {
       this.sdkCrossTableQcs = value;
-      this.changeSomething();
+      this.updateView();
     });
     this.filterService.syncQcsQerEvent$.subscribe(value => {
       this.qcsCrossTableQer = value;
-      this.changeSomething();
+      this.updateView();
     });
   }
 
@@ -61,6 +61,9 @@ export class FilterComponent implements OnInit {
   selectedComputationModels = [];
   vendors = [];
   selectedVendors = [];
+
+
+  sdkPanelOpened = true;
 
   ngOnInit(): void {
     for (const sdk of this.sdkService.getAllSdks()) {
@@ -109,7 +112,7 @@ export class FilterComponent implements OnInit {
     });
   }
 
-  changeSomething(): void {
+  updateView(): void {
     const sdkFilter: SdkFilterModel = {
       names: this.selectedSdks,
       licenses: this.selectedLicenses,
@@ -235,6 +238,76 @@ export class FilterComponent implements OnInit {
     this.selectedComputationModels = [];
     this.selectedVendors = [];
 
-    this.changeSomething();
+    this.updateView();
+  }
+
+  clearSdks(): void {
+    this.selectedSdks = [];
+    this.updateView();
+  }
+
+  clearLicenses(): void {
+    this.selectedLicenses = [];
+    this.updateView();
+  }
+
+  clearProgrammingLanguages(): void {
+    this.selectedProgrammingLanguages = [];
+    this.updateView();
+  }
+
+  clearInputLanguages(): void {
+    this.selectedInputLanguages = [];
+    this.updateView();
+  }
+
+  clearOutputLanguages(): void {
+    this.selectedOutputLanguages = [];
+    this.updateView();
+  }
+
+  clearOptimizationStrategies(): void {
+    this.selectedOptimizationStrategies = [];
+    this.updateView();
+  }
+
+  clearQcs(): void {
+    this.selectedQuantumCloudServices = [];
+    this.updateView();
+  }
+
+  clearAccessMethods(): void {
+    this.selectedAccessMethods = [];
+    this.updateView();
+  }
+
+  clearServiceModels(): void {
+    this.selectedServiceModels = [];
+    this.updateView();
+  }
+
+  clearAssemlbyLanguages(): void {
+    this.selectedAssemblyLanguages = [];
+    this.updateView();
+  }
+
+  clearQer(): void {
+    this.selectedQuantumExecutionResources = [];
+    this.updateView();
+  }
+
+  clearExecutionType(): void {
+    this.selectedExecutionType = [];
+    this.updateView();
+  }
+
+  clearComputationModel(): void {
+    this.selectedComputationModels = [];
+    this.updateView();
+  }
+
+  clearVendor(): void {
+    this.selectedVendors = [];
+    this.updateView();
   }
 }

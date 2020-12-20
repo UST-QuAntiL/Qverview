@@ -1,32 +1,25 @@
-
-
-.lock-button {
-  text-align: center;
-}
-
-.interoperability {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 200px;
-}
-
-.filter-heading-text {
-  font-size: large;
-}
-
-#filter-title {
-  font-size: x-large;
-}
-
-#filter-title-wrapper {
+#interoperability {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  //margin-top: 10px;
+  //margin-bottom: 10px;
+  //width: 200px;
 }
 
-.text {
-  width: 200px;
-  font-size: x-small;
+.filter-heading-text {
+  font-size: medium;
+}
+
+.filter-title {
+  font-size: large;
+}
+
+#filter-title-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #filter-wrapper {
@@ -34,10 +27,7 @@
   margin-left: 20px;
   margin-right: 20px;
 }
-mat-form-field { /* Changes the input styling to just about nothing so that button styling can take over */
-  font-size: 12px;
-}
 
-.clear-button {
-  margin-right: 20px;
+.smaller {
+  transform: scale(0.7);
 }

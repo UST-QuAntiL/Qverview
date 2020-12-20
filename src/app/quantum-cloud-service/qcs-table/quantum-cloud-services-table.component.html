@@ -1,8 +1,7 @@
-<h2>Quantum Cloud Services</h2>
 <div *ngIf="dataSource">
   <table mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <th mat-header-cell *matHeaderCellDef>Quantum Cloud Services</th>
       <td mat-cell *matCellDef="let qcs">
         <button mat-button class="button-in-table" (click)="nameClicked(qcs.name)">
           {{qcs.name}}

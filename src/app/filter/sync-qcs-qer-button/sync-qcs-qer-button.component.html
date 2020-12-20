@@ -1,4 +1,4 @@
 <button mat-icon-button color="primary" (click)="toggleQcsCrossTableQer()">
-  <mat-icon class="bigger" *ngIf="qcsCrossTableQer">sync</mat-icon>
-  <mat-icon class="grey-icon bigger" *ngIf="!qcsCrossTableQer">sync_disabled</mat-icon>
+  <mat-icon *ngIf="qcsCrossTableQer">sync</mat-icon>
+  <mat-icon class="grey-icon" *ngIf="!qcsCrossTableQer">sync_disabled</mat-icon>
 </button>

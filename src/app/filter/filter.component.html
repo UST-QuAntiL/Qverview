@@ -1,142 +1,218 @@
 <div id="filter-wrapper">
+  <div>
+    <span class="filter-title">Interoperability</span>
+  </div>
+  <mat-card>
+    <div id="interoperability">
+      <span>SDK</span>
+      <app-sync-sdk-qcs-button></app-sync-sdk-qcs-button>
+      <span>QCS</span>
+      <app-sync-qcs-qer-button></app-sync-qcs-qer-button>
+      <span>QER</span>
+    </div>
+  </mat-card>
+
   <div id="filter-title-wrapper">
     <div>
-      <span id="filter-title">Filter</span>
+      <span class="filter-title">Filter</span>
     </div>
     <div>
-      <button mat-icon-button class="clear-button" (click)="clearAll()">
-        <mat-icon class="clear-button-icon">backspace</mat-icon>
-        <span> clear</span>
+      <button mat-button id="clear-all" (click)="clearAll()">
+        <span>clear all</span>
       </button>
     </div>
   </div>
-  <span class="filter-heading-text">SDKs</span>
-  <form>
-    <mat-form-field>
-      <mat-label>SDKs</mat-label>
-      <mat-select [(value)]="selectedSdks" (selectionChange)="changeSomething()" multiple>
-        <mat-option *ngFor="let sdk of sdks" [value]="sdk">{{sdk}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>License</mat-label>
-      <mat-select [(value)]="selectedLicenses" (selectionChange)="changeSomething()" multiple>
-        <mat-option *ngFor="let license of licenses" [value]="license">{{license}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>Programming Language</mat-label>
-      <mat-select [(value)]="selectedProgrammingLanguages" (selectionChange)="changeSomething()" multiple>
-        <mat-option *ngFor="let language of programmingLanguages" [value]="language">{{language}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>Input Languages</mat-label>
-      <mat-select [(value)]="selectedInputLanguages" (selectionChange)="changeSomething()" multiple>
-        <mat-option *ngFor="let language of inputLanguages" [value]="language">{{language}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>Output Languages</mat-label>
-      <mat-select [(value)]="selectedOutputLanguages" (selectionChange)="changeSomething()" multiple>
-        <mat-option *ngFor="let language of outputLanguages" [value]="language">{{language}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>Optimization Strategy</mat-label>
-      <mat-select [(value)]="selectedOptimizationStrategies" multiple (selectionChange)="changeSomething()">
-        <mat-option *ngFor="let optimizationStrategy of optimizationStrategies"
-                    [value]="optimizationStrategy">{{optimizationStrategy}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </form>
 
-  <div class="interoperability">
-    <div class="lock-button">
-    <app-sync-sdk-qcs-button class="vertical"></app-sync-sdk-qcs-button>
-    </div>
-    <div class="text">
-      Only show SDK that can be used to access the selected Quantum Cloud Services.
-      And only show Quantum Cloud Services that are supported by the current selection of SDKs.
-    </div>
-  </div>
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Software Development Kit (SDK)
+        </mat-panel-title>
+      </mat-expansion-panel-header>
 
-  <span class="filter-heading-text">QCS</span>
-  <form>
-    <mat-form-field>
-      <mat-label>Quantum Cloud Services</mat-label>
-      <mat-select [(value)]="selectedQuantumCloudServices" multiple (selectionChange)="changeSomething()">
-        <mat-option *ngFor="let qcs of quantumCloudServices" [value]="qcs">{{qcs}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>Access Method</mat-label>
-      <mat-select [(value)]="selectedAccessMethods" multiple (selectionChange)="changeSomething()">
-        <mat-option *ngFor="let accessMethod of accessMethods" [value]="accessMethod">{{accessMethod}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>Service Model</mat-label>
-      <mat-select [(value)]="selectedServiceModels" multiple (selectionChange)="changeSomething()">
-        <mat-option *ngFor="let serviceModel of serviceModels" [value]="serviceModel">{{serviceModel}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>Assembly Language</mat-label>
-      <mat-select [(value)]="selectedAssemblyLanguages" multiple (selectionChange)="changeSomething()">
-        <mat-option *ngFor="let assemblyLanguage of assemblyLanguages"
-                    [value]="assemblyLanguage">{{assemblyLanguage}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </form>
+      <form>
+        <mat-form-field>
+          <mat-label>SDKs</mat-label>
+          <mat-select [(value)]="selectedSdks" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let sdk of sdks" [value]="sdk">{{sdk}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearSdks()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
 
-  <div class="interoperability">
-    <div class="lock-button">
-      <app-sync-qcs-qer-button class="vertical"></app-sync-qcs-qer-button>
-    </div>
-    <div class="text">
-      Only show Quantum Cloud Services that provide Access to the selected Quantum Execution Resources.
-      And only show Quantum Execution Resources that are supported by the current selection of Quantum Cloud Services.
-    </div>
-  </div>
+        <mat-form-field>
+          <mat-label>License</mat-label>
+          <mat-select [(value)]="selectedLicenses" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let license of licenses" [value]="license">{{license}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearLicenses()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
 
-  <span class="filter-heading-text">Execution Resources</span>
-  <form>
-    <mat-form-field>
-      <mat-label>Quantum Execution Resources</mat-label>
-      <mat-select [(value)]="selectedQuantumExecutionResources" multiple (selectionChange)="changeSomething()">
-        <mat-option *ngFor="let qer of quantumExecutionResources" [value]="qer">{{qer}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>Execution Type</mat-label>
-      <mat-select [(value)]="selectedExecutionType" multiple (selectionChange)="changeSomething()">
-        <mat-option *ngFor="let executionType of executionTypes" [value]="executionType">{{executionType}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>Computation Model</mat-label>
-      <mat-select [(value)]="selectedComputationModels" multiple (selectionChange)="changeSomething()">
-        <mat-option *ngFor="let computationModel of computationModels"
-                    [value]="computationModel">{{computationModel}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-      <mat-label>Vendor</mat-label>
-      <mat-select [(value)]="selectedVendors" multiple (selectionChange)="changeSomething()">
-        <mat-option *ngFor="let vendor of vendors" [value]="vendor">{{vendor}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </form>
+        <mat-form-field>
+          <mat-label>Programming Language</mat-label>
+          <mat-select [(value)]="selectedProgrammingLanguages" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let language of programmingLanguages" [value]="language">{{language}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearProgrammingLanguages()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Input Languages</mat-label>
+          <mat-select [(value)]="selectedInputLanguages" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let language of inputLanguages" [value]="language">{{language}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearInputLanguages()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Output Languages</mat-label>
+          <mat-select [(value)]="selectedOutputLanguages" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let language of outputLanguages" [value]="language">{{language}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearOutputLanguages()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Optimization Strategy</mat-label>
+          <mat-select [(value)]="selectedOptimizationStrategies" multiple (selectionChange)="updateView()">
+            <mat-option *ngFor="let optimizationStrategy of optimizationStrategies"
+                        [value]="optimizationStrategy">{{optimizationStrategy}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearOptimizationStrategies()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+      </form>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Quantum Cloud Service (QCS)
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <form>
+        <mat-form-field>
+          <mat-label>Quantum Cloud Services</mat-label>
+          <mat-select [(value)]="selectedQuantumCloudServices" multiple (selectionChange)="updateView()">
+            <mat-option *ngFor="let qcs of quantumCloudServices" [value]="qcs">{{qcs}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearQcs()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+
+        <mat-form-field>
+          <mat-label>Access Method</mat-label>
+          <mat-select [(value)]="selectedAccessMethods" multiple (selectionChange)="updateView()">
+            <mat-option *ngFor="let accessMethod of accessMethods" [value]="accessMethod">{{accessMethod}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearAccessMethods()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+
+        <mat-form-field>
+          <mat-label>Service Model</mat-label>
+          <mat-select [(value)]="selectedServiceModels" multiple (selectionChange)="updateView()">
+            <mat-option *ngFor="let serviceModel of serviceModels" [value]="serviceModel">{{serviceModel}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearServiceModels()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+
+        <mat-form-field>
+          <mat-label>Assembly Language</mat-label>
+          <mat-select [(value)]="selectedAssemblyLanguages" multiple (selectionChange)="updateView()">
+            <mat-option *ngFor="let assemblyLanguage of assemblyLanguages"
+                        [value]="assemblyLanguage">{{assemblyLanguage}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearAssemlbyLanguages()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+      </form>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Quantum Execution Resource (QER)
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <form>
+        <mat-form-field>
+          <mat-label>Quantum Execution Resources</mat-label>
+          <mat-select [(value)]="selectedQuantumExecutionResources" multiple (selectionChange)="updateView()">
+            <mat-option *ngFor="let qer of quantumExecutionResources" [value]="qer">{{qer}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearQer()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+
+        <mat-form-field>
+          <mat-label>Execution Type</mat-label>
+          <mat-select [(value)]="selectedExecutionType" multiple (selectionChange)="updateView()">
+            <mat-option *ngFor="let executionType of executionTypes"
+                        [value]="executionType">{{executionType}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearExecutionType()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+
+        <mat-form-field>
+          <mat-label>Computation Model</mat-label>
+          <mat-select [(value)]="selectedComputationModels" multiple (selectionChange)="updateView()">
+            <mat-option *ngFor="let computationModel of computationModels"
+                        [value]="computationModel">{{computationModel}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearComputationModel()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+
+        <mat-form-field>
+          <mat-label>Vendor</mat-label>
+          <mat-select [(value)]="selectedVendors" multiple (selectionChange)="updateView()">
+            <mat-option *ngFor="let vendor of vendors" [value]="vendor">{{vendor}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearVendor()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+      </form>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>

@@ -1,8 +1,7 @@
-<h2>Quantum Execution Resources</h2>
 <div *ngIf="dataSource">
   <table mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <th mat-header-cell *matHeaderCellDef>Quantum Execution Resources</th>
       <td mat-cell *matCellDef="let qer">
         <button mat-button class="button-in-table" class="button-in-table" (click)="nameClicked(qer.name)">
           {{qer.name}}

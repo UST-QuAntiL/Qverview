@@ -1,8 +1,7 @@
-<h2>Quantum Software Development Kits</h2>
 <div *ngIf="dataSource">
     <table mat-table [dataSource]="dataSource">
         <ng-container matColumnDef="name">
-            <th mat-header-cell class="w-150" *matHeaderCellDef [attr.rowspan]="2">Name</th>
+            <th mat-header-cell class="w-150" *matHeaderCellDef [attr.rowspan]="2">Software Development Kits</th>
             <td mat-cell *matCellDef="let sdk">
               <button class="button-in-table" mat-button>{{sdk.name}}</button>
             </td>
