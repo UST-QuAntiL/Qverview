@@ -32,42 +32,42 @@
     "accessMethods": ["SDK", "GUI", "CLI"],
     "serviceModel": "QCaaS",
     "resources": ["Honeywell", "IonQ", "Microsoft"],
-    "assemblyLanguages": []
+    "assemblyLanguages": ["N/A"]
   },
   {
     "name": "Honeywell Quantum Systems",
-    "accessMethods": [],
+    "accessMethods": ["REST"],
     "serviceModel": "QCaaS",
     "resources": ["Honeywell"],
-    "assemblyLanguages": []
+    "assemblyLanguages": ["OpenQASM"]
   },
   {
     "name": "Rigetti QCS",
     "accessMethods": ["GUI", "SDK", "CLI"],
     "serviceModel": "QCaaS",
     "resources": ["Rigetti Aspen-8"],
-    "assemblyLanguages": []
+    "assemblyLanguages": ["N/A"]
   },
   {
     "name": "AQT Cloud",
     "accessMethods": ["SDK (3rd party)", "REST"],
     "serviceModel": "QCaaS",
     "resources": ["AQT Innsbruck", "AQT QASM Simulator", "AQT QASM Simulator Noise"],
-    "assemblyLanguages": []
+    "assemblyLanguages": ["N/A"]
   },
   {
     "name": "1Qloud",
-    "accessMethods": [],
+    "accessMethods": ["N/A"],
     "serviceModel": "QCaaS",
-    "resources": [],
-    "assemblyLanguages": []
+    "resources": ["N/A"],
+    "assemblyLanguages": ["N/A"]
   },
   {
     "name": "QC Ware Forge",
-    "accessMethods": [],
+    "accessMethods": ["N/A"],
     "serviceModel": "QCaaS",
-    "resources": ["TrappedIon?", "Superconducting?", "Annealer?", "GPU Simulator", "CPU Simulator"],
-    "assemblyLanguages": []
+    "resources": ["TrappedIon", "Superconducting", "Annealer", "GPU Simulator", "CPU Simulator"],
+    "assemblyLanguages": ["N/A"]
   },
 
 
@@ -79,13 +79,20 @@
     "accessMethods": ["GUI"],
     "serviceModel": "PaaS/SaaS",
     "resources": ["Rigetti Aspen-8"],
-    "assemblyLanguages": ["N/A"]
+    "assemblyLanguages": ["-"]
   },
   {
     "name": "Quantum Programming Studio",
     "accessMethods": ["GUI", "SDK"],
     "serviceModel": "PaaS/SaaS",
     "resources": ["Simulator"],
-    "assemblyLanguages": ["N/A"]
+    "assemblyLanguages": ["-"]
+  },
+  {
+    "name": "Strangeworks",
+    "accessMethods": ["GUI"],
+    "serviceModel": "PaaS/SaaS",
+    "resources": ["'Qiskit'", "'Q#'", "'Forest'", "'Cirq'", "'Ocean'", "'Pennylane'"],
+    "assemblyLanguages": ["-"]
   }
 ]

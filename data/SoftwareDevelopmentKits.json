@@ -36,8 +36,8 @@
     "name": "Ocean",
     "licenses": ["Apache 2.0"],
     "programmingLanguages": ["Python"],
-    "compilerInputLanguages": ["BQM"],
-    "compilerOutputLanguages": ["BQM"],
+    "compilerInputLanguages": ["BQM", "Ising", "QUBO", "CSP", "DQM"],
+    "compilerOutputLanguages": ["-"],
     "compilerOptimizationStrategies": ["-"],
     "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["D-Wave Leap"],
@@ -103,7 +103,7 @@
     "licenses": ["Non-commercial"],
     "programmingLanguages": ["Python"],
     "compilerInputLanguages": ["OpenQASM", "Quipper"],
-    "compilerOutputLanguages": ["OpenQASM"],
+    "compilerOutputLanguages": ["OpenQASM", "Python+Qiskit", "Python+BraketSDK", "Python+Cirq", "Python+Forest", "Python+Q#"],
     "compilerOptimizationStrategies": ["hardware-independent", "hardware-specific"],
     "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["IBM Quantum", "AQT Cloud", "AWS Braket", "Google Cloud", "Honeywell Quantum Systems", "Rigetti QCS", "Azure Quantum"],
@@ -112,9 +112,9 @@
   {
     "name": "Quantum Development Kit",
     "licenses": ["MIT"],
-    "programmingLanguages": ["Q#"],
+    "programmingLanguages": ["Q#, Python"],
     "compilerInputLanguages": ["Q#", "Python+Q#", "C#+Q#"],
-    "compilerOutputLanguages": ["-"],
+    "compilerOutputLanguages": ["N/A"],
     "compilerOptimizationStrategies": ["N/A"],
     "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["Azure Quantum"],
@@ -125,7 +125,7 @@
     "licenses": ["Apache 2.0"],
     "programmingLanguages": ["Python"],
     "compilerInputLanguages": ["-"],
-    "compilerOutputLanguages": ["N/A"],
+    "compilerOutputLanguages": ["braket.Circuit"],
     "compilerOptimizationStrategies": ["-"],
     "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["AWS Braket"],
@@ -133,14 +133,14 @@
   },
   {
     "name": "1Qbit QDK",
-    "licenses": [],
+    "licenses": ["N/A"],
     "programmingLanguages": ["N/A"],
     "compilerInputLanguages": ["N/A"],
     "compilerOutputLanguages": ["N/A"],
     "compilerOptimizationStrategies": ["N/A"],
-    "activeDevelopment": null,
+    "activeDevelopment": "N/A",
     "supportedQuantumCloudServices": ["1Qloud"],
-    "localSimulator": null
+    "localSimulator": "N/A"
   },
   {
     "name": "Riverlane Deltaflow",
@@ -149,9 +149,9 @@
     "compilerInputLanguages": ["N/A"],
     "compilerOutputLanguages": ["N/A"],
     "compilerOptimizationStrategies": ["N/A"],
-    "activeDevelopment": null,
-    "supportedQuantumCloudServices": [],
-    "localSimulator": null
+    "activeDevelopment": "true",
+    "supportedQuantumCloudServices": ["-"],
+    "localSimulator": "true"
   },
   {
     "name": "QC Ware Platform Client Library",
