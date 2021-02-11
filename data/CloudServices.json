@@ -31,8 +31,8 @@
     "name": "Azure Quantum",
     "accessMethods": ["SDK", "GUI", "CLI"],
     "serviceModel": "QCaaS",
-    "resources": ["Honeywell", "IonQ", "Microsoft"],
-    "assemblyLanguages": ["N/A"]
+    "resources": ["1Qloud", "Honeywell", "IonQ", "Microsoft"],
+    "assemblyLanguages": ["QIR"]
   },
   {
     "name": "Honeywell Quantum Systems",

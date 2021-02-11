@@ -112,9 +112,9 @@
   {
     "name": "Quantum Development Kit",
     "licenses": ["MIT"],
-    "programmingLanguages": ["Q#, Python"],
+    "programmingLanguages": ["Q#", "Python"],
     "compilerInputLanguages": ["Q#", "Python+Q#", "C#+Q#"],
-    "compilerOutputLanguages": ["N/A"],
+    "compilerOutputLanguages": ["QIR"],
     "compilerOptimizationStrategies": ["N/A"],
     "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["Azure Quantum"],
