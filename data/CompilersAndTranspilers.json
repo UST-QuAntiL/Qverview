@@ -1,9 +1,9 @@
 [
   {
     "name": "t|ket>",
-    "inputLanguages": ["OpenQASM"],
-    "outputLanguages": ["OpenQASM"],
-    "optimizationStrategies": ["hardware-specific", "hardware-dependent"]
+    "inputLanguages": ["OpenQASM", "Quipper"],
+    "outputLanguages": ["OpenQASM", "Python+Qiskit", "Python+BraketSDK", "Python+Cirq", "Python+Forest", "Python+Q#"],
+    "optimizationStrategies": ["hardware-specific", "hardware-specific"]
   },
   {
     "name": "quilc",

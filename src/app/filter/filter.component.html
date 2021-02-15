@@ -221,5 +221,172 @@
         </button>
       </form>
     </mat-expansion-panel>
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Programming Language
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <form>
+        <mat-form-field>
+          <mat-label>Programming Language</mat-label>
+          <mat-select [(value)]="selectedProgrammingLanguages" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let language of programmingLanguages" [value]="language">{{language}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearProgrammingLanguages()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Type</mat-label>
+          <mat-select [(value)]="selectedQplTypes" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let qplType of qplTypes" [value]="qplType">{{qplType}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearQplTypes()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Syntax Implementation</mat-label>
+          <mat-select [(value)]="selectedQplSyntaxImplementations" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let qplSyntaxImplementation of qplSyntaxImplementations" [value]="qplSyntaxImplementation">{{qplSyntaxImplementation}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearQplSyntaxImplementations()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+      </form>
+    </mat-expansion-panel>
+
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Compilers and Transpilers
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <form>
+        <mat-form-field>
+          <mat-label>Compilers and Transpilers</mat-label>
+          <mat-select [(value)]="selectedCompilers" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let compiler of compilers" [value]="compiler">{{compiler}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearCompilers()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Input Languages</mat-label>
+          <mat-select [(value)]="selectedCompilerInputLanguages" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let inputLanugage of compilerInputLanguages" [value]="inputLanugage">{{inputLanugage}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearCompilerInputLanguages()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Output Languages</mat-label>
+          <mat-select [(value)]="selectedCompilerOutputLanguages" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let outputLanugage of compilerOutputLanguages" [value]="outputLanugage">{{outputLanugage}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearCompilerOutputLanguages()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Optimization Strategies</mat-label>
+          <mat-select [(value)]="selectedCompilerOptimizationStrategies" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let optimizationStrategy of compilerOptimizationStrategies" [value]="optimizationStrategy">{{optimizationStrategy}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearCompilerOptimizationStrategies()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+      </form>
+    </mat-expansion-panel>
+
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Orchestrators
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <form>
+        <mat-form-field>
+          <mat-label>Orchestrators</mat-label>
+          <mat-select [(value)]="selectedOrchestrators" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let orchestrator of orchestrators" [value]="orchestrator">{{orchestrator}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearOrchestrators()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Licenses</mat-label>
+          <mat-select [(value)]="selectedOrchestratorLicenses" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let license of orchestratorLicenses" [value]="license">{{license}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearOrchestratorLicenses()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Languages</mat-label>
+          <mat-select [(value)]="selectedOrchestratorProgrammingLanguages" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let language of orchestratorProgrammingLanguages" [value]="language">{{language}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearOrchestratorLanguages()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Active Development</mat-label>
+          <mat-select [(value)]="selectedActiveDevelopment" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let x of activeDevelopment" [value]="x">{{x}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearActiveDevelopment()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+        <mat-form-field>
+          <mat-label>Production Ready</mat-label>
+          <mat-select [(value)]="selectedProductionReady" (selectionChange)="updateView()" multiple>
+            <mat-option *ngFor="let x of productionReady" [value]="x">{{x}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button class="clear-button" (click)="clearProductionReady()">
+          <mat-icon class="clear-button-icon smaller">backspace</mat-icon>
+        </button>
+        <br>
+
+      </form>
+    </mat-expansion-panel>
   </mat-accordion>
 </div>

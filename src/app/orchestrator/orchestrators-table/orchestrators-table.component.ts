@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OrchestratorService} from '../orchestrator.service';
+import { OrchestratorService } from '../orchestrator.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Orchestrator } from '../orchestrator.model';
 import { FilterService } from '../../filter/filter.service';
@@ -20,23 +20,18 @@ export class OrchestratorsTableComponent implements OnInit {
     'productionReady'
   ];
 
-  constructor(private orchestratorService: OrchestratorService, private filterService: FilterService) {}
+  constructor(private orchestratorService: OrchestratorService, private filterService: FilterService) {
+  }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.orchestratorService.getAllOrchestrators());
-    this.filterService.searchEvent$.subscribe(value => this.dataSource.filter = value);
-  }
+    this.dataSource = new MatTableDataSource<Orchestrator>(this.orchestratorService.getAllOrchestrators());
 
+    this.filterService.orchestratorFilterEvent$.subscribe(filter => {
+      this.dataSource = new MatTableDataSource(filter);
+    });
 
-  prorammingLanguageClicked(prorammingLanguage: string): void {
-    // this.filterService.toggleProgrammingLanguage(prorammingLanguage);
-  }
-
-  activeDevelopmentClicked(activeDevelopment: string): void {
-    // this.filterService.toggleActiveDevelopment(activeDevelopment);
-  }
-
-  productionReadyClicked(productionReady: string): void {
-    // this.filterService.toggleProductionReady(productionReady);
+    this.filterService.searchEvent$.subscribe(value => {
+      this.dataSource.filter = value;
+    });
   }
 }

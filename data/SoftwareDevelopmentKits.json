@@ -110,6 +110,17 @@
     "localSimulator": "true"
   },
   {
+    "name": "Pennylane",
+    "licenses": ["Apache 2.0"],
+    "programmingLanguages": ["Python"],
+    "compilerInputLanguages": ["Python+PyTorch", "Python+TensorflowQuantum"],
+    "compilerOutputLanguages": ["Python+Qiskit", "Python+Braket", "Python+Strawberryfields", "Python+Cirq", "Python+QDK", "Python+Forest", "Python+ProjectQ"],
+    "compilerOptimizationStrategies": ["N/A"],
+    "activeDevelopment": "true",
+    "supportedQuantumCloudServices": ["IBM Quantum", "AWS Braket", "Honeywell", "AQT", "Rigetti QCS", "Azure Quantum"],
+    "localSimulator": "true"
+  },
+  {
     "name": "Quantum Development Kit",
     "licenses": ["MIT"],
     "programmingLanguages": ["Q#", "Python"],

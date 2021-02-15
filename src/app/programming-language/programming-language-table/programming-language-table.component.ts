@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ProgrammingLanguageService } from '../programming-language.service';
 import { ProgrammingLanguage } from '../programming-language.model';
 import { FilterService } from '../../filter/filter.service';
+import { Sdk } from '../../sdk/sdk.model';
 
 @Component({
   selector: 'app-programming-language-table',
@@ -18,13 +19,19 @@ export class ProgrammingLanguageTableComponent implements OnInit {
     'syntaxImplementation',
     'standardization'
   ];
-  private programmingLanguageFilter: ProgrammingLanguage;
 
   constructor(private programmingLanguageService: ProgrammingLanguageService, private filterService: FilterService) { }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.programmingLanguageService.getProgrammingLanguages());
-    this.filterService.searchEvent$.subscribe(value => this.dataSource.filter = value);
+    this.dataSource = new MatTableDataSource<ProgrammingLanguage>(this.programmingLanguageService.getAllProgrammingLanguages());
+
+    this.filterService.qplFilterEvent$.subscribe(filter => {
+      this.dataSource = new MatTableDataSource(filter);
+    });
+
+    this.filterService.searchEvent$.subscribe(value => {
+      this.dataSource.filter = value;
+    });
   }
 
   nameClicked(name: string): void {

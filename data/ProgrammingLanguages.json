@@ -88,5 +88,11 @@
     "type": "Assembly Language",
     "syntaxImplementation": "embedded",
     "standardization": "none"
+  },
+  {
+    "name": "QIR",
+    "type": "Assembly Language",
+    "syntaxImplementation": "standalone",
+    "standardization": "Proprietary"
   }
 ]
