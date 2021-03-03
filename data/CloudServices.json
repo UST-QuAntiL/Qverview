@@ -24,7 +24,7 @@
     "name": "AWS Braket",
     "accessMethods": ["SDK", "GUI", "CLI"],
     "serviceModel": "QCaaS",
-    "resources": ["IonQ", "Rigetti Aspen-8", "D-Wave 2000Q", "D-Wave Advantage"],
+    "resources": ["IonQ", "Rigetti Aspen-8", "Rigetti Aspen-9", "D-Wave 2000Q", "D-Wave Advantage"],
     "assemblyLanguages": ["braket.Circuit"]
   },
   {

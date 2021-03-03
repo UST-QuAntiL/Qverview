@@ -133,6 +133,12 @@
     "computationModel": "Circuit-Model",
     "vendor": "Rigetti"
   },
+  {
+    "name": "Rigetti Aspen-9",
+    "executionType": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "Rigetti"
+  },
 
 
 
