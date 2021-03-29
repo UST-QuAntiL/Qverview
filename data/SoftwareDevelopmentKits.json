@@ -174,5 +174,16 @@
     "activeDevelopment": "true",
     "supportedQuantumCloudServices": ["QC Ware Forge"],
     "localSimulator": "false"
+  },
+  {
+    "name": "MyQLM",
+    "licenses": ["Proprietary (partly)", "Apache 2.0 (partly)"],
+    "programmingLanguages": ["Python"],
+    "compilerInputLanguages": ["OpenQASM", "Python+Qiskit", "Python+PyQuil", "Python+ProjectQ", "Python+Cirq"],
+    "compilerOutputLanguages": ["AQASM", "Python+Qiskit", "Python+PyQuil", "Python+Cirq"],
+    "compilerOptimizationStrategies": ["N/A"],
+    "activeDevelopment": "true",
+    "supportedQuantumCloudServices": ["IBM Quantum"],
+    "localSimulator": "true"
   }
 ]

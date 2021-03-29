@@ -94,5 +94,11 @@
     "type": "Assembly Language",
     "syntaxImplementation": "standalone",
     "standardization": "Proprietary"
+  },
+  {
+    "name": "AQASM",
+    "type": "Assembly Language",
+    "syntaxImplementation": "standalone",
+    "standardization": "Proprietary"
   }
 ]
