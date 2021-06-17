@@ -69,6 +69,13 @@
     "resources": ["TrappedIon", "Superconducting", "Annealer", "GPU Simulator", "CPU Simulator"],
     "assemblyLanguages": ["N/A"]
   },
+  {
+    "name": "Quantum Inspire",
+    "accessMethods": ["SDK", "REST", "GUI"],
+    "serviceModel": "QCaaS",
+    "resources": ["Spin-2", "Starmon-5", "QX Emulator"],
+    "assemblyLanguages": ["cQASM"]
+  },
 
 
 

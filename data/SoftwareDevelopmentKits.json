@@ -132,6 +132,17 @@
     "localSimulator": "true"
   },
   {
+    "name": "Quantum Inspire SDK",
+    "licenses": ["Apache 2.0"],
+    "programmingLanguages": ["Python"],
+    "compilerInputLanguages": ["cQASM", "Python+Qiskit", "Python+ProjectQ"],
+    "compilerOutputLanguages": ["cQASM", "Python+Qiskit", "Python+ProjectQ"],
+    "compilerOptimizationStrategies": ["N/A"],
+    "activeDevelopment": "true",
+    "supportedQuantumCloudServices": ["Quantum Inspire", "IBM Quantum"],
+    "localSimulator": "true"
+  },
+  {
     "name": "Amazon Braket Python SDK",
     "licenses": ["Apache 2.0"],
     "programmingLanguages": ["Python"],
