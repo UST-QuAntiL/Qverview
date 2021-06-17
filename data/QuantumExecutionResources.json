@@ -222,5 +222,25 @@
     "executionType": "QPU",
     "computationModel": "Circuit-Model",
     "vendor": "Intel"
+  },
+
+
+  {
+    "name": "Spin-2",
+    "executionType": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "QuTech"
+  },
+  {
+    "name": "Starmon-5",
+    "executionType": "QPU",
+    "computationModel": "Circuit-Model",
+    "vendor": "QuTech"
+  },
+  {
+    "name": "QX Quantum Computer Simulator",
+    "executionType": "Simulator",
+    "computationModel": "Circuit-Model",
+    "vendor": "QuTech"
   }
 ]
