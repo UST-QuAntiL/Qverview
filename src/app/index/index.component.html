@@ -1,0 +1,16 @@
+<mat-sidenav-container id="main">
+  <mat-sidenav disableClose="true" mode="side" opened>
+    <app-filter></app-filter>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div id="tables-wrapper">
+      <app-sdks-table id="sdks"></app-sdks-table>
+      <app-quantum-cloud-services-table id="qcs"></app-quantum-cloud-services-table>
+      <app-quantum-computation-resources-table id="qer"></app-quantum-computation-resources-table>
+      <app-programming-language-table id="programming-languages"></app-programming-language-table>
+      <app-compiler-table id="compilers"></app-compiler-table>
+      <app-orchestrators-table id="orchestrators"></app-orchestrators-table>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
