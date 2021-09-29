@@ -14,9 +14,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule} from '@angular/material/expansion';
-import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-import { NgxGraphModule } from '@swimlane/ngx-graph';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -69,7 +68,6 @@ import { LanguageGraphComponent } from './language-graph/language-graph.componen
     MatExpansionModule,
     MatCardModule,
     MatInputModule,
-    NgxGraphModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
