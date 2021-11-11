@@ -1,0 +1,51 @@
+<div class="chart-container">
+  <div class="chart" #container></div>
+  <div class="chart-sidebar">
+    <div *ngIf="!selectedEdge && !selectedNode">
+      <h2>No element selected</h2>
+      <span>To view data on a language or a specific conversion process, simply click on the node or edge in the graph.</span>
+    </div>
+    <div *ngIf="selectedEdge">
+      <h2>Conversion info</h2>
+      <ul>
+        <li *ngFor="let desc of selectedConversion.description">
+          <b>via {{ desc.via }}</b>
+          <ul>
+            <li *ngFor="let note of desc.notes">
+              {{ note }}
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="selectedNode" class="properties">
+      <h1>Language info</h1>
+      <p><b>Name:</b>{{ selectedNode.data('id') }}</p>
+      <p><b>License:</b>{{ selectedLanguage.license }}</p>
+      <p><b>Last release:</b>{{ selectedLanguage.last_release }}</p>
+      <h2 *ngIf="selectedLanguage.qpus?.length">QPUs</h2>
+      <ul *ngIf="selectedLanguage.qpus?.length">
+        <li *ngFor="let qpu of selectedLanguage.qpus">
+          <span>{{ qpu.target }}</span>
+          <span *ngIf="qpu.via"> via {{ qpu.via }}</span>
+          <span> (<a [href]="qpu.url">ref</a>)</span>
+        </li>
+      </ul>
+      <h2 *ngIf="selectedLanguage.simulators?.length">Simulators</h2>
+      <ul *ngIf="selectedLanguage.simulators?.length">
+        <li *ngFor="let sim of selectedLanguage.simulators">
+          <span>{{ sim.target }}</span>
+          <span *ngIf="sim.via"> via {{ sim.via }}</span>
+          <span> (<a [href]="sim.url">ref</a>)</span>
+        </li>
+      </ul>
+      <p><b>Notes:</b>{{ selectedLanguage.notes }}</p>
+      <h2>References</h2>
+      <ul>
+        <li *ngFor="let url of selectedLanguage.references">
+          <a [href]="url">{{ url }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

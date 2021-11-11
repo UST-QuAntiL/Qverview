@@ -1,0 +1,3785 @@
+{
+  "languages": {
+    "Qiskit": {
+      "simulators": [
+        {
+          "target": "Qiskit Aer",
+          "via": null,
+          "url": "https://qiskit.org/documentation/apidoc/aer.html"
+        },
+        {
+          "target": "IBM Q",
+          "via": "Qiskit IBM Q",
+          "url": "https://qiskit.org/documentation/apidoc/ibmq_provider.html"
+        },
+        {
+          "target": "IonQ",
+          "via": "qiskit",
+          "url": "ionq - https://github.com/qiskit-partners/qiskit-ionq/"
+        },
+        {
+          "target": "IonQ",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-ionq"
+        },
+        {
+          "target": "Forest",
+          "via": "qiskit",
+          "url": "forest - https://github.com/quantastica/qiskit-forest"
+        },
+        {
+          "target": "Forest",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-pyquil"
+        },
+        {
+          "target": "AQT",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-aqt"
+        },
+        {
+          "target": "Qulacs",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qulacs"
+        },
+        {
+          "target": "Azure Quantum",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qsharp"
+        },
+        {
+          "target": "ProjectQ",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-projectq"
+        },
+        {
+          "target": "Stim",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-stim"
+        },
+        {
+          "target": "Braket",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-braket"
+        }
+      ],
+      "qpus": [
+        {
+          "target": "IBM Q",
+          "via": "Qiskit IBM Q",
+          "url": "https://qiskit.org/documentation/apidoc/ibmq_provider.html"
+        },
+        {
+          "target": "IonQ",
+          "via": "qiskit",
+          "url": "ionq - https://github.com/qiskit-partners/qiskit-ionq/"
+        },
+        {
+          "target": "Forest",
+          "via": "qiskit",
+          "url": "forest - https://github.com/quantastica/qiskit-forest"
+        },
+        {
+          "target": "AQT",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-aqt"
+        },
+        {
+          "target": "Azure Quantum",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qsharp"
+        },
+        {
+          "target": "Honeywell",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-honeywell"
+        },
+        {
+          "target": "Braket",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-braket"
+        }
+      ],
+      "type": "Embedded",
+      "references": [
+        "https://github.com/Qiskit/qiskit-terra",
+        "https://qiskit.org/documentation/apidoc/circuit.html"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "0.17.1 (15.04.2021)",
+      "license": "ASL 2.0",
+      "notes": "Python DSL",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes (via Python)"
+      },
+      "features_references": [
+        "https://github.com/Qiskit/qiskit-terra/blob/master/qiskit/circuit/quantumcircuit.py",
+        "https://qiskit.org/documentation/apidoc/circuit_library.html"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "Yes",
+        "u": "R",
+        "cnot": "Yes",
+        "toffoli": "Yes",
+        "cu": "R",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://github.com/Qiskit/qiskit-terra/blob/master/qiskit/circuit/quantumcircuit.py",
+        "https://qiskit.org/documentation/apidoc/circuit_library.html"
+      ],
+      "algorithm_support": {
+        "hhl": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.HHL.html"
+          },
+          {
+            "library": "Terra",
+            "comment": null,
+            "url": "https://qiskit.org/documentation/stubs/qiskit.algorithms.HHL.html"
+          }
+        ],
+        "vqe": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.VQE.html"
+          },
+          {
+            "library": "Terra",
+            "comment": null,
+            "url": "https://qiskit.org/documentation/stubs/qiskit.algorithms.VQE.html"
+          }
+        ],
+        "qaoa": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.QAOA.html"
+          },
+          {
+            "library": "Terra",
+            "comment": null,
+            "url": "https://qiskit.org/documentation/stubs/qiskit.algorithms.QAOA.html"
+          }
+        ],
+        "qaoa_warm": [
+          {
+            "library": "Optimization",
+            "comment": null,
+            "url": "https://qiskit.org/documentation/optimization/stubs/qiskit_optimization.algorithms.WarmStartQAOAOptimizer.html"
+          },
+          {
+            "library": "Tutorial",
+            "comment": null,
+            "url": "https://qiskit.org/documentation/optimization/tutorials/10_warm_start_qaoa.html"
+          }
+        ],
+        "vqc": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.VQC.html"
+          },
+          {
+            "library": "ML",
+            "comment": null,
+            "url": "https://qiskit.org/documentation/machine-learning/stubs/qiskit_machine_learning.algorithms.VQC.html"
+          }
+        ],
+        "qgan": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.QGAN.html"
+          },
+          {
+            "library": "ML",
+            "comment": null,
+            "url": "https://qiskit.org/documentation/machine-learning/stubs/qiskit_machine_learning.algorithms.QGAN.html"
+          }
+        ],
+        "eoh": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.EOH.html"
+          },
+          {
+            "library": "opflow ",
+            "comment": "manual",
+            "url": "https://qiskit.org/documentation/aqua_tutorials/Qiskit%20Algorithms%20Migration%20Guide.html#EOH"
+          }
+        ],
+        "qsvm": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.QSVM.html"
+          },
+          {
+            "library": "ML",
+            "comment": null,
+            "url": "https://qiskit.org/documentation/machine-learning/stubs/qiskit_machine_learning.kernels.QuantumKernel.html"
+          }
+        ],
+        "grover": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.Grover.html"
+          },
+          {
+            "library": "Terra",
+            "comment": null,
+            "url": "https://qiskit.org/documentation/stubs/qiskit.algorithms.Grover.html"
+          }
+        ],
+        "qpe": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.QPE.html"
+          },
+          {
+            "library": "Terra",
+            "comment": null,
+            "url": "https://qiskit.org/documentation/stubs/qiskit.algorithms.HamiltonianPhaseEstimation.html"
+          }
+        ],
+        "iqpe": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated, no Terra replacement yet",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.IQPE.html"
+          }
+        ],
+        "amplitude_est": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.AmplitudeEstimation.html"
+          },
+          {
+            "library": "Terra",
+            "comment": null,
+            "url": "https://qiskit.org/documentation/stubs/qiskit.algorithms.AmplitudeEstimation.html"
+          }
+        ],
+        "deutsch_josza": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.DeutschJozsa.html#qiskit.aqua.algorithms.DeutschJozsa (deprecated)"
+          },
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://qiskit.org/textbook/ch-algorithms/deutsch-jozsa.html"
+          }
+        ],
+        "bernstein_vazirani": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.BernsteinVazirani.html#qiskit.aqua.algorithms.BernsteinVazirani"
+          },
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://qiskit.org/textbook/ch-algorithms/bernstein-vazirani.html"
+          }
+        ],
+        "shor": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.Shor.html"
+          },
+          {
+            "library": "Terra",
+            "comment": null,
+            "url": "https://qiskit.org/documentation/stubs/qiskit.algorithms.Shor.html"
+          }
+        ],
+        "simon": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.Simon.html#qiskit.aqua.algorithms.Simon (deprecated)"
+          },
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://qiskit.org/textbook/ch-algorithms/simon.html"
+          }
+        ],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [
+          {
+            "library": "Aqua ",
+            "comment": "deprecated",
+            "url": "https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.Grover.html"
+          },
+          {
+            "library": "Terra",
+            "comment": null,
+            "url": "https://qiskit.org/documentation/stubs/qiskit.algorithms.Grover.html"
+          }
+        ],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "Circuit Library",
+            "comment": null,
+            "url": "https://qiskit.org/documentation/stubs/qiskit.circuit.library.QFT.html"
+          }
+        ]
+      }
+    },
+    "OpenQASM 2": {
+      "simulators": [
+        {
+          "target": "Qiskit Aer",
+          "via": null,
+          "url": "https://qiskit.org/documentation/apidoc/aer.html"
+        },
+        {
+          "target": "IBM Q",
+          "via": "Qiskit IBM Q",
+          "url": "https://qiskit.org/documentation/apidoc/ibmq_provider.html"
+        },
+        {
+          "target": "IonQ",
+          "via": "qiskit",
+          "url": "ionq - https://github.com/qiskit-partners/qiskit-ionq/"
+        },
+        {
+          "target": "IonQ",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-ionq"
+        },
+        {
+          "target": "Forest",
+          "via": "qiskit",
+          "url": "forest - https://github.com/quantastica/qiskit-forest"
+        },
+        {
+          "target": "Forest",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-pyquil"
+        },
+        {
+          "target": "AQT",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-aqt"
+        },
+        {
+          "target": "Qulacs",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qulacs"
+        },
+        {
+          "target": "Azure Quantum",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qsharp"
+        },
+        {
+          "target": "ProjectQ",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-projectq"
+        },
+        {
+          "target": "Stim",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-stim"
+        },
+        {
+          "target": "Braket",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-braket"
+        },
+        {
+          "target": "Quipper",
+          "via": "pyzx",
+          "url": "https://github.com/Quantomatic/pyzx"
+        }
+      ],
+      "qpus": [
+        {
+          "target": "IBM Q",
+          "via": "Qiskit IBM Q",
+          "url": "https://qiskit.org/documentation/apidoc/ibmq_provider.html"
+        },
+        {
+          "target": "IonQ",
+          "via": "qiskit",
+          "url": "ionq - https://github.com/qiskit-partners/qiskit-ionq/"
+        },
+        {
+          "target": "Forest",
+          "via": "qiskit",
+          "url": "forest - https://github.com/quantastica/qiskit-forest"
+        },
+        {
+          "target": "AQT",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-aqt"
+        },
+        {
+          "target": "Azure Quantum",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qsharp"
+        },
+        {
+          "target": "Honeywell",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-honeywell"
+        },
+        {
+          "target": "Braket",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-braket"
+        }
+      ],
+      "type": "Standalone",
+      "references": [
+        "https://arxiv.org/abs/1707.03429v2",
+        "https://github.com/Qiskit/openqasm/tree/OpenQASM2.x"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "2.0 Specification: Jul 2017",
+      "license": "ASL 2.0",
+      "notes": "New version (3.0) in development",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "No",
+        "custom_gates": "Yes",
+        "higher_order_functions": "No"
+      },
+      "features_references": [
+        "https://arxiv.org/abs/1707.03429v2",
+        "https://github.com/Qiskit/openqasm/blob/2.0/examples/qelib1.inc"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes (qelib1)",
+        "hadamard": "Yes (qelib1)",
+        "s": "Yes (qelib1)",
+        "t": "Yes (qelib1)",
+        "axis_rotation": "Yes (qelib1)",
+        "u": "R",
+        "cnot": "Yes",
+        "toffoli": "Yes (qelib1)",
+        "cu": "R (qelib1)",
+        "swap": "No"
+      },
+      "gate_support_references": [
+        "https://arxiv.org/abs/1707.03429v2",
+        "https://github.com/Qiskit/openqasm/blob/2.0/examples/qelib1.inc"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/Qiskit/openqasm/blob/2.0/examples/qft.qasm"
+          }
+        ]
+      }
+    },
+    "pyQuil": {
+      "simulators": [
+        {
+          "target": "Forest",
+          "via": null,
+          "url": "https://github.com/rigetti/pyquil"
+        },
+        {
+          "target": "IonQ",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-ionq"
+        },
+        {
+          "target": "IBM Q",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qiskit"
+        },
+        {
+          "target": "Qiskit Aer",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qiskit"
+        },
+        {
+          "target": "AQT",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-aqt"
+        },
+        {
+          "target": "Qulacs",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qulacs"
+        },
+        {
+          "target": "Azure Quantum",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qsharp"
+        },
+        {
+          "target": "ProjectQ",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-projectq"
+        },
+        {
+          "target": "Stim",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-stim"
+        },
+        {
+          "target": "Braket",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-braket"
+        }
+      ],
+      "qpus": [
+        {
+          "target": "Forest",
+          "via": null,
+          "url": "https://github.com/rigetti/pyquil"
+        },
+        {
+          "target": "IBM Q",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qiskit"
+        },
+        {
+          "target": "AQT",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-aqt"
+        },
+        {
+          "target": "Azure Quantum",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qsharp"
+        },
+        {
+          "target": "Honeywell",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-honeywell"
+        },
+        {
+          "target": "Braket",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-braket"
+        }
+      ],
+      "type": "Embedded",
+      "references": [
+        "https://github.com/rigetti/pyquil"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "2.28.0 (26.01.2021)",
+      "license": "ASL 2.0",
+      "notes": "Python DSL for Quil",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes (via Python)"
+      },
+      "features_references": [
+        "https://pyquil-docs.rigetti.com/en/stable/apidocs/gates.html",
+        "http://grove-docs.readthedocs.io/en/latest/qft.html"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "Yes",
+        "u": "R, M",
+        "cnot": "Yes",
+        "toffoli": "No",
+        "cu": "No",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://pyquil-docs.rigetti.com/en/stable/apidocs/gates.html",
+        "http://grove-docs.readthedocs.io/en/latest/qft.html"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [
+          {
+            "library": "Grove",
+            "comment": null,
+            "url": "http://grove-docs.readthedocs.io/en/latest/vqe.html"
+          }
+        ],
+        "qaoa": [
+          {
+            "library": "Grove",
+            "comment": null,
+            "url": "http://grove-docs.readthedocs.io/en/latest/qaoa.html"
+          }
+        ],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [
+          {
+            "library": "Grove",
+            "comment": null,
+            "url": "http://grove-docs.readthedocs.io/en/latest/phaseestimation.html"
+          }
+        ],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "Grove",
+            "comment": null,
+            "url": "http://grove-docs.readthedocs.io/en/latest/qft.html"
+          }
+        ]
+      }
+    },
+    "Q#": {
+      "simulators": [
+        {
+          "target": "Azure Quantum",
+          "via": null,
+          "url": "https://docs.microsoft.com/en-us/azure/quantum/concepts-targets-in-azure-quantum"
+        }
+      ],
+      "qpus": [
+        {
+          "target": "Azure Quantum",
+          "via": null,
+          "url": "https://docs.microsoft.com/en-us/azure/quantum/concepts-targets-in-azure-quantum"
+        }
+      ],
+      "type": "Standalone",
+      "references": [
+        "https://arxiv.org/pdf/1803.00652",
+        "https://github.com/microsoft/qsharp-language",
+        "https://docs.microsoft.com/en-us/azure/quantum/user-guide/?view=qsharp-preview",
+        "https://docs.microsoft.com/en-us/quantum/overview/what-is-qsharp-and-qdk?view=qsharp-preview",
+        "https://devblogs.microsoft.com/qsharp/why-do-we-need-q/"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "none\n(Last commit 25.03.2021)",
+      "license": "MIT License",
+      "notes": "",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes"
+      },
+      "features_references": [
+        "https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.intrinsic",
+        "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/5_Grammar/QSharpLexer.g4"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "",
+        "axis_rotation": "Yes",
+        "u": "No",
+        "cnot": "Yes",
+        "toffoli": "Yes",
+        "cu": "No",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.intrinsic",
+        "https://github.com/microsoft/qsharp-language/blob/main/Specifications/Language/5_Grammar/QSharpLexer.g4"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [
+          {
+            "library": "QDK",
+            "comment": null,
+            "url": "https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.characterization"
+          }
+        ],
+        "iqpe": [
+          {
+            "library": "QDK",
+            "comment": null,
+            "url": "https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.characterization"
+          }
+        ],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [
+          {
+            "library": "QDK",
+            "comment": null,
+            "url": "https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.amplitudeamplification"
+          }
+        ],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "QDK",
+            "comment": null,
+            "url": "https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.canon.qft"
+          }
+        ]
+      }
+    },
+    "Cirq": {
+      "simulators": [
+        {
+          "target": "Cirq",
+          "via": null,
+          "url": "https://quantumai.google/cirq/simulation"
+        },
+        {
+          "target": "qsim",
+          "via": null,
+          "url": "https://quantumai.google/cirq/simulation#external_simulators"
+        },
+        {
+          "target": "quimb",
+          "via": null,
+          "url": "https://quantumai.google/cirq/simulation#external_simulators"
+        },
+        {
+          "target": "qFlex",
+          "via": null,
+          "url": "https://quantumai.google/cirq/simulation#external_simulators"
+        }
+      ],
+      "qpus": [],
+      "type": "Embedded",
+      "references": [
+        "https://github.com/quantumlib/Cirq"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "0.10.0 (06.03.2021)",
+      "license": "ASL 2.0",
+      "notes": "Python DSL\nCirq objects (incl. circuits) can be serialized to JSON  \n(https://github.com/quantumlib/Cirq/blob/36aa495843707f6483d1acdf113e9ffcb8499c5c/docs/dev/serialization.md)\nInterop with https://github.com/strilanc/quirk",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes (via Python)"
+      },
+      "features_references": [
+        "https://quantumai.google/cirq/gates",
+        "https://quantumai.google/reference/python/cirq/ops/qft"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "Yes",
+        "u": "M",
+        "cnot": "Yes",
+        "toffoli": "Yes",
+        "cu": "M",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://quantumai.google/cirq/gates",
+        "https://quantumai.google/reference/python/cirq/ops/qft"
+      ],
+      "algorithm_support": {
+        "hhl": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/quantumlib/Cirq/blob/master/examples/hhl.py"
+          }
+        ],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/quantumlib/Cirq/blob/master/examples/grover.py"
+          }
+        ],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/quantumlib/Cirq/blob/master/examples/bernstein_vazirani.py"
+          }
+        ],
+        "shor": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/quantumlib/Cirq/blob/master/examples/shor.py"
+          }
+        ],
+        "simon": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/quantumlib/Cirq/blob/master/examples/simon_algorithm.py"
+          }
+        ],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/quantumlib/Cirq/blob/master/examples/hidden_shift_algorithm.py"
+          }
+        ],
+        "qft": [
+          {
+            "library": "Yes",
+            "comment": null,
+            "url": "https://quantumai.google/reference/python/cirq/ops/qft"
+          }
+        ]
+      }
+    },
+    "ProjectQ": {
+      "simulators": [
+        {
+          "target": "ProjectQ",
+          "via": null,
+          "url": "https://github.com/ProjectQ-Framework/ProjectQ/tree/1c07475ad9dbc30baedddf78fddafa96112ffcdc/projectq/backends/_sim"
+        },
+        {
+          "target": "AQT",
+          "via": null,
+          "url": "https://github.com/ProjectQ-Framework/ProjectQ/tree/1c07475ad9dbc30baedddf78fddafa96112ffcdc/projectq/backends/_aqt"
+        },
+        {
+          "target": "IBM Q",
+          "via": null,
+          "url": "https://github.com/ProjectQ-Framework/ProjectQ/tree/1c07475ad9dbc30baedddf78fddafa96112ffcdc/projectq/backends/_ibm"
+        },
+        {
+          "target": "IonQ",
+          "via": null,
+          "url": "https://github.com/ProjectQ-Framework/ProjectQ/tree/1c07475ad9dbc30baedddf78fddafa96112ffcdc/projectq/backends/_ionq"
+        },
+        {
+          "target": "Braket",
+          "via": null,
+          "url": "https://github.com/ProjectQ-Framework/ProjectQ/tree/1c07475ad9dbc30baedddf78fddafa96112ffcdc/projectq/backends/_awsbraket"
+        }
+      ],
+      "qpus": [
+        {
+          "target": "AQT",
+          "via": null,
+          "url": "https://github.com/ProjectQ-Framework/ProjectQ/tree/1c07475ad9dbc30baedddf78fddafa96112ffcdc/projectq/backends/_aqt"
+        },
+        {
+          "target": "IBM Q",
+          "via": null,
+          "url": "https://github.com/ProjectQ-Framework/ProjectQ/tree/1c07475ad9dbc30baedddf78fddafa96112ffcdc/projectq/backends/_ibm"
+        },
+        {
+          "target": "IonQ",
+          "via": null,
+          "url": "https://github.com/ProjectQ-Framework/ProjectQ/tree/1c07475ad9dbc30baedddf78fddafa96112ffcdc/projectq/backends/_ionq"
+        },
+        {
+          "target": "Braket",
+          "via": null,
+          "url": "https://github.com/ProjectQ-Framework/ProjectQ/tree/1c07475ad9dbc30baedddf78fddafa96112ffcdc/projectq/backends/_awsbraket"
+        }
+      ],
+      "type": "Embedded",
+      "references": [
+        "https://arxiv.org/abs/1612.08091",
+        "https://projectq.ch/"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "projectq 0.5.1 - 5 Jun 2020\nLast commit 19.4.2021",
+      "license": "ASL 2.0",
+      "notes": "",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes",
+        "higher_order_functions": "Yes (via Python)"
+      },
+      "features_references": [
+        "https://github.com/ProjectQ-Framework/ProjectQ/blob/develop/projectq/ops/_gates.py",
+        "https://projectq.readthedocs.io"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "Yes",
+        "u": "No",
+        "cnot": "Yes",
+        "toffoli": "Yes (shortcuts)",
+        "cu": "No",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://github.com/ProjectQ-Framework/ProjectQ/blob/develop/projectq/ops/_gates.py",
+        "https://projectq.readthedocs.io"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [
+          {
+            "library": "ProjectQ",
+            "comment": null,
+            "url": "https://github.com/ProjectQ-Framework/ProjectQ/blob/develop/projectq/ops/_qpegate.py"
+          }
+        ],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [
+          {
+            "library": "ProjectQ",
+            "comment": null,
+            "url": "https://github.com/ProjectQ-Framework/ProjectQ/blob/develop/projectq/ops/_qaagate.py"
+          }
+        ],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "ProjectQ",
+            "comment": null,
+            "url": "https://projectq.readthedocs.io/en/latest/_doc_gen/projectq.ops.html#module-projectq.ops._qftgate"
+          }
+        ]
+      }
+    },
+    "Qulacs": {
+      "simulators": [
+        {
+          "target": "Qulacs",
+          "via": null,
+          "url": "https://github.com/qulacs/qulacs/blob/8cd29d4c1d7836c37b32b42a2516d1fbcd41535a/doc/0_About_Qulacs.md"
+        }
+      ],
+      "qpus": [],
+      "type": "Embedded",
+      "references": [
+        "https://github.com/qulacs"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "0.2.0 (29.11.2020)",
+      "license": "MIT License",
+      "notes": "Embedded in Python or C++",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes (via C++ or Python)"
+      },
+      "features_references": [
+        "https://github.com/qulacs/qulacs/blob/master/python/cppsim_wrapper.cpp"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "Yes",
+        "u": "R, M",
+        "cnot": "Yes",
+        "toffoli": "Yes",
+        "cu": "No",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://github.com/qulacs/qulacs/blob/master/python/cppsim_wrapper.cpp"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": []
+      }
+    },
+    "Braket SDK": {
+      "simulators": [
+        {
+          "target": "Braket",
+          "via": null,
+          "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-submit-tasks.html"
+        }
+      ],
+      "qpus": [
+        {
+          "target": "Braket",
+          "via": null,
+          "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-submit-tasks.html"
+        }
+      ],
+      "type": "Embedded",
+      "references": [
+        "https://docs.aws.amazon.com/braket/latest/developerguide/braket-constructing-circuit.html",
+        "https://github.com/aws/amazon-braket-sdk-python"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "1.5.15 (08.04.2021)",
+      "license": "ASL 2.0",
+      "notes": "Python DSL",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes (via Python)"
+      },
+      "features_references": [
+        "https://github.com/aws/amazon-braket-sdk-python/blob/main/src/braket/circuits/gates.py",
+        "https://github.com/aws/amazon-braket-examples/blob/main/examples/advanced_circuits_algorithms/QFT/QFT.ipynb"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "Yes",
+        "u": "No",
+        "cnot": "Yes",
+        "toffoli": "Yes",
+        "cu": "No",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://github.com/aws/amazon-braket-sdk-python/blob/main/src/braket/circuits/gates.py",
+        "https://github.com/aws/amazon-braket-examples/blob/main/examples/advanced_circuits_algorithms/QFT/QFT.ipynb"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/aws/amazon-braket-examples/blob/main/examples/advanced_circuits_algorithms/Grover/Grover.ipynb"
+          }
+        ],
+        "qpe": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/aws/amazon-braket-examples/blob/main/examples/advanced_circuits_algorithms/QPE/QPE.ipynb"
+          }
+        ],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/aws/amazon-braket-examples/blob/main/examples/advanced_circuits_algorithms/QAA/QAA_tutorial.ipynb"
+          }
+        ],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/aws/amazon-braket-examples/blob/main/examples/advanced_circuits_algorithms/QFT/QFT.ipynb"
+          }
+        ]
+      }
+    },
+    "AQASM": {
+      "simulators": [
+        {
+          "target": "Atos QLM",
+          "via": null,
+          "url": "https://atos.net/en/lp/myqlm/enterprise"
+        },
+        {
+          "target": "IBM Q",
+          "via": "Qiskit",
+          "url": "https://myqlm.github.io/myqlm_specific/qiskit.html#module-qat.interop.qiskit.providers"
+        },
+        {
+          "target": "Forest",
+          "via": "pyQuil",
+          "url": "https://myqlm.github.io/myqlm_specific/pyquil.html#module-qat.interop.pyquil.providers"
+        }
+      ],
+      "qpus": [
+        {
+          "target": "IBM Q",
+          "via": "Qiskit",
+          "url": "https://myqlm.github.io/myqlm_specific/qiskit.html#module-qat.interop.qiskit.providers"
+        },
+        {
+          "target": "Forest",
+          "via": "pyQuil",
+          "url": "https://myqlm.github.io/myqlm_specific/pyquil.html#module-qat.interop.pyquil.providers"
+        }
+      ],
+      "type": "Standalone",
+      "references": [
+        "https://myqlm.github.io/aqasm.html"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "1.2.3 (23.04.2021)",
+      "license": "Atos myQLM EULA",
+      "notes": "not open source",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "No",
+        "custom_gates": "Yes (Compiler ext.)",
+        "higher_order_functions": "No"
+      },
+      "features_references": [
+        "https://myqlm.github.io/aqasm.html?highlight=gates"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "Yes",
+        "u": "Matrix, as custom gate",
+        "cnot": "Yes",
+        "toffoli": "Yes",
+        "cu": "Matrix, as custom gate",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://myqlm.github.io/aqasm.html?highlight=gates"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "myQLM",
+            "comment": null,
+            "url": "https://myqlm.github.io/qat-lang-arith.html#qat.lang.AQASM.qftarith.QFTT"
+          }
+        ]
+      }
+    },
+    "pyAQASM": {
+      "simulators": [
+        {
+          "target": "Atos QLM",
+          "via": null,
+          "url": "https://atos.net/en/lp/myqlm/enterprise"
+        },
+        {
+          "target": "IBM Q",
+          "via": "Qiskit",
+          "url": "https://myqlm.github.io/myqlm_specific/qiskit.html#module-qat.interop.qiskit.providers"
+        },
+        {
+          "target": "Forest",
+          "via": "pyQuil",
+          "url": "https://myqlm.github.io/myqlm_specific/pyquil.html#module-qat.interop.pyquil.providers"
+        }
+      ],
+      "qpus": [
+        {
+          "target": "IBM Q",
+          "via": "Qiskit",
+          "url": "https://myqlm.github.io/myqlm_specific/qiskit.html#module-qat.interop.qiskit.providers"
+        },
+        {
+          "target": "Forest",
+          "via": "pyQuil",
+          "url": "https://myqlm.github.io/myqlm_specific/pyquil.html#module-qat.interop.pyquil.providers"
+        }
+      ],
+      "type": "Embedded",
+      "references": [
+        "https://myqlm.github.io/programming.html"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "1.2.3 (23.04.2021)",
+      "license": "Atos myQLM EULA",
+      "notes": "not open source",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes (via Python)"
+      },
+      "features_references": [
+        "https://myqlm.github.io/aqasm.html?highlight=gates"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "Yes",
+        "u": "Matrix, as custom gate",
+        "cnot": "Yes",
+        "toffoli": "Yes",
+        "cu": "Matrix, as custom gate",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://myqlm.github.io/aqasm.html?highlight=gates"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "myQLM",
+            "comment": null,
+            "url": "https://myqlm.github.io/qat-lang-arith.html#qat.lang.AQASM.qftarith.QFT"
+          }
+        ]
+      }
+    },
+    "OpenQASM 3": {
+      "simulators": [],
+      "qpus": [],
+      "type": "Standalone",
+      "references": [
+        "https://qiskit.github.io/openqasm/"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes\nThis project is a work-in-progress",
+      "last_release": "Live specification\n(Last commit 24.03.2021)",
+      "license": "ASL 2.0",
+      "notes": "",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes",
+        "higher_order_functions": "No"
+      },
+      "features_references": [
+        "https://qiskit.github.io/openqasm/language/gates.html",
+        "https://github.com/Qiskit/openqasm/blob/master/examples/stdgates.inc"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes (stdgates)",
+        "hadamard": "Yes (stdgates)",
+        "s": "Yes (stdgates)",
+        "t": "Yes (stdgates)",
+        "axis_rotation": "Yes (stdgates)",
+        "u": "R",
+        "cnot": "Yes",
+        "toffoli": "Yes (stdgates)",
+        "cu": "R (stdgates)",
+        "swap": "CSWAP (stdgates)"
+      },
+      "gate_support_references": [
+        "https://qiskit.github.io/openqasm/language/gates.html",
+        "https://github.com/Qiskit/openqasm/blob/master/examples/stdgates.inc"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/Qiskit/openqasm/blob/master/examples/vqe.qasm"
+          }
+        ],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/Qiskit/openqasm/blob/master/examples/ipe.qasm"
+          }
+        ],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/Qiskit/openqasm/blob/master/examples/qft.qasm"
+          }
+        ]
+      }
+    },
+    "Quil": {
+      "simulators": [
+        {
+          "target": "Forest",
+          "via": null,
+          "url": "https://github.com/rigetti/pyquil"
+        },
+        {
+          "target": "IonQ",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-ionq"
+        },
+        {
+          "target": "IBM Q",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qiskit"
+        },
+        {
+          "target": "Qiskit Aer",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qiskit"
+        },
+        {
+          "target": "AQT",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-aqt"
+        },
+        {
+          "target": "Qulacs",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qulacs"
+        },
+        {
+          "target": "Azure Quantum",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qsharp"
+        },
+        {
+          "target": "ProjectQ",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-projectq"
+        },
+        {
+          "target": "Stim",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-stim"
+        },
+        {
+          "target": "Braket",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-braket"
+        }
+      ],
+      "qpus": [
+        {
+          "target": "Forest",
+          "via": null,
+          "url": "https://github.com/rigetti/pyquil"
+        },
+        {
+          "target": "IBM Q",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qiskit"
+        },
+        {
+          "target": "AQT",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-aqt"
+        },
+        {
+          "target": "Azure Quantum",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-qsharp"
+        },
+        {
+          "target": "Honeywell",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-honeywell"
+        },
+        {
+          "target": "Braket",
+          "via": "pytket",
+          "url": "https://github.com/CQCL/pytket-extensions/tree/develop/modules/pytket-braket"
+        }
+      ],
+      "type": "Standalone",
+      "references": [
+        "https://arxiv.org/pdf/1608.03355.pdf",
+        "https://github.com/rigetti/quil"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "pyquil: 2.28.0 (26.01.2021)\nQuil-T (pyquil 2.26.0, PR 1257, 10.12.2020)",
+      "license": "ASL 2.0",
+      "notes": "",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (sub-circuits)",
+        "higher_order_functions": "No"
+      },
+      "features_references": [
+        "https://github.com/quil-lang/quil/blob/master/spec/Quil.md"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "Yes",
+        "u": "R, M",
+        "cnot": "Yes",
+        "toffoli": "Yes",
+        "cu": "No",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://github.com/quil-lang/quil/blob/master/spec/Quil.md"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": []
+      }
+    },
+    "Quipper": {
+      "simulators": [
+        {
+          "target": "Quipper",
+          "via": null,
+          "url": "https://hackage.haskell.org/package/quipper-tools-0.9.0.0/docs/Quipper-Libraries-Simulation.html"
+        }
+      ],
+      "qpus": [],
+      "type": "Embedded",
+      "references": [
+        "https://arxiv.org/pdf/1304.3390",
+        "http://arxiv.org/abs/1304.5485 (tutorial)",
+        "https://www.mathstat.dal.ca/~selinger/quipper"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "0.9.0.0 (29.12.2019)",
+      "license": "BSD 3-Clause",
+      "notes": "Haskell DSL",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes (via Haskell)"
+      },
+      "features_references": [
+        "https://www.mathstat.dal.ca/~selinger/quipper/downloads/quipper-0.9.0.0.tgz"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "No",
+        "u": "No",
+        "cnot": "Yes",
+        "toffoli": "No",
+        "cu": "No",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://www.mathstat.dal.ca/~selinger/quipper/downloads/quipper-0.9.0.0.tgz"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [
+          {
+            "library": "Quipper",
+            "comment": null,
+            "url": "https://hackage.haskell.org/package/quipper-tools-0.9.0.0/docs/Quipper-Algorithms-BWT-BWT.html"
+          }
+        ],
+        "qls": [
+          {
+            "library": "Quipper",
+            "comment": null,
+            "url": "https://hackage.haskell.org/package/quipper-tools-0.9.0.0/docs/Quipper-Algorithms-QLS-QLS.html"
+          }
+        ],
+        "tf": [
+          {
+            "library": "Quipper",
+            "comment": null,
+            "url": "https://hackage.haskell.org/package/quipper-tools-0.9.0.0/docs/Quipper-Algorithms-TF-Main.html"
+          }
+        ],
+        "cl": [
+          {
+            "library": "Quipper",
+            "comment": null,
+            "url": "https://hackage.haskell.org/package/quipper-tools-0.9.0.0/docs/Quipper-Algorithms-CL-Main.html"
+          }
+        ],
+        "usv": [
+          {
+            "library": "Quipper",
+            "comment": null,
+            "url": "https://hackage.haskell.org/package/quipper-tools-0.9.0.0/docs/Quipper-Algorithms-USV-USV.html"
+          }
+        ],
+        "boolean_formula": [
+          {
+            "library": "Quipper",
+            "comment": null,
+            "url": "https://hackage.haskell.org/package/quipper-tools-0.9.0.0/docs/Quipper-Algorithms-BF-BooleanFormula.html"
+          }
+        ],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "Quipper",
+            "comment": null,
+            "url": "https://hackage.haskell.org/package/quipper-tools-0.9.0.0/docs/Quipper-Libraries-QFT.html"
+          }
+        ]
+      }
+    },
+    "QuEST": {
+      "simulators": [
+        {
+          "target": "QuEST",
+          "via": null,
+          "url": "https://github.com/quest-kit/QuEST"
+        }
+      ],
+      "qpus": [],
+      "type": "Embedded",
+      "references": [
+        "https://quest.qtechtheory.org",
+        "https://github.com/quest-kit/QuEST"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "3.2.0 (21.07.2020)",
+      "license": "MIT License",
+      "notes": "C++",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes (via C++)"
+      },
+      "features_references": [
+        "https://github.com/QuEST-Kit/QuEST/blob/master/QuEST/include/QuEST.h"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "Yes",
+        "u": "R, M",
+        "cnot": "Yes",
+        "toffoli": "No",
+        "cu": "R, M",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://github.com/QuEST-Kit/QuEST/blob/master/QuEST/include/QuEST.h"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": []
+      }
+    },
+    "Quirk": {
+      "simulators": [
+        {
+          "target": "Quirk",
+          "via": null,
+          "url": "https://github.com/Strilanc/Quirk/blob/294431ebf05dd96c2ac626f53620b68c723ca12b/README.md"
+        }
+      ],
+      "qpus": [],
+      "type": "Embedded",
+      "references": [
+        "https://github.com/strilanc/quirk"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "2.3 (11.09.2019)",
+      "license": "ASL 2.0",
+      "notes": "based on JSON",
+      "features": {
+        "conditionals": "No",
+        "loops": "No",
+        "custom_gates": "Yes",
+        "higher_order_functions": "No"
+      },
+      "features_references": [
+        "https://algassert.com/quirk"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "Yes",
+        "u": "R, M",
+        "cnot": "Yes",
+        "toffoli": "Yes",
+        "cu": "R, M",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://algassert.com/quirk"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/Strilanc/Quirk/blob/09fc00fa080b6a93e4f9a37b3ace30c2d5f31dc6/src/gates/FourierTransformGates.js"
+          }
+        ]
+      }
+    },
+    "Scaffold": {
+      "type": "Standalone",
+      "references": [
+        "https://apps.dtic.mil/dtic/tr/fulltext/u2/a571279.pdf",
+        "https://github.com/epiqc/ScaffCC"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "ScaffCC 5.0 (24.04.2021)",
+      "license": "BSD 2-Clause (ScaffCC)",
+      "notes": "",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes",
+        "higher_order_functions": "No"
+      },
+      "features_references": [
+        "https://apps.dtic.mil/dtic/tr/fulltext/u2/a571279.pdf",
+        "https://github.com/epiqc/ScaffCC"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "Yes",
+        "u": "No",
+        "cnot": "Yes",
+        "toffoli": "Yes",
+        "cu": "No",
+        "swap": "Yes (library)"
+      },
+      "gate_support_references": [
+        "https://apps.dtic.mil/dtic/tr/fulltext/u2/a571279.pdf",
+        "https://github.com/epiqc/ScaffCC"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/epiqc/ScaffCC/tree/master/Algorithms/VQE"
+          }
+        ],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/epiqc/ScaffCC/tree/master/Algorithms/Shors"
+          }
+        ],
+        "simon": [],
+        "bwt": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/epiqc/ScaffCC/tree/master/Algorithms/Binary_Welded_Tree"
+          }
+        ],
+        "qls": [],
+        "tf": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/epiqc/ScaffCC/tree/master/Algorithms/Triangle_Finding_Problem"
+          }
+        ],
+        "cl": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/epiqc/ScaffCC/tree/master/Algorithms/Class_Number"
+          }
+        ],
+        "usv": [],
+        "boolean_formula": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/epiqc/ScaffCC/tree/master/Algorithms/Boolean_Formula"
+          }
+        ],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/epiqc/ScaffCC/tree/ab84a7d36aec4f2d03a17a715e2441cfa55324b2/Library/QFT"
+          }
+        ]
+      }
+    },
+    "XASM": {
+      "simulators": [],
+      "qpus": [],
+      "type": "Standalone",
+      "references": [
+        "https://arxiv.org/pdf/1911.02452v1.pdf (Section IV)",
+        "https://github.com/eclipse/xacc/blob/39fe870caf61fe72bd367b624e09c94014db6d64/quantum/plugins/xasm/xasm.g4",
+        "https://xacc.readthedocs.io/en/latest/extensions.html#xasm"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "none\n(Last commit 16.04.2021)",
+      "license": "BSD 3-Clause",
+      "notes": "",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "No",
+        "higher_order_functions": "No"
+      },
+      "features_references": [
+        "https://github.com/eclipse/xacc/blob/master/quantum/gate/ir/CommonGates.hpp",
+        "https://github.com/eclipse/xacc/blob/master/quantum/plugins/xasm/xasm.g4"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "Yes",
+        "u": "R, M",
+        "cnot": "Yes",
+        "toffoli": "No",
+        "cu": "No",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://github.com/eclipse/xacc/blob/master/quantum/gate/ir/CommonGates.hpp",
+        "https://github.com/eclipse/xacc/blob/master/quantum/plugins/xasm/xasm.g4"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": []
+      }
+    },
+    "QGL": {
+      "simulators": [],
+      "qpus": [
+        {
+          "target": "BBN APSv2",
+          "via": null,
+          "url": "https://github.com/BBN-Q/QGL/blob/8df9ce5d68dca61c8c057d34a1c08b98eb910a43/QGL/Compiler.py"
+        }
+      ],
+      "type": "Embedded",
+      "references": [
+        "https://github.com/BBN-Q/QGL"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "2020.01 (21.01.2020)",
+      "license": "ASL 2.0",
+      "notes": "Python DSL",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes (via Python)"
+      },
+      "features_references": [
+        "https://github.com/BBN-Q/QGL",
+        "https://github.com/BBN-Q/QGL/blob/develop/QGL/PulsePrimitives.py"
+      ],
+      "gate_support": {
+        "pauli_xyz": "No",
+        "hadamard": "No",
+        "s": "No",
+        "t": "No",
+        "axis_rotation": "Yes",
+        "u": "R, M",
+        "cnot": "Yes",
+        "toffoli": "No",
+        "cu": "No",
+        "swap": "No"
+      },
+      "gate_support_references": [
+        "https://github.com/BBN-Q/QGL",
+        "https://github.com/BBN-Q/QGL/blob/develop/QGL/PulsePrimitives.py"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": []
+      }
+    },
+    "QGL2": {
+      "simulators": [],
+      "qpus": [
+        {
+          "target": "BBN APSv2",
+          "via": null,
+          "url": "https://github.com/BBN-Q/QGL/blob/8df9ce5d68dca61c8c057d34a1c08b98eb910a43/QGL/Compiler.py"
+        }
+      ],
+      "type": "Embedded",
+      "references": [
+        "https://github.com/BBN-Q/pyqgl2"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "none (11.10.2019)",
+      "license": "ASL 2.0",
+      "notes": "Python DSL",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes (via Python)"
+      },
+      "features_references": [
+        "https://github.com/BBN-Q/pyqgl2"
+      ],
+      "gate_support": {
+        "pauli_xyz": "No",
+        "hadamard": "No",
+        "s": "No",
+        "t": "No",
+        "axis_rotation": "Yes",
+        "u": "R, M",
+        "cnot": "Yes",
+        "toffoli": "No",
+        "cu": "No",
+        "swap": "No"
+      },
+      "gate_support_references": [
+        "https://github.com/BBN-Q/pyqgl2"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": []
+      }
+    },
+    "Silq": {
+      "simulators": [
+        {
+          "target": "Silq",
+          "via": null,
+          "url": "https://github.com/eth-sri/silq/blob/c0029ff86575c78cb1580a14d5648ade7f7aeed4/qsim.d"
+        }
+      ],
+      "qpus": [],
+      "type": "Standalone",
+      "references": [
+        "https://silq.ethz.ch/",
+        "https://files.sri.inf.ethz.ch/website/papers/pldi20-silq.pdf"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "github master branch\nhttps://github.com/eth-sri/silq",
+      "license": "Boost Software License 1.0",
+      "notes": "written in dlang\nhandles uncomputation on its own",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes",
+        "higher_order_functions": "Some (e.g. reverse)"
+      },
+      "features_references": [
+        "https://silq.ethz.ch/documentation#/documentation/4_statements"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "No",
+        "t": "No",
+        "axis_rotation": "Yes",
+        "u": "No",
+        "cnot": "No",
+        "toffoli": "No",
+        "cu": "No",
+        "swap": "No"
+      },
+      "gate_support_references": [
+        "https://silq.ethz.ch/documentation#/documentation/4_statements"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/eth-sri/silq/blob/master/test/grover.slq"
+          }
+        ],
+        "qpe": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/quantumlib/Cirq/blob/master/examples/phase_estimator.py"
+          }
+        ],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/eth-sri/silq/blob/2a3e2d6721788990431d130fdaafb5a716b7d780/test/qft.slq"
+          }
+        ]
+      }
+    },
+    "Qibo": {
+      "simulators": [
+        {
+          "target": "Qibo",
+          "via": null,
+          "url": "https://github.com/qiboteam/qibo/tree/master/src/qibo/backends"
+        }
+      ],
+      "qpus": [
+        {
+          "target": "IcarusQ",
+          "via": null,
+          "url": "https://github.com/qiboteam/qibo/blob/195aa160c539fa0b38a5b116e02b640741852f46/src/qibo/backends/hardware.py"
+        }
+      ],
+      "type": "Embedded",
+      "references": [
+        "https://arxiv.org/abs/2009.01845",
+        "https://github.com/Quantum-TII/qibo"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "0.1.4 (12.4.2021)",
+      "license": "ASL 2.0",
+      "notes": "Python DSL",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes (via Python)"
+      },
+      "features_references": [
+        "https://github.com/Quantum-TII/qibo/blob/master/src/qibo/core/gates.py"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "No",
+        "t": "No",
+        "axis_rotation": "Yes",
+        "u": "R, M",
+        "cnot": "Yes",
+        "toffoli": "Yes",
+        "cu": "R, M",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://github.com/Quantum-TII/qibo/blob/master/src/qibo/core/gates.py"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": []
+      }
+    },
+    "QWIRE": {
+      "type": "Standalone",
+      "references": [
+        "http://dl.acm.org/citation.cfm?id=3009894",
+        "https://github.com/inQWIRE/QWIRE",
+        "https://www.cs.umd.edu/~rrand/popl_2017.pdf"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "none\n(Last commit 08.03.2021)",
+      "license": "MIT License",
+      "notes": "",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes (via Haskell)"
+      },
+      "features_references": [
+        "https://github.com/inQWIRE/QWIRE/blob/master/Quantum.v"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "No",
+        "t": "No",
+        "axis_rotation": "Yes",
+        "u": "R",
+        "cnot": "Yes",
+        "toffoli": "No",
+        "cu": "M",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://github.com/inQWIRE/QWIRE/blob/master/Quantum.v"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [],
+        "qpe": [],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/inQWIRE/QWIRE/blob/7a99a53f93160d945fd8e83d768bbe4197cebc26/HOASExamples.v"
+          }
+        ]
+      }
+    },
+    "QCircuits": {
+      "simulators": [
+        {
+          "target": "QCircuits",
+          "via": null,
+          "url": "https://github.com/grey-area/qcircuits/blob/c42a525e50b8df7c77e2407dcefea5bf7458525b/README.rst"
+        }
+      ],
+      "qpus": [],
+      "type": "Embedded",
+      "references": [
+        "http://www.awebb.info/qcircuits/index.html",
+        "https://github.com/grey-area/qcircuits"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "0.6.0 (03.01.2021)",
+      "license": "MIT License",
+      "notes": "",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes (via Python)"
+      },
+      "features_references": [
+        "https://github.com/grey-area/qcircuits/blob/master/qcircuits/operators.py"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "No",
+        "t": "No",
+        "axis_rotation": "Yes",
+        "u": "R, M",
+        "cnot": "Yes",
+        "toffoli": "Yes",
+        "cu": "R, M",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://github.com/grey-area/qcircuits/blob/master/qcircuits/operators.py"
+      ],
+      "algorithm_support": {
+        "hhl": [],
+        "vqe": [],
+        "qaoa": [],
+        "qaoa_warm": [],
+        "vqc": [],
+        "qgan": [],
+        "eoh": [],
+        "qsvm": [],
+        "grover": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/grey-area/qcircuits/blob/c42a525e50b8df7c77e2407dcefea5bf7458525b/examples/grover_algorithm.py"
+          }
+        ],
+        "qpe": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/grey-area/qcircuits/blob/c42a525e50b8df7c77e2407dcefea5bf7458525b/examples/phase_estimation.py"
+          }
+        ],
+        "iqpe": [],
+        "amplitude_est": [],
+        "deutsch_josza": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/grey-area/qcircuits/blob/c42a525e50b8df7c77e2407dcefea5bf7458525b/examples/deutsch_jozsa_algorithm.py"
+          }
+        ],
+        "bernstein_vazirani": [],
+        "shor": [],
+        "simon": [],
+        "bwt": [],
+        "qls": [],
+        "tf": [],
+        "cl": [],
+        "usv": [],
+        "boolean_formula": [],
+        "amplitude_amplification": [],
+        "hidden_shift": [],
+        "qft": [
+          {
+            "library": "Example",
+            "comment": null,
+            "url": "https://github.com/grey-area/qcircuits/blob/c42a525e50b8df7c77e2407dcefea5bf7458525b/examples/phase_estimation.py"
+          }
+        ]
+      }
+    },
+    "QCL": {
+      "type": "Standalone",
+      "references": [
+        "http://tph.tuwien.ac.at/~oemer/qcl.html"
+      ],
+      "is_relevant": false,
+      "relevance": "No\nThis project is de-facto abandoned",
+      "last_release": "0.6.4 (27.03.2014)",
+      "license": "",
+      "notes": ""
+    },
+    "qsim": {
+      "type": "Standalone",
+      "references": [
+        "https://quantumai.google/qsim/input_format",
+        "https://github.com/quantumlib/qsim"
+      ],
+      "is_relevant": false,
+      "relevance": "No\nThis project is de-facto abandoned",
+      "last_release": "0.9.1 (10.03.2021)",
+      "license": "ASL 2.0",
+      "notes": "Officially superseded by Cirq"
+    },
+    "QC": {
+      "type": "Standalone",
+      "references": [
+        "https://circuits.qsoft.iqc.uwaterloo.ca/about/spec"
+      ],
+      "is_relevant": false,
+      "relevance": "No\nThis project is de-facto abandoned",
+      "last_release": "Unknown (homepage offline)",
+      "license": "Unknown (homepage offline)",
+      "notes": "Probably obsolete (homepage offline)"
+    },
+    "LIQUi|\u232a": {
+      "type": "Embedded",
+      "references": [
+        "https://www.microsoft.com/en-us/research/project/language-integrated-quantum-operations-liqui/",
+        "https://stationq.github.io/Liquid/"
+      ],
+      "is_relevant": false,
+      "relevance": "No\nThis project is officially abandoned",
+      "last_release": "none\n(Last commit 23.08.2018)",
+      "license": "Microsoft Research License",
+      "notes": "Officially superseded by Q#\n(https://devblogs.microsoft.com/qsharp/why-do-we-need-q/)"
+    },
+    "qpic": {
+      "type": "Standalone",
+      "references": [
+        "https://github.com/qpic/qpic"
+      ],
+      "is_relevant": false,
+      "relevance": "No",
+      "last_release": "1.0.2 (21.04.2016)",
+      "license": "GPL v3",
+      "notes": "Compiled to LaTeX"
+    },
+    "QMASM": {
+      "type": "Standalone",
+      "references": [
+        "https://ieeexplore.ieee.org/document/7761637",
+        "https://github.com/lanl/qmasm"
+      ],
+      "is_relevant": false,
+      "relevance": "No\nOnly supports annealing",
+      "last_release": "4.1 (19.12.2020)",
+      "license": "Modified BSD-3-Clause",
+      "notes": ""
+    },
+    "qasm": {
+      "type": "Standalone",
+      "references": [
+        "https://www.media.mit.edu/quanta/quanta-web/projects/qasm-tools/"
+      ],
+      "is_relevant": false,
+      "relevance": "No\nThis project is de-facto abandoned",
+      "last_release": "14.10.2005 (main tools)",
+      "license": "GPL v2",
+      "notes": ""
+    },
+    "Strawberry Fields": {
+      "type": "Embedded",
+      "references": [
+        "https://quantum-journal.org/papers/q-2019-03-11-129/",
+        "https://github.com/XanaduAI/strawberryfields"
+      ],
+      "is_relevant": false,
+      "relevance": "No\nOnly supports continuous variables",
+      "last_release": "0.18.0-post1 (30.04.2021)",
+      "license": "ASL 2.0",
+      "notes": "Python DSL"
+    },
+    "QML": {
+      "type": "Embedded",
+      "references": [
+        "https://web.archive.org/web/20070926230222/http://sneezy.cs.nott.ac.uk/QML/"
+      ],
+      "is_relevant": false,
+      "relevance": "No\nThis project is de-facto abandoned",
+      "last_release": "Unknown (homepage offline)",
+      "license": "Unknown (homepage offline)",
+      "notes": "Haskell DSL, part of a thesis"
+    },
+    "Blackbird": {
+      "type": "Standalone",
+      "references": [
+        "https://quantum-blackbird.readthedocs.io/en/latest/index.html",
+        "https://github.com/XanaduAI/blackbird"
+      ],
+      "is_relevant": false,
+      "relevance": "No\nOnly supports continuous variables",
+      "last_release": "0.3.0 (02.11.2020)",
+      "license": "ASL 2.0",
+      "notes": ""
+    },
+    "QCOR": {
+      "type": "Standalone",
+      "references": [
+        "https://github.com/ORNL-QCI/qcor"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "none yet",
+      "license": "BSD-3-Clause",
+      "notes": ""
+    },
+    "PennyLane": {
+      "type": "Embedded",
+      "references": [
+        "https://arxiv.org/pdf/1811.04968.pdf",
+        "https://github.com/PennyLaneAI/PennyLane"
+      ],
+      "is_relevant": true,
+      "relevance": "Yes",
+      "last_release": "0.17.0 (17.08.2021)",
+      "license": "ASL 2.0",
+      "notes": "Python DSL",
+      "features": {
+        "conditionals": "Yes",
+        "loops": "Yes",
+        "custom_gates": "Yes (functions)",
+        "higher_order_functions": "Yes (via Python)"
+      },
+      "features_references": [
+        "https://github.com/PennyLaneAI/PennyLane"
+      ],
+      "gate_support": {
+        "pauli_xyz": "Yes",
+        "hadamard": "Yes",
+        "s": "Yes",
+        "t": "Yes",
+        "axis_rotation": "Yes",
+        "u": "R",
+        "cnot": "Yes",
+        "toffoli": "Yes",
+        "cu": "R",
+        "swap": "Yes"
+      },
+      "gate_support_references": [
+        "https://github.com/PennyLaneAI/pennylane/blob/master/pennylane/ops/qubit/__init__.py"
+      ]
+    }
+  },
+  "conversions": [
+    {
+      "source": "Qiskit",
+      "target": "OpenQASM 2",
+      "description": [
+        {
+          "via": "Native export functionality",
+          "refs": [
+            "https://qiskit.org/documentation/stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit.qasm"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Qiskit",
+      "target": "pyQuil",
+      "description": [
+        {
+          "via": "pytket (object representation only)",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-qiskit/pytket/extensions/qiskit/qiskit_convert.py",
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-pyquil/pytket/extensions/pyquil/pyquil_convert.py"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Qiskit",
+      "target": "Q#",
+      "description": [
+        {
+          "via": "pytket",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-qiskit/pytket/extensions/qiskit/qiskit_convert.py",
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-qsharp/pytket/extensions/qsharp/qsharp_convert.py"
+          ],
+          "notes": []
+        },
+        {
+          "via": "Pennylane",
+          "refs": [
+            "https://github.com/PennyLaneAI/pennylane-qiskit/blob/master/pennylane_qiskit/converter.py",
+            "https://github.com/PennyLaneAI/PennyLane-qsharp/blob/677d2d5629b0b2bec7bf89ef70fc877140f85e43/pennylane_qsharp/device.py"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Qiskit",
+      "target": "Cirq",
+      "description": [
+        {
+          "via": "pytket (object representation only)",
+          "refs": [],
+          "notes": []
+        },
+        {
+          "via": "Pennylane (object representation only)",
+          "refs": [
+            "https://github.com/PennyLaneAI/pennylane-qiskit/blob/master/pennylane_qiskit/converter.py",
+            "https://github.com/PennyLaneAI/pennylane-cirq/blob/master/pennylane_cirq/cirq_device.py"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Qiskit",
+      "target": "ProjectQ",
+      "description": [
+        {
+          "via": "pytket (object representation only)",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-projectq/pytket/extensions/projectq/projectq_convert.py"
+          ],
+          "notes": [
+            "Only standard gates",
+            "No Allocate/Deallocate/Barrier/FlushGate"
+          ]
+        },
+        {
+          "via": "Pennylane (object representation only)",
+          "refs": [
+            "https://github.com/PennyLaneAI/pennylane-qiskit/blob/master/pennylane_qiskit/converter.py",
+            "https://github.com/PennyLaneAI/pennylane-pq/blob/e229f5fe38a1330b3e3a84080f72ced4a2b55a65/pennylane_pq/devices.py"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Qiskit",
+      "target": "Qulacs",
+      "description": [
+        {
+          "via": "Pennylane (object representation only)",
+          "refs": [
+            "https://github.com/PennyLaneAI/pennylane-qiskit/blob/master/pennylane_qiskit/converter.py",
+            "https://github.com/PennyLaneAI/pennylane-qulacs/blob/master/pennylane_qulacs/qulacs_device.py"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Qiskit",
+      "target": "Braket SDK",
+      "description": [
+        {
+          "via": "pytket (object representation only)",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-braket/pytket/extensions/braket/braket_convert.py",
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-qiskit/pytket/extensions/qiskit/qiskit_convert.py"
+          ],
+          "notes": []
+        },
+        {
+          "via": "Pennylane (object representation only)",
+          "refs": [
+            "https://github.com/PennyLaneAI/pennylane-qiskit/blob/master/pennylane_qiskit/converter.py",
+            "https://github.com/aws/amazon-braket-pennylane-plugin-python/blob/main/src/braket/pennylane_plugin/translation.py"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Qiskit",
+      "target": "AQASM",
+      "description": [
+        {
+          "via": "myqlm-interop[qiskit_binder] (only QLM bytecode)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/qiskit.html#module-qat.interop.qiskit.converters"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Qiskit",
+      "target": "pyAQASM",
+      "description": [
+        {
+          "via": "myqlm-interop[qiskit_binder] (only QLM bytecode)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/qiskit.html#module-qat.interop.qiskit.converters"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "OpenQASM 2",
+      "target": "Qiskit",
+      "description": [
+        {
+          "via": "qconvert",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-python-qiskit"
+          ],
+          "notes": []
+        },
+        {
+          "via": "Native import (object representation only)",
+          "refs": [
+            "https://qiskit.org/documentation/stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit.from_qasm_str"
+          ],
+          "notes": [
+            "No source export, only runtime object conversion"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "OpenQASM 2",
+      "target": "OpenQASM 3",
+      "description": [
+        {
+          "via": "backwards compatible (best effort)",
+          "refs": [
+            "https://qiskit.github.io/openqasm/grammar/index.html",
+            "https://arxiv.org/abs/2104.14722"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "OpenQASM 2",
+      "target": "Quil",
+      "description": [
+        {
+          "via": "qconvert",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-quil"
+          ],
+          "notes": []
+        },
+        {
+          "via": "Cirq",
+          "refs": [],
+          "notes": [
+            "Only via unitary matrix gates"
+          ]
+        },
+        {
+          "via": "Staq",
+          "refs": [
+            "https://github.com/softwareQinc/staq/blob/main/tools/quil.cpp"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "OpenQASM 2",
+      "target": "pyQuil",
+      "description": [
+        {
+          "via": "qconvert",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-python-pyquil"
+          ],
+          "notes": [
+            "V1.9, V2.0, V2.1, V2.12"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "OpenQASM 2",
+      "target": "Q#",
+      "description": [
+        {
+          "via": "qconvert (V0.10)",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-q-qsharp"
+          ],
+          "notes": []
+        },
+        {
+          "via": "pytket",
+          "refs": [],
+          "notes": [
+            "Pauli x,y,z, Exp. Pauli Tensor",
+            "H,S,T Gate",
+            "Rx,Ry,Rz",
+            "CCX, CX"
+          ]
+        },
+        {
+          "via": "Staq",
+          "refs": [
+            "https://github.com/softwareQinc/staq/blob/main/tools/qsharp.cpp"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "OpenQASM 2",
+      "target": "Quipper",
+      "description": [
+        {
+          "via": "pyZX",
+          "refs": [
+            "https://github.com/Quantomatic/pyzx/blob/c5b63016c667f1f15a91f9f139ef06a6449b4502/pyzx/circuit/__init__.py#L364"
+          ],
+          "notes": [
+            "No custom gates with arguments",
+            "No Pauli Y, Ry, CRZ, CH",
+            "U1, U2, U3 are decomposed"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "OpenQASM 2",
+      "target": "Cirq",
+      "description": [
+        {
+          "via": "qconvert (V0.7)",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-python-cirq"
+          ],
+          "notes": []
+        },
+        {
+          "via": "Staq",
+          "refs": [
+            "https://github.com/softwareQinc/staq/blob/main/tools/circ.cpp"
+          ],
+          "notes": []
+        },
+        {
+          "via": "Cirq",
+          "refs": [
+            "https://quantumai.google/cirq/interop#supported_control_statements"
+          ],
+          "notes": [
+            "No custom gates, barriers, resets and conditionals",
+            "No CRZ, CU1, CU3, RZZ"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "OpenQASM 2",
+      "target": "ProjectQ",
+      "description": [
+        {
+          "via": "Staq",
+          "refs": [
+            "https://github.com/softwareQinc/staq/blob/main/tools/projectq.cpp"
+          ],
+          "notes": []
+        },
+        {
+          "via": "pytket",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-projectq/pytket/extensions/projectq/projectq_convert.py"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "OpenQASM 2",
+      "target": "Qulacs",
+      "description": [
+        {
+          "via": "pytket",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-qulacs/pytket/extensions/qulacs/qulacs_convert.py"
+          ],
+          "notes": [
+            "Only Pauli XYZ, H,S,T, Rx,Ry,Rz, U1,U2,U3, CX, CNOT, CZ, SWAP",
+            "No measurement?"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "OpenQASM 2",
+      "target": "QuEST",
+      "description": [
+        {
+          "via": "qconvert (V0.7)",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-cc-quest"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "OpenQASM 2",
+      "target": "Quirk",
+      "description": [
+        {
+          "via": "qconvert",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-quirk"
+          ],
+          "notes": []
+        },
+        {
+          "via": "Cirq",
+          "refs": [
+            "https://github.com/quantumlib/Cirq/blob/v0.11.0/cirq-core/cirq/contrib/quirk/export_to_quirk.py#L54-L103"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "OpenQASM 2",
+      "target": "Braket SDK",
+      "description": [
+        {
+          "via": "qconvert (V1.0)",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-python-braket"
+          ],
+          "notes": []
+        },
+        {
+          "via": "myQLM (only QLM bytecode)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/openqasm.html#translating-quantum-circuits"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "OpenQASM 2",
+      "target": "AQASM",
+      "description": [
+        {
+          "via": "qconvert (V0.7)",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-python-aqasm"
+          ],
+          "notes": []
+        },
+        {
+          "via": "myQLM (only QLM bytecode)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/openqasm.html#translating-quantum-circuits"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "OpenQASM 2",
+      "target": "pyAQASM",
+      "description": [
+        {
+          "via": "qconvert",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-python-pyaqasm"
+          ],
+          "notes": []
+        },
+        {
+          "via": "myQLM (only QLM bytecode)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/openqasm.html#translating-quantum-circuits"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Quil",
+      "target": "Qiskit",
+      "description": [
+        {
+          "via": "qconvert (V0.18)",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#import-from-quil",
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-python-qiskit"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Quil",
+      "target": "OpenQASM 2",
+      "description": [
+        {
+          "via": "qconvert",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-qasm"
+          ],
+          "notes": []
+        },
+        {
+          "via": "Cirq",
+          "refs": [
+            "https://github.com/quantumlib/Cirq/blob/v0.11.0/cirq-core/cirq/circuits/circuit.py#L1215"
+          ],
+          "notes": [
+            "No parameterized DEFGATEs",
+            "No DECLARE, RESET, PRAGMA",
+            "Only CCNOT, CNOT, CSWAP, CPHASE, CPHASE00, CPHASE01, CPHASE10, CZ, PHASE, H, I, ISWAP, PSWAP, RX, RY, RZ, S, SWAP, T, X, Y, Z, XY",
+            "Only via unitary rotation gates"
+          ]
+        },
+        {
+          "via": "QuantumTranspiler",
+          "refs": [
+            "https://github.com/UST-QuAntiL/QuantumTranspiler/tree/master/conversion"
+          ],
+          "notes": [
+            "Decomposes CPHASE00, CPHASE01, CPHASE10, PSWAP"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Quil",
+      "target": "pyQuil",
+      "description": [
+        {
+          "via": "qconvert",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-python-pyquil"
+          ],
+          "notes": [
+            "V1.9, V2.0, V2.1, V2.12"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Quil",
+      "target": "Q#",
+      "description": [
+        {
+          "via": "qconvert (V0.10)",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-q-qsharp"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Quil",
+      "target": "Cirq",
+      "description": [
+        {
+          "via": "qconvert (V0.7)",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-python-cirq"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Quil",
+      "target": "QuEST",
+      "description": [
+        {
+          "via": "qconvert",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-cc-quest"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Quil",
+      "target": "Quirk",
+      "description": [
+        {
+          "via": "qconvert",
+          "refs": [
+            "https://github.com/quantastica/quantum-circuit/blob/master/README.md#export-to-quirk"
+          ],
+          "notes": []
+        },
+        {
+          "via": "Cirq",
+          "refs": [
+            "https://github.com/quantumlib/Cirq/blob/v0.11.0/cirq-core/cirq/contrib/quirk/export_to_quirk.py#L54-L103"
+          ],
+          "notes": [
+            "No parameterized DEFGATEs",
+            "No DECLARE, RESET, PRAGMA",
+            "Only CCNOT, CNOT, CSWAP, CPHASE, CPHASE00, CPHASE01, CPHASE10, CZ, PHASE, H, I, ISWAP, PSWAP, RX, RY, RZ, S, SWAP, T, X, Y, Z, XY"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "pyQuil",
+      "target": "Qiskit",
+      "description": [
+        {
+          "via": "pytket",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-pyquil/pytket/extensions/pyquil/pyquil_convert.py"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "pyQuil",
+      "target": "OpenQASM 2",
+      "description": [
+        {
+          "via": "pytket",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-pyquil/pytket/extensions/pyquil/pyquil_convert.py"
+          ],
+          "notes": []
+        },
+        {
+          "via": "QuantumTranspiler",
+          "refs": [
+            "https://github.com/UST-QuAntiL/QuantumTranspiler/blob/master/conversion/converter/pyquil_converter.py"
+          ],
+          "notes": [
+            "No parameterized custom gates",
+            "Decomposes U2, U3, Sdg, Tdg"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "pyQuil",
+      "target": "Quil",
+      "description": [
+        {
+          "via": "native",
+          "refs": [],
+          "notes": [
+            "Only components which are quil compatible (e.g. no if statements)"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "pyQuil",
+      "target": "Q#",
+      "description": [
+        {
+          "via": "Pennylane",
+          "refs": [
+            "https://github.com/XanaduAI/pennylane-forest/blob/f692b4ba3cb9ca9af766ad8994c550d6577380ba/pennylane_forest/converter.py",
+            "https://github.com/PennyLaneAI/PennyLane-qsharp/blob/677d2d5629b0b2bec7bf89ef70fc877140f85e43/pennylane_qsharp/device.py"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "pyQuil",
+      "target": "ProjectQ",
+      "description": [
+        {
+          "via": "pytket",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-pyquil/pytket/extensions/pyquil/pyquil_convert.py",
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-projectq/pytket/extensions/projectq/projectq_convert.py"
+          ],
+          "notes": [
+            "Only standard gates",
+            "No Allocate/Deallocate/Barrier/FlushGate"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "pyQuil",
+      "target": "Qulacs",
+      "description": [
+        {
+          "via": "pytket",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-pyquil/pytket/extensions/pyquil/pyquil_convert.py",
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-qulacs/pytket/extensions/qulacs/qulacs_convert.py"
+          ],
+          "notes": [
+            "Only standard gates",
+            "No Allocate/Deallocate/Barrier/FlushGate"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "pyQuil",
+      "target": "Braket SDK",
+      "description": [
+        {
+          "via": "pytket",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-pyquil/pytket/extensions/pyquil/pyquil_convert.py",
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-braket/pytket/extensions/braket/braket_convert.py"
+          ],
+          "notes": [
+            "Measure instructions are ignored"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "pyQuil",
+      "target": "AQASM",
+      "description": [
+        {
+          "via": "myqlm-interop[pyquil_binder] (only QLM bytecode)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/pyquil.html#module-qat.interop.pyquil.converters"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "pyQuil",
+      "target": "pyAQASM",
+      "description": [
+        {
+          "via": "myqlm-interop[pyquil_binder] (only QLM bytecode)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/pyquil.html#module-qat.interop.pyquil.converters"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Quipper",
+      "target": "OpenQASM 2",
+      "description": [
+        {
+          "via": "pyzX",
+          "refs": [
+            "https://github.com/Quantomatic/pyzx/blob/c5b63016c667f1f15a91f9f139ef06a6449b4502/pyzx/circuit/__init__.py#L372"
+          ],
+          "notes": [
+            "Only linear version, no branching / functions / etc.",
+            "Only Pauli X,Z, Rx, Rz, H, S, T, CNOT, CZ, CCZ, TOF gates"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Scaffold",
+      "target": "OpenQASM 2",
+      "description": [
+        {
+          "via": "native (scaffcc -b)",
+          "refs": [
+            "https://github.com/epiqc/ScaffCC/blob/ab84a7d36aec4f2d03a17a715e2441cfa55324b2/llvm/lib/Transforms/Scaffold/GenOpenQASM.cpp"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Cirq",
+      "target": "Qiskit",
+      "description": [
+        {
+          "via": "pytket (object representation only)",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-cirq/pytket/extensions/cirq/cirq_convert.py",
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-qiskit/pytket/extensions/qiskit/qiskit_convert.py"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Cirq",
+      "target": "OpenQASM 2",
+      "description": [
+        {
+          "via": "Cirq",
+          "refs": [
+            "https://github.com/quantumlib/Cirq/blob/v0.11.0/cirq-core/cirq/circuits/circuit.py#L1215"
+          ],
+          "notes": [
+            "only via unitary rotation gates"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Cirq",
+      "target": "Quil",
+      "description": [
+        {
+          "via": "Cirq",
+          "refs": [
+            "https://github.com/quantumlib/Cirq/blob/v0.11.0/cirq-core/cirq/circuits/circuit.py#L1233"
+          ],
+          "notes": [
+            "Only via unitary matrix gates"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Cirq",
+      "target": "Quirk",
+      "description": [
+        {
+          "via": "Native export functionality",
+          "refs": [
+            "https://github.com/quantumlib/Cirq/blob/v0.11.0/cirq-core/cirq/contrib/quirk/export_to_quirk.py#L54-L103"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Cirq",
+      "target": "AQASM",
+      "description": [
+        {
+          "via": "myqlm-interop[cirq_binder] (only QLM bytecode)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/cirq.html#module-qat.interop.cirq.converters"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Cirq",
+      "target": "pyAQASM",
+      "description": [
+        {
+          "via": "myqlm-interop[cirq_binder] (only QLM bytecode)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/cirq.html#module-qat.interop.cirq.converters"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "ProjectQ",
+      "target": "OpenQASM 2",
+      "description": [
+        {
+          "via": "ProjectQ",
+          "refs": [
+            "https://projectq.readthedocs.io/en/latest/projectq.backends.html#projectq.backends.IBMBackend.get_qasm"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "ProjectQ",
+      "target": "Cirq",
+      "description": [
+        {
+          "via": "CirqProjectQ (object representation only, deprecated)",
+          "refs": [
+            "https://github.com/HQSquantumsimulations/CirqProjectQ"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "ProjectQ",
+      "target": "AQASM",
+      "description": [
+        {
+          "via": "myqlm-interop[projectq_binder] (only QLM bytecode)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/projectq.html"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "ProjectQ",
+      "target": "pyAQASM",
+      "description": [
+        {
+          "via": "myqlm-interop[projectq_binder] (only QLM bytecode)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/projectq.html"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Qulacs",
+      "target": "OpenQASM 2",
+      "description": [
+        {
+          "via": "pytket",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-qulacs/pytket/extensions/qulacs/qulacs_convert.py"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Qulacs",
+      "target": "ProjectQ",
+      "description": [
+        {
+          "via": "pytket (object representation only)",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/fa4fda3eb09a404a0924b24240dcdc6d6c11e862/modules/pytket-qulacs/pytket/extensions/qulacs/qulacs_convert.py"
+          ],
+          "notes": [
+            "Only standard gates",
+            "No Allocate/Deallocate/Barrier/FlushGate"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "QWIRE",
+      "target": "OpenQASM 2",
+      "description": [
+        {
+          "via": "native",
+          "refs": [
+            "https://github.com/inQWIRE/QWIRE/blob/master/QASMPrinter.v"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "QuEST",
+      "target": "OpenQASM 2",
+      "description": [
+        {
+          "via": "native",
+          "refs": [
+            "https://github.com/QuEST-Kit/QuEST/blob/master/QuEST/src/QuEST_qasm.c"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Quirk",
+      "target": "OpenQASM 2",
+      "description": [
+        {
+          "via": "Cirq",
+          "refs": [],
+          "notes": [
+            "from Quirk to Cirq object, then from Cirq to OpenQASM 2",
+            "only via unitary rotation gates"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Quirk",
+      "target": "Cirq",
+      "description": [
+        {
+          "via": "Cirq (object representation only)",
+          "refs": [
+            "https://github.com/quantumlib/Cirq/blob/v0.11.0/cirq-core/cirq/interop/quirk/url_to_circuit.py#L149-L252",
+            "https://github.com/quantumlib/Cirq/blob/v0.11.0/cirq-core/cirq/interop/quirk/url_to_circuit.py#L149-L252"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "Braket SDK",
+      "target": "Qiskit",
+      "description": [
+        {
+          "via": "pytket (object representation only)",
+          "refs": [
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-braket/pytket/extensions/braket/braket_convert.py",
+            "https://github.com/CQCL/pytket-extensions/blob/develop/modules/pytket-qiskit/pytket/extensions/qiskit/qiskit_convert.py"
+          ],
+          "notes": [
+            "No support for Braket CPhaseShift00, CPhaseShift01, CPhaseShift10, PSwap"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "AQASM",
+      "target": "Qiskit",
+      "description": [
+        {
+          "via": "myqlm-interop[qiskit_binder] (object representation only)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/qiskit.html#module-qat.interop.qiskit.converters"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "AQASM",
+      "target": "pyQuil",
+      "description": [
+        {
+          "via": "myqlm-interop[pyquil_binder] (object representation only)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/pyquil.html#module-qat.interop.pyquil.converters"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "AQASM",
+      "target": "Cirq",
+      "description": [
+        {
+          "via": "myqlm-interop[cirq_binder] (object representation only)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/cirq.html#module-qat.interop.cirq.converters"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "pyAQASM",
+      "target": "Qiskit",
+      "description": [
+        {
+          "via": "myqlm-interop[qiskit_binder] (object representation only)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/qiskit.html#module-qat.interop.qiskit.converters"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "pyAQASM",
+      "target": "pyQuil",
+      "description": [
+        {
+          "via": "myqlm-interop[pyquil_binder] (object representation only)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/pyquil.html#module-qat.interop.pyquil.converters"
+          ],
+          "notes": []
+        }
+      ]
+    },
+    {
+      "source": "pyAQASM",
+      "target": "Cirq",
+      "description": [
+        {
+          "via": "myqlm-interop[cirq_binder] (object representation only)",
+          "refs": [
+            "https://myqlm.github.io/myqlm_specific/cirq.html#module-qat.interop.cirq.converters"
+          ],
+          "notes": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,22 +1,11 @@
-<p>
-  <mat-toolbar id="main-toolbar" color="primary">
-    <span>Qverview</span>
-  </mat-toolbar>
-</p>
+<mat-toolbar id="main-toolbar" color="primary">
+  <mat-toolbar-row>
+    <a mat-button routerLink="/">Qverview</a>
+    <span class="menu-spacer"></span>
+    <a mat-button routerLink="/conversion">Language graph</a>
+  </mat-toolbar-row>
+</mat-toolbar>
 
-<mat-sidenav-container id="main">
-  <mat-sidenav disableClose="true" mode="side" opened>
-    <app-filter></app-filter>
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <div id="tables-wrapper">
-      <app-sdks-table id="sdks"></app-sdks-table>
-      <app-quantum-cloud-services-table id="qcs"></app-quantum-cloud-services-table>
-      <app-quantum-computation-resources-table id="qer"></app-quantum-computation-resources-table>
-      <app-programming-language-table id="programming-languages"></app-programming-language-table>
-      <app-compiler-table id="compilers"></app-compiler-table>
-      <app-orchestrators-table id="orchestrators"></app-orchestrators-table>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<div id="main">
+  <router-outlet></router-outlet>
+</div>

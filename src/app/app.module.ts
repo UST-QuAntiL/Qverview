@@ -14,10 +14,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule} from '@angular/material/expansion';
-import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { SdksTableComponent } from './sdk/sdks-table/sdks-table.component';
 import { OrchestratorsTableComponent } from './orchestrator/orchestrators-table/orchestrators-table.component';
 import { QuantumCloudServicesTableComponent } from './quantum-cloud-service/qcs-table/quantum-cloud-services-table.component';
@@ -28,6 +29,8 @@ import { CompilerTableComponent } from './compiler/compiler-table/compiler-table
 import { FilterComponent } from './filter/filter.component';
 import { SyncSdkQcsButtonComponent } from './filter/sync-sdk-qcs-button/sync-sdk-qcs-button.component';
 import { SyncQcsQerButtonComponent } from './filter/sync-qcs-qer-button/sync-qcs-qer-button.component';
+import { IndexComponent } from './index/index.component';
+import { LanguageGraphComponent } from './language-graph/language-graph.component';
 
 @NgModule({
   declarations: [
@@ -40,9 +43,12 @@ import { SyncQcsQerButtonComponent } from './filter/sync-qcs-qer-button/sync-qcs
     CompilerTableComponent,
     FilterComponent,
     SyncSdkQcsButtonComponent,
-    SyncQcsQerButtonComponent
+    SyncQcsQerButtonComponent,
+    IndexComponent,
+    LanguageGraphComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     MatTableModule,
@@ -61,7 +67,7 @@ import { SyncQcsQerButtonComponent } from './filter/sync-qcs-qer-button/sync-qcs
     MatTabsModule,
     MatExpansionModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
